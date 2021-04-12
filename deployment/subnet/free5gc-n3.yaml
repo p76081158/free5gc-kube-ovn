@@ -1,0 +1,11 @@
+---
+apiVersion: kubeovn.io/v1
+kind: Subnet
+metadata:
+  name: free5gc-n3
+  labels:
+    nsi: "1"        # Network Slice Instance of three networks (RAN,TN,CN)
+spec:
+  protocol: IPv4
+  cidrBlock: 10.200.100.0/24
+  gateway: 10.200.100.1

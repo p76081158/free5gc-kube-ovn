@@ -1,0 +1,9 @@
+apiVersion: kubeovn.io/v1
+kind: Subnet
+metadata:
+  name: free5gc-macvlan
+spec:
+  protocol: IPv4
+  provider: free5gc-macvlan.free5gc
+  cidrBlock: 192.168.72.0/24
+  gateway: 192.168.72.254
