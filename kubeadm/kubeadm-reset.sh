@@ -1,3 +1,4 @@
+#!/bin//bash
 
 # kubeadm reset
 sudo kubeadm reset
