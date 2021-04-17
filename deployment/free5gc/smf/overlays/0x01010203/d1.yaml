@@ -1,0 +1,21 @@
+- op: replace
+  path: /metadata/name
+  value: free5gc-smf-0x01010203
+- op: replace
+  path: /metadata/labels/app
+  value: free5gc-smf-0x01010203
+- op: add
+  path: /metadata/labels/
+  value:
+    nsi: "1"
+    sst: "1"
+    sd: "010203"
+- op: replace
+  path: /spec/selector/matchLabels/app
+  value: free5gc-smf-0x01010203
+- op: replace
+  path: /spec/template/metadata/labels/app
+  value: free5gc-smf-0x01010203
+- op: replace
+  path: /spec/template/metadata/labels/app
+  value: free5gc-smf-0x01010203

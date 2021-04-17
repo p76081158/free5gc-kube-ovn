@@ -1,0 +1,39 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../base
+
+# network slice patch
+patchesJson6902:
+- target:
+    version: v1 # apiVersion
+    kind: ServiceAccount
+    name: free5gc-smf-sa
+  path: sa-patch.yaml
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1 # apiVersion
+    kind: ClusterRoleBinding
+    name: free5gc-smf-rbac
+  path: rbac-patch.yaml
+- target:
+    version: v1 # apiVersion
+    kind: Service
+    name: free5gc-smf
+  path: service-patch.yaml
+- target:
+    group: apps
+    version: v1 # apiVersion
+    kind: Deployment
+    name: free5gc-smf
+  path: deployment-patch.yaml
+
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-smf-config
+  namespace: free5gc
+  behavior: replace
+  files:
+    - config/smfcfg.yaml
+    - config/uerouting.yaml

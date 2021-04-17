@@ -1,0 +1,42 @@
+---
+# Source: vpn/templates/secure-intranet-connectivity.yaml
+apiVersion: networkservicemesh.io/v1alpha1
+kind: NetworkService
+metadata:
+  name: secure-intranet-connectivity
+spec:
+  payload: IP
+  matches:
+    - match:
+      sourceSelector:
+        app: firewall
+      route:
+        - destination:
+          destinationSelector:
+            app: passthrough-1
+    - match:
+      sourceSelector:
+        app: passthrough-1
+      route:
+        - destination:
+          destinationSelector:
+            app: passthrough-2
+    - match:
+      sourceSelector:
+        app: passthrough-2
+      route:
+        - destination:
+          destinationSelector:
+            app: passthrough-3
+    - match:
+      sourceSelector:
+        app: passthrough-3
+      route:
+        - destination:
+          destinationSelector:
+            app: vpn-gateway
+    - match:
+      route:
+        - destination:
+          destinationSelector:
+            app: firewall

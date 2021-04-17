@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: free5gc-nssf
+  labels:
+    app: free5gc-nssf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: free5gc-nssf
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: free5gc-nssf
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: free5gc-nssf
+          image: black842679513/free5gc-nssf:v3.0.5
+          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: Always
+          securityContext:
+            privileged: false
+          volumeMounts:
+            - name: free5gc-nssf-config
+              mountPath: /free5gc/config
+            - name: free5gc-nssf-cert
+              mountPath: /free5gc/support/TLS
+          ports:
+            - containerPort: 8000
+              name: free5gc-nssf
+              protocol: TCP
+        - name: tcpdump
+          image: corfr/tcpdump
+          command:
+            - /bin/sleep
+            - infinity
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: free5gc-nssf-sa
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: free5gc-nssf-cert
+          secret:
+            secretName: free5gc-nssf-tls-secret
+        - name: free5gc-nssf-config
+          configMap:
+            name: free5gc-nssf-config

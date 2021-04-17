@@ -1,0 +1,27 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: free5gc
+resources:
+  - pcf-sa.yaml
+  - pcf-rbac.yaml
+  - pcf-service.yaml
+  - pcf-deployment.yaml
+
+# declare Secret from a secretGenerator
+secretGenerator:
+- name: free5gc-pcf-tls-secret
+  namespace: free5gc
+  files:
+  - TLS/pcf.pem
+  - TLS/pcf.key
+  type: "Opaque"
+generatorOptions:
+  disableNameSuffixHash: true
+
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-pcf-config
+  namespace: free5gc
+  files:
+    - config/pcfcfg.yaml

@@ -1,0 +1,60 @@
+---
+# Source: vpn/templates/vpn-gateway-nse.tpl
+apiVersion: apps/v1
+kind: Deployment
+spec:
+  selector:
+    matchLabels:
+      networkservicemesh.io/app: "vpn-gateway"
+      networkservicemesh.io/impl: "secure-intranet-connectivity"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        networkservicemesh.io/app: "vpn-gateway"
+        networkservicemesh.io/impl: "secure-intranet-connectivity"
+    spec:
+      serviceAccount: nse-acc
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: networkservicemesh.io/app
+                    operator: In
+                    values:
+                      - vpn-gateway
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: vpn-gateway
+          image: docker.io/networkservicemesh/test-common:v0.2.0
+          command: ["/bin/icmp-responder-nse"]
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ADVERTISE_NSE_NAME
+              value: "secure-intranet-connectivity"
+            - name: ADVERTISE_NSE_LABELS
+              value: "app=vpn-gateway"
+            - name: IP_ADDRESS
+              value: "172.16.1.0/24"
+          resources:
+            limits:
+              networkservicemesh.io/socket: 1
+        - name: nginx
+          image: docker.io/networkservicemesh/nginx:latest
+        - name: tcpdump
+          image: corfr/tcpdump
+          securityContext:
+            privileged: true
+          command:
+            - /bin/sh
+            - -c
+            - |
+              sysctl -w net.ipv4.ip_forward=1
+              apk update
+              apk add iptables
+             
+              iptables -t nat -A POSTROUTING -s 172.16.0.0/16 -o eth0 -j MASQUERADE
+              sleep infinity
+metadata:
+  name: vpn-gateway-nse

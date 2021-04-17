@@ -1,0 +1,9 @@
+- op: replace
+  path: /metadata/name
+  value: free5gc-smf-0x01010203
+- op: replace
+  path: /metadata/labels/app
+  value: free5gc-smf-0x01010203
+- op: replace
+  path: /spec/selector/app
+  value: free5gc-smf-0x01010203

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: free5gc-nrf
+  name: free5gc-nrf
+spec:
+  type: ClusterIP
+  ports:
+  - name: free5gc-nrf
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: free5gc-nrf

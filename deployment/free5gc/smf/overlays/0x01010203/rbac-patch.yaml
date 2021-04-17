@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: free5gc-smf-0x01010203-rbac
+- op: replace
+  path: /subjects/0/name
+  value: free5gc-smf-0x01010203-sa

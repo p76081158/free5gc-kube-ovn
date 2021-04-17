@@ -1,0 +1,3 @@
+- op: replace
+  path: /metadata/name
+  value: free5g-smf-0x01010203-sa
