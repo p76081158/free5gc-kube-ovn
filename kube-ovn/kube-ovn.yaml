@@ -39,7 +39,7 @@ spec:
       containers:
         - name: kube-ovn-controller
           image: "kubeovn/kube-ovn:v1.7.0"
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           command:
           - /kube-ovn/start-controller.sh
           args:
@@ -130,7 +130,7 @@ spec:
       initContainers:
       - name: install-cni
         image: "kubeovn/kube-ovn:v1.7.0"
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         command: ["/kube-ovn/install-cni.sh"]
         securityContext:
           runAsUser: 0
@@ -141,7 +141,7 @@ spec:
       containers:
       - name: cni-server
         image: "kubeovn/kube-ovn:v1.7.0"
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         command:
           - bash
           - /kube-ovn/start-cniserver.sh
@@ -252,7 +252,7 @@ spec:
         - name: pinger
           image: "kubeovn/kube-ovn:v1.7.0"
           command: ["/kube-ovn/kube-ovn-pinger", "--external-address=114.114.114.114", "--external-dns=alauda.cn"]
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           securityContext:
             runAsUser: 0
             privileged: false
