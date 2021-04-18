@@ -1,0 +1,76 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  # name must match the spec fields below, and be in the form: <plural>.<group>
+  name: networkslices.nssmf.free5gc.com
+spec:
+  # group name to use for REST API: /apis/<group>/<version>
+  group: nssmf.free5gc.com
+  # list of versions supported by this CustomResourceDefinition
+  versions:
+    - name: v1
+      # Each version can be enabled/disabled by Served flag.
+      served: true
+      # One and only one version must be marked as the storage version.
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                sst:
+                  type: string
+                sd:
+                  type: string
+                n4_cidr:
+                  type: string
+                ue_subnet:
+                  type: string
+                cpu:
+                  type: string
+                memory:
+                  type: string
+                bandwidth:
+                  type: string
+      # print column of crd
+      additionalPrinterColumns:
+        - name: SST
+          type: string
+          description: The cron spec defining the interval a CronJob is run
+          jsonPath: .spec.sst
+        - name: SD
+          type: string
+          jsonPath: .spec.sd
+        - name: N4 CIDR
+          type: string
+          jsonPath: .spec.n4_cidr
+        - name: UE Subnet
+          type: string
+          jsonPath: .spec.ue_subnet
+        - name: CPU
+          type: string
+          jsonPath: .spec.cpu
+        - name: Memory
+          type: string
+          jsonPath: .spec.memory
+        - name: Bandwidth
+          type: string
+          jsonPath: .spec.bandwidth
+        - name: Age
+          type: date
+          jsonPath: .metadata.creationTimestamp
+  # either Namespaced or Cluster
+  scope: Namespaced
+  names:
+    # plural name to be used in the URL: /apis/<group>/<version>/<plural>
+    plural: networkslices
+    # singular name to be used as an alias on the CLI and for display
+    singular: networkslice
+    # kind is normally the CamelCased singular type. Your resource manifests use this.
+    kind: NetworkSlice
+    # shortNames allow shorter string to match your resource on the CLI
+    shortNames:
+    - ns
