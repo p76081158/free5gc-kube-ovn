@@ -20,8 +20,16 @@ sudo bash install.sh
 cd ..
 
 # other cni
-echo "[Step 7] Install other cni"
+echo "[Step 7] Install other CNI"
 cd cni
+kubectl apply -f .
+cd ..
+echo "-------------------------------"
+echo ""
+
+# other plugin
+echo "[Step 8] Install Kubernetes Plugin"
+cd plugin
 kubectl apply -f .
 cd ..
 echo "-------------------------------"
