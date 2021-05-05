@@ -27,13 +27,22 @@ cd ..
 echo "-------------------------------"
 echo ""
 
-# other plugin
-echo "[Step 8] Install Kubernetes Plugin"
-cd plugin
-kubectl apply -f .
+# prometheus
+echo "[Step 8] Install other Prometheus"
+cd prometheus
+./install.sh
 cd ..
 echo "-------------------------------"
 echo ""
+
+
+# other plugin
+# echo "[Step 8] Install Kubernetes Plugin"
+# cd plugin
+# kubectl apply -f .
+# cd ..
+# echo "-------------------------------"
+# echo ""
 
 # print kubeadm join token
 echo "[Final] Join worker to cluster"
