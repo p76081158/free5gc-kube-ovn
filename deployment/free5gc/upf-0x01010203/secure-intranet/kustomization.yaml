@@ -1,8 +1,0 @@
----
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: free5gc
-resources:
-  - vppagent-acl-filter.yaml
-  - vppagent-passthrough.yaml
-  - secure-intranet.yaml

@@ -1,5 +1,0 @@
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: free5gc-smf-0x01010203-sa
