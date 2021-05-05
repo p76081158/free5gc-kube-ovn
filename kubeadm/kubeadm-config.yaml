@@ -4,3 +4,7 @@ kind: ClusterConfiguration
 apiServer:
   extraArgs:
     feature-gates: SCTPSupport=true   # --feature-gates=SCTPSupport=True
+---
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+cpuCFSQuota: false
