@@ -1,0 +1,77 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: free5gc-ueransim-gnb-466-93-000000010
+  labels:
+    app: free5gc-ueransim-gnb-466-93-000000010
+    nsi: "1"
+    mcc: "466"
+    mnc: "93"
+    nci: "000000010"
+    telecom: TWM
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: free5gc-ueransim-gnb-466-93-000000010
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: free5gc-ueransim-gnb-466-93-000000010
+      annotations:
+        k8s.v1.cni.cncf.io/networks: free5gc-macvlan, free5gc-n3-466-93-000000010
+        free5gc-macvlan.free5gc.kubernetes.io/ip_address: 192.168.72.52
+        free5gc-n3-466-93-000000010.free5gc.ovn.kubernetes.io/logical_switch: free5gc-n3-466-93-000000010
+        free5gc-n3-466-93-000000010.free5gc.ovn.kubernetes.io/ip_address: 10.202.100.3
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: free5gc-ueransim-gnb
+          image: black842679513/free5gc-ueransim:v3.1.5
+          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: Always
+          command:
+            - /bin/bash
+          #  - -c
+          #  - build/nr-gnb -c config/free5gc-gnb.yaml
+          tty: true
+          securityContext:
+            # allow container to access the host's resources
+            privileged: true
+            capabilities:
+              add: ["NET_ADMIN", "SYS_TIME"]
+          volumeMounts:
+            - name: free5gc-ueransim-gnb-466-93-000000010-config
+              mountPath: /UERANSIM/config
+              # read host linux tun/tap packets
+          #  - name: tun-dev-dir  
+          #    mountPath: /dev/net/tun
+          ports:
+            - containerPort: 4997
+              name: if-n1n2
+              protocol: UDP
+            - containerPort: 2152
+              name: if-n3
+              protocol: UDP
+        - name: tcpdump
+          image: corfr/tcpdump
+          command:
+            - /bin/sleep
+            - infinity
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: free5gc-ueransim-gnb-466-93-000000010-sa
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: free5gc-ueransim-gnb-466-93-000000010-config
+          configMap:
+            name: free5gc-ueransim-gnb-466-93-000000010-config
+        #- name: tun-dev-dir
+        #  hostPath:
+        #    path: /dev/net/tun
