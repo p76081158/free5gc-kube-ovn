@@ -1,0 +1,12 @@
+---
+apiVersion: "nso.free5gc.com/v1"
+kind: gNB
+metadata:
+  name: 466-01-000000010
+spec:
+  name: 466-01-000000010
+  mcc: "466"
+  mnc: "01"
+  ue_nums: 0
+  n3-logical-switch: 
+  n3_cidr:
