@@ -5,6 +5,7 @@ metadata:
   name: mongodb-pv-volume
   labels:
     type: local
+    namespace: free5gc
 spec:
   capacity:
     storage: 1Gi
