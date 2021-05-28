@@ -54,7 +54,7 @@ spec:
   - bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
     honorLabels: true
     honorTimestamps: false
-    interval: 30s
+    interval: 5s
     metricRelabelings:
     - action: drop
       regex: container_(network_tcp_usage_total|network_udp_usage_total|tasks_state|cpu_load_average_10s)
