@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: free5gc-mongodb-466-93
+spec:
+  serviceName: free5gc-mongodb-466-93
+  selector:
+    matchLabels:
+      app: free5gc-mongodb-466-93
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: free5gc-mongodb-466-93
+        nsi: "1"
+        mcc: "466"
+        mnc: "93"
+        telecom: TWM
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+      - name: mongodb
+        image: mongo:4.2.7
+        ports:
+        - containerPort: 27017
+          name: mongodb
+        volumeMounts:
+        - name: mongodb-466-93-persistent-storage
+          mountPath: /data/db
+        env:
+          - name: MONGO_INITDB_DATABASE
+            valueFrom:
+              configMapKeyRef:
+                name: free5gc-mongodb-466-93-config
+                key: mongo_initdb_database
+      volumes:
+      - name: mongodb-466-93-persistent-storage
+        persistentVolumeClaim:
+          claimName: mongodb-466-93-pv-claim

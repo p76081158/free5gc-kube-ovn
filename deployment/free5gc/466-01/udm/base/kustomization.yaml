@@ -1,0 +1,27 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: free5gc
+resources:
+  - udm-sa.yaml
+  - udm-rbac.yaml
+  - udm-service.yaml
+  - udm-deployment.yaml
+
+# declare Secret from a secretGenerator
+secretGenerator:
+- name: free5gc-udm-466-01-tls-secret
+  namespace: free5gc
+  files:
+  - TLS/udm.pem
+  - TLS/udm.key
+  type: "Opaque"
+generatorOptions:
+  disableNameSuffixHash: true
+
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-udm-466-01-config
+  namespace: free5gc
+  files:
+    - config/udmcfg.yaml

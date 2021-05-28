@@ -1,0 +1,27 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: free5gc
+resources:
+  - amf-sa.yaml
+  - amf-rbac.yaml
+  - amf-service.yaml
+  - amf-deployment.yaml
+
+# declare Secret from a secretGenerator
+secretGenerator:
+- name: free5gc-amf-466-01-tls-secret
+  namespace: free5gc
+  files:
+  - TLS/amf.pem
+  - TLS/amf.key
+  type: "Opaque"
+generatorOptions:
+  disableNameSuffixHash: true
+
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-amf-466-01-config
+  namespace: free5gc
+  files:
+    - config/amfcfg.yaml

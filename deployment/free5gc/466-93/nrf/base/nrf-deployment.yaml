@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: free5gc-nrf-466-93
+  labels:
+    app: free5gc-nrf-466-93
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: free5gc-nrf-466-93
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: free5gc-nrf-466-93
+        nsi: "1"
+        mcc: "466"
+        mnc: "93"
+        telecom: TWM
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: free5gc-nrf
+          image: black842679513/free5gc-nrf:v3.0.5
+          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: Always
+          securityContext:
+            privileged: false
+          volumeMounts:
+            - name: free5gc-nrf-466-93-config
+              mountPath: /free5gc/config
+            - name: free5gc-nrf-466-93-cert
+              mountPath: /free5gc/support/TLS
+          ports:
+            - containerPort: 8000
+              name: free5gc-nrf
+              protocol: TCP
+        - name: tcpdump
+          image: corfr/tcpdump
+          imagePullPolicy: IfNotPresent
+          command:
+            - /bin/sleep
+            - infinity
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: free5gc-nrf-466-93-sa
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: free5gc-nrf-466-93-cert
+          secret:
+            secretName: free5gc-nrf-466-93-tls-secret
+        - name: free5gc-nrf-466-93-config
+          configMap:
+            name: free5gc-nrf-466-93-config

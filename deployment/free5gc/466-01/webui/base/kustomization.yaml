@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: free5gc
+resources:
+  - webui-sa.yaml
+  - webui-rbac.yaml
+  - webui-service.yaml
+  - webui-deployment.yaml
+
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-webui-466-01-config
+  namespace: free5gc
+  files:
+    - config/webuicfg.yaml
+

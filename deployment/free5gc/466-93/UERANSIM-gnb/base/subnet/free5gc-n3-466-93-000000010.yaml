@@ -1,0 +1,16 @@
+---
+apiVersion: kubeovn.io/v1
+kind: Subnet
+metadata:
+  name: free5gc-n3-466-93-000000010
+  namespace: free5gc
+  labels:
+    nsi: "1"        # Network Slice Instance of three networks (RAN,TN,CN)
+    mcc: "466"
+    mnc: "93"
+    nci: "000000010"
+    telecom: TWM
+spec:
+  protocol: IPv4
+  cidrBlock: 10.203.100.0/24
+  gateway: 10.203.100.1

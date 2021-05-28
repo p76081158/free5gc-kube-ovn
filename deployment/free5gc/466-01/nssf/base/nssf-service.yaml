@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: free5gc-nssf-466-01
+  name: free5gc-nssf-466-01
+spec:
+  type: ClusterIP
+  ports:
+  - name: free5gc-nssf
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: free5gc-nssf-466-01

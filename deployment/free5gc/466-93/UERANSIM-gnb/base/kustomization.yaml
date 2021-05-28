@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: free5gc
+resources:
+  - custom-resource/gnb-cr.yaml
+  - network-attachment-definition/free5gc-n3-466-93-000000010.yaml
+  - subnet/free5gc-n3-466-93-000000010.yaml
+  - ueransim-gnb-sa.yaml
+  - ueransim-gnb-rbac.yaml
+  - ueransim-gnb-service.yaml
+  - ueransim-gnb-deployment.yaml
+  - config/free5gc-gnb-466-93-000000010.yaml

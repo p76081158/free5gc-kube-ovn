@@ -1,0 +1,59 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: free5gc-udm-466-11
+  labels:
+    app: free5gc-udm-466-11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: free5gc-udm-466-11
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: free5gc-udm-466-11
+        nsi: "1"
+        mcc: "466"
+        mnc: "11"
+        telecom: CHT
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: free5gc-udm
+          image: black842679513/free5gc-udm:v3.0.5
+          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: Always
+          securityContext:
+            privileged: false
+          volumeMounts:
+            - name: free5gc-udm-466-11-config
+              mountPath: /free5gc/config
+            - name: free5gc-udm-466-11-cert
+              mountPath: /free5gc/support/TLS
+          ports:
+            - containerPort: 8000
+              name: free5gc-udm
+              protocol: TCP
+        - name: tcpdump
+          image: corfr/tcpdump
+          command:
+            - /bin/sleep
+            - infinity
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: free5gc-udm-466-11-sa
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: free5gc-udm-466-11-cert
+          secret:
+            secretName: free5gc-udm-466-11-tls-secret
+        - name: free5gc-udm-466-11-config
+          configMap:
+            name: free5gc-udm-466-11-config

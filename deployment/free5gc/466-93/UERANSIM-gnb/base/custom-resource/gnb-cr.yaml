@@ -1,0 +1,11 @@
+---
+apiVersion: "nso.free5gc.com/v1"
+kind: gNB
+metadata:
+  name: "466-93-000000010"
+spec:
+  mcc: "466"
+  mnc: "93"
+  ue-nums: 0
+  n3_cidr: "10.203.100.0/24"
+  external_ip: "192.168.72.55"

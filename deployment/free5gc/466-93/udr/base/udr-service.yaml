@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: free5gc-udr-466-93
+  name: free5gc-udr-466-93
+spec:
+  type: ClusterIP
+  ports:
+  - name: free5gc-udr
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: free5gc-udr-466-93

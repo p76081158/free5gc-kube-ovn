@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: free5gc-webui-466-11
+  labels:
+    app: free5gc-webui-466-11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: free5gc-webui-466-11
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: free5gc-webui-466-11
+        nsi: "1"
+        mcc: "466"
+        mnc: "11"
+        telecom: CHT
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: free5gc-webui
+          image: black842679513/free5gc-webui:v3.0.5
+          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: Always
+          securityContext:
+            privileged: false
+          volumeMounts:
+            - name: free5gc-webui-466-11-config
+              mountPath: /free5gc/config
+          ports:
+            - containerPort: 5000
+              name: free5gc-webui
+              protocol: TCP
+        - name: tcpdump
+          image: corfr/tcpdump
+          command:
+            - /bin/sleep
+            - infinity
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: free5gc-webui-466-11-sa
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: free5gc-webui-466-11-config
+          configMap:
+            name: free5gc-webui-466-11-config
