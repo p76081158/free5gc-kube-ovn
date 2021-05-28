@@ -21,24 +21,18 @@ spec:
             spec:
               type: object
               properties:
-                name:
-                  type: string
                 mcc:
                   type: string
                 mnc:
                   type: string
                 ue-nums:
                   type: integer
-                n3-logical-switch:
-                  type: string
                 n3_cidr:
+                  type: string
+                external_ip:
                   type: string
       # print column of crd
       additionalPrinterColumns:
-        - name: NAME
-          type: string
-          description: The cron spec defining the interval a CronJob is run
-          jsonPath: .spec.name
         - name: MCC
           type: string
           jsonPath: .spec.mcc
@@ -48,12 +42,12 @@ spec:
         - name: UE Numbers
           type: integer
           jsonPath: .spec.ue-nums
-        - name: N3 Logical Switch
-          type: string
-          jsonPath: .spec.n3-logical-switch
         - name: N3 CIDR
           type: string
           jsonPath: .spec.n3_cidr
+        - name: External IP
+          type: string
+          jsonPath: .spec.external_ip
   # either Namespaced or Cluster
   scope: Namespaced
   names:
