@@ -2,35 +2,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: free5gc-ueransim-gnb-466-01-000000010
+  name: free5gc-ueransim-gnb-208-93-000000010
   labels:
-    app: free5gc-ueransim-gnb-466-01-000000010
+    app: free5gc-ueransim-gnb-208-93-000000010
     nsi: "1"
-    mcc: "466"
-    mnc: "01"
+    mcc: "208"
+    mnc: "93"
     nci: "000000010"
-    telecom: FET
+    telecom: free5gc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: free5gc-ueransim-gnb-466-01-000000010
+      app: free5gc-ueransim-gnb-208-93-000000010
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: free5gc-ueransim-gnb-466-01-000000010
+        app: free5gc-ueransim-gnb-208-93-000000010
         nsi: "1"
-        mcc: "466"
-        mnc: "01"
+        mcc: "208"
+        mnc: "93"
         nci: "000000010"
-        telecom: FET
+        telecom: free5gc
       annotations:
-        k8s.v1.cni.cncf.io/networks: free5gc-macvlan, free5gc-n3-466-01-000000010
+        k8s.v1.cni.cncf.io/networks: free5gc-macvlan, free5gc-n3-208-93-000000010
         free5gc-macvlan.free5gc.kubernetes.io/ip_address: 192.168.72.51
-        free5gc-n3-466-01-000000010.free5gc.ovn.kubernetes.io/logical_switch: free5gc-n3-466-01-000000010
-        free5gc-n3-466-01-000000010.free5gc.ovn.kubernetes.io/ip_address: 10.200.100.3
+        free5gc-n3-208-93-000000010.free5gc.ovn.kubernetes.io/logical_switch: free5gc-n3-208-93-000000010
+        free5gc-n3-208-93-000000010.free5gc.ovn.kubernetes.io/ip_address: 10.200.100.3
     spec:
       securityContext:
         runAsUser: 0
@@ -51,7 +51,7 @@ spec:
             capabilities:
               add: ["NET_ADMIN", "SYS_TIME"]
           volumeMounts:
-            - name: free5gc-ueransim-gnb-466-01-000000010-config
+            - name: free5gc-ueransim-gnb-208-93-000000010-config
               mountPath: /UERANSIM/config
               # read host linux tun/tap packets
           #  - name: tun-dev-dir  
@@ -71,12 +71,12 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      serviceAccountName: free5gc-ueransim-gnb-466-01-000000010-sa
+      serviceAccountName: free5gc-ueransim-gnb-208-93-000000010-sa
       terminationGracePeriodSeconds: 30
       volumes:
-        - name: free5gc-ueransim-gnb-466-01-000000010-config
+        - name: free5gc-ueransim-gnb-208-93-000000010-config
           configMap:
-            name: free5gc-ueransim-gnb-466-01-000000010-config
+            name: free5gc-ueransim-gnb-208-93-000000010-config
         #- name: tun-dev-dir
         #  hostPath:
         #    path: /dev/net/tun

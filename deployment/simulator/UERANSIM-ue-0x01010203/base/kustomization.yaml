@@ -13,3 +13,6 @@ configMapGenerator:
   namespace: free5gc
   files:
     - config/free5gc-ue.yaml
+   # - config/free5gc-ue-test.yaml
+   # - config/free5gc-ue-test1.yaml
+    - config/free5gc-ue-466-01.yaml

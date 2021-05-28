@@ -2,14 +2,14 @@
 apiVersion: kubeovn.io/v1
 kind: Subnet
 metadata:
-  name: free5gc-n3-466-01-000000010
+  name: free5gc-n3-208-93-000000010
   namespace: free5gc
   labels:
     nsi: "1"        # Network Slice Instance of three networks (RAN,TN,CN)
-    mcc: "466"
-    mnc: "01"
+    mcc: "208"
+    mnc: "93"
     nci: "000000010"
-    telecom: FET
+    telecom: free5gc
 spec:
   protocol: IPv4
   cidrBlock: 10.200.100.0/24

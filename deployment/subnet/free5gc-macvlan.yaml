@@ -2,6 +2,7 @@ apiVersion: kubeovn.io/v1
 kind: Subnet
 metadata:
   name: free5gc-macvlan
+  namespace: free5gc
 spec:
   protocol: IPv4
   provider: free5gc-macvlan.free5gc

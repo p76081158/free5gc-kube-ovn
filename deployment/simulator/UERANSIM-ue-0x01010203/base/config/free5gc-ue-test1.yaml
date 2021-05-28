@@ -1,9 +1,9 @@
 # IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 or 16 digits)
-supi: 'imsi-208930000000003'
+supi: 'imsi-310560000000005'
 # Mobile Country Code value of HPLMN
-mcc: '208'
+mcc: '310'
 # Mobile Network Code value of HPLMN (2 or 3 digits)
-mnc: '93'
+mnc: '560'
 
 # Permanent subscription key
 key: '8baf473f2f8fd09487cccbd7097c6862'
@@ -20,7 +20,7 @@ imeiSv: '4370816125816151'
 
 # List of gNB IP addresses for Radio Link Simulation
 gnbSearchList:
-  - 192.168.72.51
+  - 192.168.72.3
 
 # Initial PDU sessions to be established
 sessions:
@@ -28,13 +28,13 @@ sessions:
     apn: 'internet'
     slice:
       sst: 0x01
-      sd: 0x010203
+      sd: 0x000002
     emergency: false
 
 # Configured NSSAI for this UE by HPLMN
 configured-nssai:
   - sst: 0x01
-    sd: 0x010203
+    sd: 0x000002
 
 # Default Configured NSSAI for this UE
 default-nssai:
