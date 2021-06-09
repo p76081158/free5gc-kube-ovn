@@ -35,7 +35,6 @@ cd ..
 echo "-------------------------------"
 echo ""
 
-
 # other plugin
 # echo "[Step 8] Install Kubernetes Plugin"
 # cd plugin
@@ -49,3 +48,6 @@ echo "[Final] Join worker to cluster"
 kubeadm token create --print-join-command
 echo "-------------------------------"
 echo ""
+
+# kubectl without root
+sudo chown -R $USER $HOME/.kube
