@@ -30,12 +30,6 @@ then
     exit
 fi
 
-if [ -z "$6" ]
-then
-    echo "Please enter core network id!"
-    exit
-fi
-
 nextip(){
     IP=$1
     IP_HEX=$(printf '%.2X%.2X%.2X%.2X\n' `echo $IP | sed -e 's/\./ /g'`)
@@ -49,11 +43,35 @@ mnc="$2"
 abb="$3"
 nsi="$4"
 amf_ip="$5"
-id="$6"
-core_network_id="$(printf "%02x\n" $6)"
+id=$(kubectl -n free5gc get telecoms.nso.free5gc.com | grep -c free5gc)
+core_network_id="$(printf "%02x\n" $(( 1 + id )))"
+bias=$(kubectl get subnets.kubeovn.io | grep -c free5gc-n3)
 default_gnb_id="000000010"
 gnb_ip=$(nextip $amf_ip)
-gnb_n3_ip_b=$(( 200 + id ))
+gnb_n3_ip_b=$(( 200 + bias ))
+
+#
+# create custom resource
+#
+
+mkdir -p $mcc-$mnc/custom-resource/
+
+cat <<EOF > $mcc-$mnc/custom-resource/telecom-cr.yaml
+---
+apiVersion: "nso.free5gc.com/v1"
+kind: TeleCom
+metadata:
+  name: "$mcc-$mnc"
+  namespace: free5gc
+spec:
+  id: $(( 1 + id ))
+  provider: free5gc
+  abbrev: "$abb"
+  mcc: "$mcc"
+  mnc: "$mnc"
+  gnb-nums: 1
+  slice-nums: 0
+EOF
 
 #
 # create mongodb
@@ -2190,3 +2208,9 @@ spec:
         #  hostPath:
         #    path: /dev/net/tun
 EOF
+
+#
+# Register telecom to kubernetes
+#
+
+kubectl apply -f $mcc-$mnc/custom-resource/telecom-cr.yaml
