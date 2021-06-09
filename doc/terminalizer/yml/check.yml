@@ -18,7 +18,7 @@ config:
   # Explicitly set the number of columns
   # or use `auto` to take the current
   # number of columns of your shell
-  cols: 313
+  cols: 155
   
   # Explicitly set the number of rows
   # or use `auto` to take the current
@@ -111,103 +111,103 @@ config:
   
 # Records, feel free to edit them
 records:
-  - delay: 1770
+  - delay: 1831
     content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
-  - delay: 1095
+  - delay: 763
     content: k
-  - delay: 212
+  - delay: 207
     content: u
-  - delay: 107
+  - delay: 145
     content: b
-  - delay: 178
+  - delay: 214
     content: e
-  - delay: 183
+  - delay: 199
     content: c
-  - delay: 178
+  - delay: 259
     content: "\atl"
-  - delay: 248
+  - delay: 234
+    content: ' '
+  - delay: 254
+    content: g
+  - delay: 151
+    content: e
+  - delay: 144
+    content: t
+  - delay: 177
+    content: ' '
+  - delay: 209
+    content: 'n'
+  - delay: 164
+    content: o
+  - delay: 154
+    content: d
+  - delay: 189
+    content: e
+  - delay: 240
+    content: "\r\n"
+  - delay: 266
+    content: "NAME                      STATUS   ROLES    AGE    VERSION\r\nvcx-bm6660-bm6360         Ready    <none>   152m   v1.19.0\r\nvcx-d820mt-d820sf-bm3ce   Ready    <none>   151m   v1.19.0\r\nvcx-virtual-machine       Ready    master   158m   v1.19.0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
+  - delay: 856
+    content: k
+  - delay: 203
+    content: u
+  - delay: 144
+    content: b
+  - delay: 182
+    content: e
+  - delay: 177
+    content: c
+  - delay: 219
+    content: "\atl"
+  - delay: 215
+    content: ' '
+  - delay: 454
+    content: g
+  - delay: 156
+    content: e
+  - delay: 134
+    content: t
+  - delay: 160
+    content: ' '
+  - delay: 201
+    content: p
+  - delay: 117
+    content: o
+  - delay: 91
+    content: d
+  - delay: 159
     content: ' '
   - delay: 302
-    content: g
-  - delay: 138
-    content: e
-  - delay: 136
-    content: t
-  - delay: 140
-    content: ' '
-  - delay: 182
-    content: 'n'
-  - delay: 113
-    content: o
-  - delay: 103
-    content: d
-  - delay: 183
-    content: e
-  - delay: 258
-    content: "\r\n"
-  - delay: 73
-    content: "NAME                      STATUS   ROLES    AGE    VERSION\r\nvcx-bm6660-bm6360         Ready    <none>   130m   v1.19.0\r\nvcx-d820mt-d820sf-bm3ce   Ready    <none>   130m   v1.19.0\r\nvcx-virtual-machine       Ready    master   136m   v1.19.0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
-  - delay: 823
-    content: k
-  - delay: 183
-    content: u
-  - delay: 162
-    content: b
-  - delay: 192
-    content: e
-  - delay: 180
-    content: c
-  - delay: 189
-    content: "\atl"
-  - delay: 214
-    content: ' '
-  - delay: 449
-    content: g
-  - delay: 154
-    content: e
-  - delay: 130
-    content: t
-  - delay: 124
-    content: ' '
-  - delay: 162
-    content: p
-  - delay: 119
-    content: o
-  - delay: 98
-    content: d
-  - delay: 176
-    content: ' '
-  - delay: 968
     content: '-'
-  - delay: 183
+  - delay: 194
     content: '-'
-  - delay: 358
+  - delay: 314
     content: a
-  - delay: 171
+  - delay: 319
     content: l
-  - delay: 155
+  - delay: 153
     content: l
-  - delay: 268
+  - delay: 276
     content: '-'
-  - delay: 240
+  - delay: 411
     content: 'namespaces '
-  - delay: 748
+  - delay: 854
     content: '-'
-  - delay: 361
+  - delay: 262
     content: o
-  - delay: 227
+  - delay: 245
     content: ' '
-  - delay: 286
+  - delay: 370
     content: w
-  - delay: 93
+  - delay: 162
     content: i
-  - delay: 170
+  - delay: 114
     content: d
-  - delay: 186
+  - delay: 210
     content: e
-  - delay: 481
+  - delay: 679
     content: "\r\n"
-  - delay: 106
-    content: "NAMESPACE     NAME                                          READY   STATUS    RESTARTS   AGE    IP               NODE                      NOMINATED NODE   READINESS GATES\r\nkube-system   coredns-f9fd979d6-9htf2                       1/1     Running   0          135m   10.16.0.5        vcx-virtual-machine       <none>           <none>\r\nkube-system   coredns-f9fd979d6-z264v                       1/1     Running   0          135m   10.16.0.6        vcx-virtual-machine       <none>           <none>\r\nkube-system   etcd-vcx-virtual-machine                      1/1     Running   0          136m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-apiserver-vcx-virtual-machine            1/1     Running   0          136m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-controller-manager-vcx-virtual-machine   1/1     Running   0          136m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-multus-ds-amd64-2jdzl                    1/1     Running   0          130m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-multus-ds-amd64-frbcx                    1/1     Running   0          134m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-multus-ds-amd64-z9wzd                    1/1     Running   0          130m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-cni-k6lwz                            1/1     Running   1          130m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-ovn-cni-pkvwd                            1/1     Running   0          130m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-cni-rr8p6                            1/1     Running   0          135m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-ovn-controller-67474bc5d6-wdhzr          1/1     Running   0          135m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-ovn-pinger-5hx9q                         1/1     Running   0          130m   10.16.0.13       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-pinger-c7qk5                         1/1     Running   0          130m   10.16.0.12       vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-ovn-pinger-kwt4f                         1/1     Running   0          135m   10.16.0.7        vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-proxy-25n26                              1/1     Running   0          130m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-proxy-br58c                              1/1     Running   0          136m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-proxy-p5nk2                              1/1     Running   0          130m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-scheduler-vcx-virtual-machine            1/1     Running   0          136m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   ovn-central-6cb47c8d8-v9rgs                   2/2     Running   0          136m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   ovs-ovn-b4mt9                                 1/1     Running   1          130m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   ovs-ovn-rx9mg                                 1/1     Running   1          130m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   ovs-ovn-xt976                                 1/1     Running   1          136m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nmonitoring    alertmanager-main-0                           2/2     Running   0          129m   10.16.0.14       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    alertmanager-main-1                           2/2     Running   0          129m   10.16.0.15       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    alertmanager-main-2                           2/2     Running   0          129m   10.16.0.16       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    grafana-f8cd57fcf-gw4gh                       1/1     Running   0          134m   10.16.0.10       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    kube-state-metrics-587bfd4f97-8swhd           3/3     Running   0          134m   10.16.0.9        vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    node-exporter-g9znz                           2/2     Running   0          134m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nmonitoring    node-exporter-m2xdx                           2/2     Running   0          130m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    node-exporter-n7wxk                           2/2     Running   0          130m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nmonitoring    prometheus-adapter-69b8496df6-27fvq           1/1     Running   0          134m   10.16.0.11       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-k8s-0                              2/2     Running   0          129m   10.16.0.17       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-k8s-1                              2/2     Running   0          129m   10.16.0.18       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-operator-7649c7454f-q62nq          2/2     Running   0          134m   10.16.0.8        vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
-  - delay: 1735
+  - delay: 113
+    content: "NAMESPACE     NAME                                          READY   STATUS    RESTARTS   AGE    IP               NODE                      NOMINATED NODE   READINESS GATES\r\nkube-system   coredns-f9fd979d6-9htf2                       1/1     Running   0          157m   10.16.0.5        vcx-virtual-machine       <none>           <none>\r\nkube-system   coredns-f9fd979d6-z264v                       1/1     Running   0          157m   10.16.0.6        vcx-virtual-machine       <none>           <none>\r\nkube-system   etcd-vcx-virtual-machine                      1/1     Running   0          158m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-apiserver-vcx-virtual-machine            1/1     Running   0          158m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-controller-manager-vcx-virtual-machine   1/1     Running   0          158m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-multus-ds-amd64-2jdzl                    1/1     Running   0          152m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-multus-ds-amd64-frbcx                    1/1     Running   0          156m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-multus-ds-amd64-z9wzd                    1/1     Running   0          152m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-cni-k6lwz                            1/1     Running   1          152m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-ovn-cni-pkvwd                            1/1     Running   0          152m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-cni-rr8p6                            1/1     Running   0          157m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-ovn-controller-67474bc5d6-wdhzr          1/1     Running   0          157m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-ovn-pinger-5hx9q                         1/1     Running   0          152m   10.16.0.13       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-pinger-c7qk5                         1/1     Running   0          152m   10.16.0.12       vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-ovn-pinger-kwt4f                         1/1     Running   0          156m   10.16.0.7        vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-proxy-25n26                              1/1     Running   0          152m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-proxy-br58c                              1/1     Running   0          158m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-proxy-p5nk2                              1/1     Running   0          152m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-scheduler-vcx-virtual-machine            1/1     Running   0          158m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   ovn-central-6cb47c8d8-v9rgs                   2/2     Running   0          158m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   ovs-ovn-b4mt9                                 1/1     Running   1          152m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   ovs-ovn-rx9mg                                 1/1     Running   1          152m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   ovs-ovn-xt976                                 1/1     Running   1          158m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nmonitoring    alertmanager-main-0                           2/2     Running   0          150m   10.16.0.14       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    alertmanager-main-1                           2/2     Running   0          150m   10.16.0.15       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    alertmanager-main-2                           2/2     Running   0          150m   10.16.0.16       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    grafana-f8cd57fcf-gw4gh                       1/1     Running   0          156m   10.16.0.10       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    kube-state-metrics-587bfd4f97-8swhd           3/3     Running   0          156m   10.16.0.9        vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    node-exporter-g9znz                           2/2     Running   0          156m   140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nmonitoring    node-exporter-m2xdx                           2/2     Running   0          152m   192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    node-exporter-n7wxk                           2/2     Running   0          152m   192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nmonitoring    prometheus-adapter-69b8496df6-27fvq           1/1     Running   0          156m   10.16.0.11       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-k8s-0                              2/2     Running   0          150m   10.16.0.17       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-k8s-1                              2/2     Running   0          150m   10.16.0.18       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-operator-7649c7454f-q62nq          2/2     Running   0          156m   10.16.0.8        vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
+  - delay: 1989
     content: "logout\r\n"
