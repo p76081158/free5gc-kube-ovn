@@ -12,9 +12,9 @@ CNI_CONF_DIR="/etc/cni/net.d"
 CNI_BIN_DIR="/opt/cni/bin"
 
 REGISTRY="kubeovn"
-VERSION="v1.7.0"
-# IMAGE_PULL_POLICY="IfNotPresent"
-IMAGE_PULL_POLICY="Always"
+VERSION="v1.8.0"
+IMAGE_PULL_POLICY="IfNotPresent"
+# IMAGE_PULL_POLICY="Always"
 POD_CIDR="10.16.0.0/16"                # Do NOT overlap with NODE/SVC/JOIN CIDR
 POD_GATEWAY="10.16.0.1"
 SVC_CIDR="10.96.0.0/12"                # Do NOT overlap with NODE/POD/JOIN CIDR

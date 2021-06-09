@@ -38,8 +38,8 @@ spec:
       hostNetwork: true
       containers:
         - name: kube-ovn-controller
-          image: "kubeovn/kube-ovn:v1.7.0"
-          imagePullPolicy: Always
+          image: "kubeovn/kube-ovn:v1.8.0"
+          imagePullPolicy: IfNotPresent
           command:
           - /kube-ovn/start-controller.sh
           args:
@@ -129,8 +129,8 @@ spec:
       hostPID: true
       initContainers:
       - name: install-cni
-        image: "kubeovn/kube-ovn:v1.7.0"
-        imagePullPolicy: Always
+        image: "kubeovn/kube-ovn:v1.8.0"
+        imagePullPolicy: IfNotPresent
         command: ["/kube-ovn/install-cni.sh"]
         securityContext:
           runAsUser: 0
@@ -140,8 +140,8 @@ spec:
             name: cni-bin
       containers:
       - name: cni-server
-        image: "kubeovn/kube-ovn:v1.7.0"
-        imagePullPolicy: Always
+        image: "kubeovn/kube-ovn:v1.8.0"
+        imagePullPolicy: IfNotPresent
         command:
           - bash
           - /kube-ovn/start-cniserver.sh
@@ -255,9 +255,9 @@ spec:
       hostPID: true
       containers:
         - name: pinger
-          image: "kubeovn/kube-ovn:v1.7.0"
+          image: "kubeovn/kube-ovn:v1.8.0"
           command: ["/kube-ovn/kube-ovn-pinger", "--external-address=114.114.114.114", "--external-dns=alauda.cn"]
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           securityContext:
             runAsUser: 0
             privileged: false
