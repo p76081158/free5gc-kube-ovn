@@ -18,7 +18,7 @@ config:
   # Explicitly set the number of columns
   # or use `auto` to take the current
   # number of columns of your shell
-  cols: 155
+  cols: 102
   
   # Explicitly set the number of rows
   # or use `auto` to take the current
@@ -111,37 +111,37 @@ config:
   
 # Records, feel free to edit them
 records:
-  - delay: 1834
+  - delay: 1753
     content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment\e[00m$ "
-  - delay: 1423
+  - delay: 562
     content: .
-  - delay: 268
+  - delay: 177
     content: /
-  - delay: 458
+  - delay: 503
     content: f
-  - delay: 668
+  - delay: 781
     content: "\aree5gc"
-  - delay: 703
+  - delay: 682
     content: '-'
-  - delay: 296
+  - delay: 213
     content: c
-  - delay: 144
+  - delay: 185
     content: l
-  - delay: 372
+  - delay: 249
     content: 'ear-all.sh '
-  - delay: 976
+  - delay: 1049
     content: "\r\n"
-  - delay: 119
+  - delay: 397
     content: "namespace \"free5gc\" deleted\r\n"
-  - delay: 5282
+  - delay: 5257
     content: "subnet.kubeovn.io \"free5gc-macvlan\" deleted\r\n"
-  - delay: 94
+  - delay: 91
     content: "customresourcedefinition.apiextensions.k8s.io \"gnbs.nso.free5gc.com\" deleted\r\n"
-  - delay: 9
+  - delay: 12
     content: "customresourcedefinition.apiextensions.k8s.io \"networkslices.nssmf.free5gc.com\" deleted\r\n"
-  - delay: 9
+  - delay: 19
     content: "customresourcedefinition.apiextensions.k8s.io \"telecoms.nso.free5gc.com\" deleted\r\n"
-  - delay: 157
+  - delay: 147
     content: "No resources found\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment\e[00m$ "
-  - delay: 2424
+  - delay: 1941
     content: "logout\r\n"
