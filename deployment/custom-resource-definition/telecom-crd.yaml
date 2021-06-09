@@ -21,7 +21,11 @@ spec:
             spec:
               type: object
               properties:
-                name:
+                id:
+                  type: integer
+                provider:
+                  type: string
+                abbrev:
                   type: string
                 mcc:
                   type: string
@@ -31,14 +35,18 @@ spec:
                   type: integer
                 slice-nums:
                   type: integer
-                n3-logical-siwtch:
-                  type: string
       # print column of crd
       additionalPrinterColumns:
-        - name: NAME
-          type: string
+        - name: ID
+          type: integer
           description: The cron spec defining the interval a CronJob is run
-          jsonPath: .spec.name
+          jsonPath: .spec.id
+        - name: PROVIDER
+          type: string
+          jsonPath: .spec.provider
+        - name: Abbrev
+          type: string
+          jsonPath: .spec.abbrev
         - name: MCC
           type: string
           jsonPath: .spec.mcc
@@ -51,9 +59,6 @@ spec:
         - name: Slice Numbers
           type: integer
           jsonPath: .spec.slice-nums
-        - name: N3 Logical Switch
-          type: string
-          jsonPath: .spec.n3-logical-siwtch
   # either Namespaced or Cluster
   scope: Namespaced
   names:
