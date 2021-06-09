@@ -1,0 +1,203 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/vcx/free5gc-kube-ovn/deployment/free5gc
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 102
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 29
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 2157
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 2895
+    content: "./free5gc-create-tenant.sh 466 01\r1 FET 1 192.168.72"
+  - delay: 5
+    content: '.50'
+  - delay: 2351
+    content: "\r\n"
+  - delay: 355
+    content: "No resources found in free5gc namespace.\r\n"
+  - delay: 1065
+    content: "telecom.nso.free5gc.com/466-01 created\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 2117
+    content: k
+  - delay: 162
+    content: u
+  - delay: 93
+    content: b
+  - delay: 178
+    content: e
+  - delay: 165
+    content: c
+  - delay: 185
+    content: "\atl"
+  - delay: 253
+    content: ' '
+  - delay: 687
+    content: '-'
+  - delay: 191
+    content: 'n'
+  - delay: 133
+    content: ' '
+  - delay: 167
+    content: f
+  - delay: 318
+    content: 'ree5gc '
+  - delay: 599
+    content: g
+  - delay: 102
+    content: e
+  - delay: 158
+    content: t
+  - delay: 147
+    content: ' '
+  - delay: 639
+    content: t
+  - delay: 94
+    content: e
+  - delay: 334
+    content: "lecoms.n\rnso.free5gc.com "
+  - delay: 739
+    content: "\r\n"
+  - delay: 338
+    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 5916
+    content: "./free5gc-create-tenant.sh 466 11\r1 CHT 1 192.168.72"
+  - delay: 5
+    content: '.52'
+  - delay: 1242
+    content: "\r\n"
+  - delay: 1195
+    content: "telecom.nso.free5gc.com/466-11 created\r\n"
+  - delay: 8
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1994
+    content: "./free5gc-create-tenant.sh 466 11\r1 CHT 1 192.168.72.52"
+  - delay: 158
+    content: "\e[A\r(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ kubectl -n free5gc get telecoms.n\e[5Pso.free5gc.com "
+  - delay: 928
+    content: "\r\n"
+  - delay: 354
+    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             0\r\n466-11   2     free5gc    CHT      466   11    1             0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 4958
+    content: "./free5gc-create-tenant.sh 466 93\r3 TWM 1 192.168.72.54"
+  - delay: 1448
+    content: "\r\n"
+  - delay: 1275
+    content: "telecom.nso.free5gc.com/466-93 created\r\n"
+  - delay: 9
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1189
+    content: "./free5gc-create-tenant.sh 466 93\r3 TWM 1 192.168.72.54"
+  - delay: 171
+    content: "\e[A\r(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ kubectl -n free5gc get telecoms.n\e[5Pso.free5gc.com "
+  - delay: 1179
+    content: "\r\n"
+  - delay: 337
+    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             0\r\n466-11   2     free5gc    CHT      466   11    1             0\r\n466-93   3     free5gc    TWM      466   93    1             0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1975
+    content: "logout\r\n"
