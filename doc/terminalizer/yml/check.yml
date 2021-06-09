@@ -1,0 +1,213 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/vcx/free5gc-kube-ovn
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 313
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 72
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 2178
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
+  - delay: 1762
+    content: k
+  - delay: 167
+    content: u
+  - delay: 99
+    content: b
+  - delay: 179
+    content: e
+  - delay: 149
+    content: c
+  - delay: 171
+    content: "\atl"
+  - delay: 553
+    content: ' '
+  - delay: 210
+    content: g
+  - delay: 141
+    content: e
+  - delay: 127
+    content: t
+  - delay: 186
+    content: ' '
+  - delay: 448
+    content: 'n'
+  - delay: 117
+    content: o
+  - delay: 88
+    content: d
+  - delay: 188
+    content: e
+  - delay: 582
+    content: "\r\n"
+  - delay: 342
+    content: "NAME                      STATUS   ROLES    AGE   VERSION\r\nvcx-bm6660-bm6360         Ready    <none>   11m   v1.19.0\r\nvcx-d820mt-d820sf-bm3ce   Ready    <none>   10m   v1.19.0\r\nvcx-virtual-machine       Ready    master   16m   v1.19.0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
+  - delay: 1178
+    content: k
+  - delay: 328
+    content: u
+  - delay: 138
+    content: b
+  - delay: 179
+    content: e
+  - delay: 192
+    content: c
+  - delay: 188
+    content: "\atl"
+  - delay: 440
+    content: ' '
+  - delay: 892
+    content: g
+  - delay: 191
+    content: e
+  - delay: 138
+    content: t
+  - delay: 147
+    content: ' '
+  - delay: 158
+    content: p
+  - delay: 127
+    content: o
+  - delay: 109
+    content: d
+  - delay: 172
+    content: ' '
+  - delay: 659
+    content: '-'
+  - delay: 161
+    content: '-'
+  - delay: 300
+    content: a
+  - delay: 298
+    content: l
+  - delay: 153
+    content: l
+  - delay: 331
+    content: '-'
+  - delay: 215
+    content: 'namespaces '
+  - delay: 654
+    content: '-'
+  - delay: 776
+    content: o
+  - delay: 310
+    content: ' '
+  - delay: 304
+    content: w
+  - delay: 126
+    content: i
+  - delay: 138
+    content: d
+  - delay: 154
+    content: e
+  - delay: 463
+    content: "\r\n"
+  - delay: 113
+    content: "NAMESPACE     NAME                                          READY   STATUS    RESTARTS   AGE     IP               NODE                      NOMINATED NODE   READINESS GATES\r\nkube-system   coredns-f9fd979d6-9htf2                       1/1     Running   0          15m     10.16.0.5        vcx-virtual-machine       <none>           <none>\r\nkube-system   coredns-f9fd979d6-z264v                       1/1     Running   0          15m     10.16.0.6        vcx-virtual-machine       <none>           <none>\r\nkube-system   etcd-vcx-virtual-machine                      1/1     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-apiserver-vcx-virtual-machine            1/1     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-controller-manager-vcx-virtual-machine   1/1     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-multus-ds-amd64-2jdzl                    1/1     Running   0          11m     192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-multus-ds-amd64-frbcx                    1/1     Running   0          15m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-multus-ds-amd64-z9wzd                    1/1     Running   0          10m     192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-cni-k6lwz                            1/1     Running   1          11m     192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-ovn-cni-pkvwd                            1/1     Running   0          10m     192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-cni-rr8p6                            1/1     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-ovn-controller-67474bc5d6-wdhzr          1/1     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-ovn-pinger-5hx9q                         1/1     Running   0          10m     10.16.0.13       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-ovn-pinger-c7qk5                         1/1     Running   0          11m     10.16.0.12       vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-ovn-pinger-kwt4f                         1/1     Running   0          15m     10.16.0.7        vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-proxy-25n26                              1/1     Running   0          11m     192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   kube-proxy-br58c                              1/1     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   kube-proxy-p5nk2                              1/1     Running   0          10m     192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   kube-scheduler-vcx-virtual-machine            1/1     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   ovn-central-6cb47c8d8-v9rgs                   2/2     Running   0          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nkube-system   ovs-ovn-b4mt9                                 1/1     Running   1          10m     192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nkube-system   ovs-ovn-rx9mg                                 1/1     Running   1          11m     192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nkube-system   ovs-ovn-xt976                                 1/1     Running   1          16m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nmonitoring    alertmanager-main-0                           2/2     Running   0          9m35s   10.16.0.14       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    alertmanager-main-1                           2/2     Running   0          9m35s   10.16.0.15       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    alertmanager-main-2                           2/2     Running   0          9m35s   10.16.0.16       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    grafana-f8cd57fcf-gw4gh                       1/1     Running   0          15m     10.16.0.10       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    kube-state-metrics-587bfd4f97-8swhd           3/3     Running   0          15m     10.16.0.9        vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    node-exporter-g9znz                           2/2     Running   0          15m     140.116.247.67   vcx-virtual-machine       <none>           <none>\r\nmonitoring    node-exporter-m2xdx                           2/2     Running   0          10m     192.168.72.11    vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    node-exporter-n7wxk                           2/2     Running   0          11m     192.168.72.10    vcx-bm6660-bm6360         <none>           <none>\r\nmonitoring    prometheus-adapter-69b8496df6-27fvq           1/1     Running   0          15m     10.16.0.11       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-k8s-0                              2/2     Running   0          9m34s   10.16.0.17       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-k8s-1                              2/2     Running   0          9m34s   10.16.0.18       vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\nmonitoring    prometheus-operator-7649c7454f-q62nq          2/2     Running   0          15m     10.16.0.8        vcx-d820mt-d820sf-bm3ce   <none>           <none>\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
+  - delay: 3704
+    content: "logout\r\n"
