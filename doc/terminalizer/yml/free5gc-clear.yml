@@ -111,37 +111,37 @@ config:
   
 # Records, feel free to edit them
 records:
-  - delay: 1753
+  - delay: 1584
     content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment\e[00m$ "
-  - delay: 562
+  - delay: 869
     content: .
-  - delay: 177
+  - delay: 212
     content: /
-  - delay: 503
+  - delay: 209
     content: f
-  - delay: 781
+  - delay: 220
     content: "\aree5gc"
-  - delay: 682
+  - delay: 1108
     content: '-'
-  - delay: 213
+  - delay: 943
     content: c
-  - delay: 185
+  - delay: 145
     content: l
-  - delay: 249
+  - delay: 199
     content: 'ear-all.sh '
-  - delay: 1049
+  - delay: 946
     content: "\r\n"
-  - delay: 397
+  - delay: 76
     content: "namespace \"free5gc\" deleted\r\n"
-  - delay: 5257
+  - delay: 5239
     content: "subnet.kubeovn.io \"free5gc-macvlan\" deleted\r\n"
-  - delay: 91
+  - delay: 85
     content: "customresourcedefinition.apiextensions.k8s.io \"gnbs.nso.free5gc.com\" deleted\r\n"
-  - delay: 12
-    content: "customresourcedefinition.apiextensions.k8s.io \"networkslices.nssmf.free5gc.com\" deleted\r\n"
-  - delay: 19
-    content: "customresourcedefinition.apiextensions.k8s.io \"telecoms.nso.free5gc.com\" deleted\r\n"
-  - delay: 147
-    content: "No resources found\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment\e[00m$ "
-  - delay: 1941
+  - delay: 9
+    content: "customresourcedefinition.apiextensions.k8s.io \"networkslices.nssmf.free5gc.com\" deleted\r\ncustomresourcedefinition.apiextensions.k8s.io \"telecoms.nso.free5gc.com\" deleted\r\n"
+  - delay: 114
+    content: "No resources found\r\n"
+  - delay: 9
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment\e[00m$ "
+  - delay: 2635
     content: "logout\r\n"
