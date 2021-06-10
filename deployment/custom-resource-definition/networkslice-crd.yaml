@@ -25,6 +25,8 @@ spec:
                   type: string
                 sd:
                   type: string
+                status:
+                  type: string
                 n4_cidr:
                   type: string
                 ue_subnet:
@@ -44,6 +46,9 @@ spec:
         - name: SD
           type: string
           jsonPath: .spec.sd
+        - name: STATUS
+          type: string
+          jsonPath: .spec.status
         - name: N4 CIDR
           type: string
           jsonPath: .spec.n4_cidr
