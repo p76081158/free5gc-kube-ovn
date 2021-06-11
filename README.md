@@ -10,7 +10,7 @@ Deploy free5gc v3.0.5 on kubernetes with kube-ovn v1.8.0
 
 ## Requirement
 
-* [free5gc-kube-ovn Prerequest](https://hackmd.io/@Vcx/HytNUJwS_)
+* [free5gc-kube-ovn Prerequisite](https://hackmd.io/@Vcx/HytNUJwS_)
 
 ## Quick Start
 
