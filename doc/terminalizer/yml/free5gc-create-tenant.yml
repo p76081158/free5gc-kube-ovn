@@ -111,93 +111,1077 @@ config:
   
 # Records, feel free to edit them
 records:
-  - delay: 2157
+  - delay: 1656
     content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
-  - delay: 2895
-    content: "./free5gc-create-tenant.sh 466 01\r1 FET 1 192.168.72"
-  - delay: 5
-    content: '.50'
-  - delay: 2351
+  - delay: 6466
+    content: "./free5gc-create-tenant.sh 466 01\r1 FET 1 192.168.72.50"
+  - delay: 1472
     content: "\r\n"
-  - delay: 355
+  - delay: 328
     content: "No resources found in free5gc namespace.\r\n"
-  - delay: 1065
-    content: "telecom.nso.free5gc.com/466-01 created\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
-  - delay: 2117
+  - delay: 849
+    content: "telecom.nso.free5gc.com/466-01 created\r\n"
+  - delay: 286
+    content: "networkslice.nssmf.free5gc.com/0x01010203 created\r\n"
+  - delay: 279
+    content: "networkslice.nssmf.free5gc.com/0x01010204 created\r\n"
+  - delay: 286
+    content: "networkslice.nssmf.free5gc.com/0x01010205 created\r\n"
+  - delay: 387
+    content: "configmap/free5gc-mongodb-466-01-config created\r\n"
+  - delay: 9
+    content: "service/free5gc-mongodb-466-01 created\r\n"
+  - delay: 11
+    content: "statefulset.apps/free5gc-mongodb-466-01 created\r\n"
+  - delay: 8
+    content: "persistentvolume/mongodb-466-01-pv-volume created\r\n"
+  - delay: 23
+    content: "persistentvolumeclaim/mongodb-466-01-pv-claim created\r\n"
+  - delay: 128
+    content: "waiting for pod free5gc-mongodb-466-01\r\n"
+  - delay: 1083
+    content: "waiting for pod free5gc-mongodb-466-01\r\n"
+  - delay: 1081
+    content: "waiting for pod free5gc-mongodb-466-01\r\n"
+  - delay: 1422
+    content: "serviceaccount/free5gc-nrf-466-01-sa created\r\n"
+  - delay: 5
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-nrf-466-01-rbac unchanged\r\n"
+  - delay: 23
+    content: "configmap/free5gc-nrf-466-01-config created\r\n"
+  - delay: 19
+    content: "secret/free5gc-nrf-466-01-tls-secret created\r\n"
+  - delay: 12
+    content: "service/free5gc-nrf-466-01 created\r\n"
+  - delay: 27
+    content: "deployment.apps/free5gc-nrf-466-01 created\r\n"
+  - delay: 347
+    content: "serviceaccount/free5gc-webui-466-01-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-webui-466-01-rbac unchanged\r\nconfigmap/free5gc-webui-466-01-config-mc96k2ftm9 created\r\n"
+  - delay: 15
+    content: "service/free5gc-webui-466-01 created\r\n"
+  - delay: 18
+    content: "deployment.apps/free5gc-webui-466-01 created\r\n"
+  - delay: 113
+    content: "waiting for pod free5gc-nrf-466-01\r\n"
+  - delay: 1103
+    content: "waiting for pod free5gc-nrf-466-01\r\n"
+  - delay: 1080
+    content: "waiting for pod free5gc-nrf-466-01\r\n"
+  - delay: 1081
+    content: "waiting for pod free5gc-nrf-466-01\r\n"
+  - delay: 1446
+    content: "serviceaccount/free5gc-amf-466-01-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-amf-466-01-rbac unchanged\r\n"
+  - delay: 9
+    content: "configmap/free5gc-amf-466-01-config created\r\n"
+  - delay: 7
+    content: "secret/free5gc-amf-466-01-tls-secret created\r\n"
+  - delay: 9
+    content: "service/free5gc-amf-466-01 created\r\n"
+  - delay: 12
+    content: "deployment.apps/free5gc-amf-466-01 created\r\n"
+  - delay: 361
+    content: "serviceaccount/free5gc-ausf-466-01-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-ausf-466-01-rbac unchanged\r\n"
+  - delay: 8
+    content: "configmap/free5gc-ausf-466-01-config created\r\n"
+  - delay: 13
+    content: "secret/free5gc-ausf-466-01-tls-secret created\r\n"
+  - delay: 13
+    content: "service/free5gc-ausf-466-01 created\r\n"
+  - delay: 23
+    content: "deployment.apps/free5gc-ausf-466-01 created\r\n"
+  - delay: 413
+    content: "serviceaccount/free5gc-nssf-466-01-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-nssf-466-01-rbac unchanged\r\n"
+  - delay: 13
+    content: "configmap/free5gc-nssf-466-01-config created\r\n"
+  - delay: 7
+    content: "secret/free5gc-nssf-466-01-tls-secret created\r\n"
+  - delay: 26
+    content: "service/free5gc-nssf-466-01 created\r\n"
+  - delay: 22
+    content: "deployment.apps/free5gc-nssf-466-01 created\r\n"
+  - delay: 329
+    content: "serviceaccount/free5gc-pcf-466-01-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-pcf-466-01-rbac unchanged\r\n"
+  - delay: 7
+    content: "configmap/free5gc-pcf-466-01-config created\r\n"
+  - delay: 10
+    content: "secret/free5gc-pcf-466-01-tls-secret created\r\n"
+  - delay: 15
+    content: "service/free5gc-pcf-466-01 created\r\n"
+  - delay: 22
+    content: "deployment.apps/free5gc-pcf-466-01 created\r\n"
+  - delay: 375
+    content: "serviceaccount/free5gc-udm-466-01-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-udm-466-01-rbac unchanged\r\n"
+  - delay: 9
+    content: "configmap/free5gc-udm-466-01-config created\r\n"
+  - delay: 9
+    content: "secret/free5gc-udm-466-01-tls-secret created\r\n"
+  - delay: 17
+    content: "service/free5gc-udm-466-01 created\r\n"
+  - delay: 13
+    content: "deployment.apps/free5gc-udm-466-01 created\r\n"
+  - delay: 361
+    content: "serviceaccount/free5gc-udr-466-01-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-udr-466-01-rbac unchanged\r\n"
+  - delay: 10
+    content: "configmap/free5gc-udr-466-01-config created\r\n"
+  - delay: 7
+    content: "secret/free5gc-udr-466-01-tls-secret created\r\n"
+  - delay: 14
+    content: "service/free5gc-udr-466-01 created\r\n"
+  - delay: 13
+    content: "deployment.apps/free5gc-udr-466-01 created\r\n"
+  - delay: 327
+    content: "serviceaccount/free5gc-ueransim-gnb-466-01-000000010-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-ueransim-gnb-466-01-000000010-rbac unchanged\r\n"
+  - delay: 7
+    content: "configmap/free5gc-ueransim-gnb-466-01-000000010-config created\r\n"
+  - delay: 12
+    content: "service/free5gc-ueransim-gnb-466-01-000000010 created\r\n"
+  - delay: 33
+    content: "deployment.apps/free5gc-ueransim-gnb-466-01-000000010 created\r\nnetworkattachmentdefinition.k8s.cni.cncf.io/free5gc-n3-466-01-000000010 created\r\n"
+  - delay: 45
+    content: "subnet.kubeovn.io/free5gc-n3-466-01-000000010 configured\r\n"
+  - delay: 16
+    content: "gnb.nso.free5gc.com/466-01-000000010 created\r\n"
+  - delay: 5
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 3254
     content: k
-  - delay: 162
+  - delay: 169
     content: u
-  - delay: 93
+  - delay: 162
     content: b
-  - delay: 178
+  - delay: 190
     content: e
-  - delay: 165
+  - delay: 190
     content: c
-  - delay: 185
+  - delay: 170
     content: "\atl"
-  - delay: 253
+  - delay: 194
     content: ' '
-  - delay: 687
+  - delay: 184
     content: '-'
-  - delay: 191
+  - delay: 192
     content: 'n'
-  - delay: 133
+  - delay: 118
     content: ' '
-  - delay: 167
+  - delay: 210
     content: f
-  - delay: 318
+  - delay: 336
     content: 'ree5gc '
-  - delay: 599
+  - delay: 326
     content: g
-  - delay: 102
+  - delay: 126
     content: e
-  - delay: 158
+  - delay: 122
     content: t
-  - delay: 147
+  - delay: 118
     content: ' '
-  - delay: 639
+  - delay: 1571
     content: t
-  - delay: 94
+  - delay: 111
     content: e
-  - delay: 334
+  - delay: 397
     content: "lecoms.n\rnso.free5gc.com "
-  - delay: 739
+  - delay: 701
     content: "\r\n"
-  - delay: 338
-    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
-  - delay: 5916
+  - delay: 434
+    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             3\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 2519
+    content: "kubectl -n free5gc get telecoms.n\rnso.free5gc.com "
+  - delay: 601
+    content: "\b\e[K"
+  - delay: 500
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 36
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 31
+    content: "\b\e[K"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 158
+    content: "\b\e[K"
+  - delay: 160
+    content: "\b\e[K"
+  - delay: 501
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 34
+    content: "\r\e[K"
+  - delay: 34
+    content: "\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[K\r\n\r\e[K\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 39
+    content: "\b\e[K"
+  - delay: 27
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 400
+    content: "\b\e[K"
+  - delay: 1193
+    content: g
+  - delay: 319
+    content: "nbs.nso.f\rfree5gc.com "
+  - delay: 647
+    content: "\r\n"
+  - delay: 351
+    content: "NAME               MCC   MNC   UE NUMBERS   N3 CIDR           EXTERNAL IP\r\n466-01-000000010   466   01    0            10.201.100.0/24   192.168.72.51\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1575
+    content: "kubectl -n free5gc get gnbs.nso.f\rfree5gc.com "
+  - delay: 354
+    content: "\b\e[K"
+  - delay: 495
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 34
+    content: "\r\e[K"
+  - delay: 32
+    content: "\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[K\r\n\r\e[K\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 31
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 1100
+    content: 'n'
+  - delay: 114
+    content: e
+  - delay: 565
+    content: "\atwork"
+  - delay: 720
+    content: d
+  - delay: 356
+    content: "\b\e[K"
+  - delay: 133
+    content: s
+  - delay: 109
+    content: "l \r"
+  - delay: 268
+    content: 'ices.nssmf.free5gc.com '
+  - delay: 812
+    content: "\r\n"
+  - delay: 300
+    content: "NAME         SST   SD       STATUS     N4 CIDR     UE SUBNET   CPU       MEMORY    BANDWIDTH   AGE\r\n0x01010203   01    010203   Inactive   Undefined   Undefined   Default   Default   Default     37s\r\n0x01010204   01    010204   Inactive   Undefined   Undefined   Default   Default   Default     37s\r\n0x01010205   01    010205   Inactive   Undefined   Undefined   Default   Default   Default     36s\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 8005
     content: "./free5gc-create-tenant.sh 466 11\r1 CHT 1 192.168.72"
   - delay: 5
     content: '.52'
-  - delay: 1242
+  - delay: 1156
     content: "\r\n"
-  - delay: 1195
+  - delay: 981
     content: "telecom.nso.free5gc.com/466-11 created\r\n"
+  - delay: 304
+    content: "networkslice.nssmf.free5gc.com/0x01020203 created\r\n"
+  - delay: 252
+    content: "networkslice.nssmf.free5gc.com/0x01020204 created\r\n"
+  - delay: 262
+    content: "networkslice.nssmf.free5gc.com/0x01020205 created\r\n"
+  - delay: 273
+    content: "configmap/free5gc-mongodb-466-11-config created\r\n"
+  - delay: 13
+    content: "service/free5gc-mongodb-466-11 created\r\n"
+  - delay: 12
+    content: "statefulset.apps/free5gc-mongodb-466-11 created\r\n"
   - delay: 8
-    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
-  - delay: 1994
-    content: "./free5gc-create-tenant.sh 466 11\r1 CHT 1 192.168.72.52"
-  - delay: 158
-    content: "\e[A\r(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ kubectl -n free5gc get telecoms.n\e[5Pso.free5gc.com "
-  - delay: 928
-    content: "\r\n"
-  - delay: 354
-    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             0\r\n466-11   2     free5gc    CHT      466   11    1             0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
-  - delay: 4958
-    content: "./free5gc-create-tenant.sh 466 93\r3 TWM 1 192.168.72.54"
-  - delay: 1448
-    content: "\r\n"
-  - delay: 1275
-    content: "telecom.nso.free5gc.com/466-93 created\r\n"
+    content: "persistentvolume/mongodb-466-11-pv-volume created\r\n"
+  - delay: 32
+    content: "persistentvolumeclaim/mongodb-466-11-pv-claim created\r\n"
+  - delay: 104
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1105
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1077
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1099
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1079
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1080
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1102
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1081
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1079
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1079
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1113
+    content: "waiting for pod free5gc-mongodb-466-11\r\n"
+  - delay: 1418
+    content: "serviceaccount/free5gc-nrf-466-11-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-nrf-466-11-rbac created\r\n"
+  - delay: 8
+    content: "configmap/free5gc-nrf-466-11-config created\r\n"
+  - delay: 6
+    content: "secret/free5gc-nrf-466-11-tls-secret created\r\n"
+  - delay: 19
+    content: "service/free5gc-nrf-466-11 created\r\n"
+  - delay: 13
+    content: "deployment.apps/free5gc-nrf-466-11 created\r\n"
+  - delay: 349
+    content: "serviceaccount/free5gc-webui-466-11-sa created\r\n"
+  - delay: 7
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-webui-466-11-rbac created\r\n"
+  - delay: 6
+    content: "configmap/free5gc-webui-466-11-config-kgh2dh2784 created\r\n"
+  - delay: 12
+    content: "service/free5gc-webui-466-11 created\r\n"
+  - delay: 18
+    content: "deployment.apps/free5gc-webui-466-11 created\r\n"
+  - delay: 223
+    content: "waiting for pod free5gc-nrf-466-11\r\n"
+  - delay: 1079
+    content: "waiting for pod free5gc-nrf-466-11\r\n"
+  - delay: 1095
+    content: "waiting for pod free5gc-nrf-466-11\r\n"
+  - delay: 1084
+    content: "waiting for pod free5gc-nrf-466-11\r\n"
+  - delay: 1376
+    content: "serviceaccount/free5gc-amf-466-11-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-amf-466-11-rbac created\r\n"
+  - delay: 7
+    content: "configmap/free5gc-amf-466-11-config created\r\n"
+  - delay: 7
+    content: "secret/free5gc-amf-466-11-tls-secret created\r\n"
+  - delay: 6
+    content: "service/free5gc-amf-466-11 created\r\n"
   - delay: 9
+    content: "deployment.apps/free5gc-amf-466-11 created\r\n"
+  - delay: 406
+    content: "serviceaccount/free5gc-ausf-466-11-sa created\r\n"
+  - delay: 8
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-ausf-466-11-rbac created\r\n"
+  - delay: 8
+    content: "configmap/free5gc-ausf-466-11-config created\r\n"
+  - delay: 7
+    content: "secret/free5gc-ausf-466-11-tls-secret created\r\n"
+  - delay: 19
+    content: "service/free5gc-ausf-466-11 created\r\n"
+  - delay: 16
+    content: "deployment.apps/free5gc-ausf-466-11 created\r\n"
+  - delay: 370
+    content: "serviceaccount/free5gc-nssf-466-11-sa created\r\n"
+  - delay: 8
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-nssf-466-11-rbac created\r\n"
+  - delay: 15
+    content: "configmap/free5gc-nssf-466-11-config created\r\n"
+  - delay: 10
+    content: "secret/free5gc-nssf-466-11-tls-secret created\r\n"
+  - delay: 20
+    content: "service/free5gc-nssf-466-11 created\r\n"
+  - delay: 12
+    content: "deployment.apps/free5gc-nssf-466-11 created\r\n"
+  - delay: 404
+    content: "serviceaccount/free5gc-pcf-466-11-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-pcf-466-11-rbac created\r\n"
+  - delay: 17
+    content: "configmap/free5gc-pcf-466-11-config created\r\n"
+  - delay: 9
+    content: "secret/free5gc-pcf-466-11-tls-secret created\r\n"
+  - delay: 19
+    content: "service/free5gc-pcf-466-11 created\r\n"
+  - delay: 19
+    content: "deployment.apps/free5gc-pcf-466-11 created\r\n"
+  - delay: 349
+    content: "serviceaccount/free5gc-udm-466-11-sa created\r\n"
+  - delay: 7
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-udm-466-11-rbac created\r\n"
+  - delay: 6
+    content: "configmap/free5gc-udm-466-11-config created\r\n"
+  - delay: 11
+    content: "secret/free5gc-udm-466-11-tls-secret created\r\n"
+  - delay: 24
+    content: "service/free5gc-udm-466-11 created\r\n"
+  - delay: 19
+    content: "deployment.apps/free5gc-udm-466-11 created\r\n"
+  - delay: 341
+    content: "serviceaccount/free5gc-udr-466-11-sa created\r\n"
+  - delay: 9
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-udr-466-11-rbac created\r\n"
+  - delay: 5
+    content: "configmap/free5gc-udr-466-11-config created\r\n"
+  - delay: 6
+    content: "secret/free5gc-udr-466-11-tls-secret created\r\n"
+  - delay: 13
+    content: "service/free5gc-udr-466-11 created\r\n"
+  - delay: 15
+    content: "deployment.apps/free5gc-udr-466-11 created\r\n"
+  - delay: 394
+    content: "serviceaccount/free5gc-ueransim-gnb-466-11-000000010-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-ueransim-gnb-466-11-000000010-rbac created\r\n"
+  - delay: 7
+    content: "configmap/free5gc-ueransim-gnb-466-11-000000010-config created\r\n"
+  - delay: 13
+    content: "service/free5gc-ueransim-gnb-466-11-000000010 created\r\n"
+  - delay: 17
+    content: "deployment.apps/free5gc-ueransim-gnb-466-11-000000010 created\r\n"
+  - delay: 26
+    content: "networkattachmentdefinition.k8s.cni.cncf.io/free5gc-n3-466-11-000000010 created\r\n"
+  - delay: 36
+    content: "subnet.kubeovn.io/free5gc-n3-466-11-000000010 created\r\n"
+  - delay: 23
+    content: "gnb.nso.free5gc.com/466-11-000000010 created\r\n"
+  - delay: 7
     content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
-  - delay: 1189
-    content: "./free5gc-create-tenant.sh 466 93\r3 TWM 1 192.168.72.54"
-  - delay: 171
-    content: "\e[A\r(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ kubectl -n free5gc get telecoms.n\e[5Pso.free5gc.com "
-  - delay: 1179
+  - delay: 6336
+    content: k
+  - delay: 172
+    content: u
+  - delay: 85
+    content: b
+  - delay: 195
+    content: e
+  - delay: 221
+    content: c
+  - delay: 200
+    content: "\atl"
+  - delay: 196
+    content: ' '
+  - delay: 72
+    content: '-'
+  - delay: 199
+    content: 'n'
+  - delay: 132
+    content: ' '
+  - delay: 157
+    content: f
+  - delay: 274
+    content: 'ree5gc '
+  - delay: 527
+    content: g
+  - delay: 83
+    content: e
+  - delay: 152
+    content: t
+  - delay: 118
+    content: ' '
+  - delay: 1002
+    content: t
+  - delay: 77
+    content: e
+  - delay: 287
+    content: "lecoms.n\rnso.free5gc.com "
+  - delay: 490
     content: "\r\n"
-  - delay: 337
-    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             0\r\n466-11   2     free5gc    CHT      466   11    1             0\r\n466-93   3     free5gc    TWM      466   93    1             0\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
-  - delay: 1975
+  - delay: 265
+    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             3\r\n466-11   2     free5gc    CHT      466   11    1             3\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1021
+    content: "kubectl -n free5gc get telecoms.n\rnso.free5gc.com "
+  - delay: 363
+    content: "\b\e[K"
+  - delay: 500
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 31
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 39
+    content: "\b\e[K"
+  - delay: 31
+    content: "\r\e[K"
+  - delay: 162
+    content: "\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[K\r\n\r\e[K\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C"
+  - delay: 139
+    content: "\b\e[K"
+  - delay: 145
+    content: "\b\e[K"
+  - delay: 130
+    content: "\b\e[K"
+  - delay: 127
+    content: "\b\e[K"
+  - delay: 141
+    content: "\b\e[K"
+  - delay: 141
+    content: "\b\e[K"
+  - delay: 144
+    content: "\b\e[K"
+  - delay: 152
+    content: "\b\e[K"
+  - delay: 282
+    content: g
+  - delay: 116
+    content: 'n'
+  - delay: 419
+    content: "bs.nso.f\rfree5gc.com "
+  - delay: 680
+    content: "\r\n"
+  - delay: 279
+    content: "NAME               MCC   MNC   UE NUMBERS   N3 CIDR           EXTERNAL IP\r\n466-01-000000010   466   01    0            10.201.100.0/24   192.168.72.51\r\n466-11-000000010   466   11    0            10.201.100.0/24   192.168.72.53\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 732
+    content: "kubectl -n free5gc get gnbs.nso.f\rfree5gc.com "
+  - delay: 392
+    content: "\b\e[K"
+  - delay: 499
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 30
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 31
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 33
+    content: "\r\e[K"
+  - delay: 32
+    content: "\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[K\r\n\r\e[K\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C"
+  - delay: 36
+    content: "\b\e[K"
+  - delay: 31
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 35
+    content: "\b\e[K"
+  - delay: 387
+    content: "\b\e[K"
+  - delay: 485
+    content: ' '
+  - delay: 371
+    content: 'n'
+  - delay: 103
+    content: e
+  - delay: 98
+    content: t
+  - delay: 316
+    content: "\aworkq"
+  - delay: 487
+    content: "s \r"
+  - delay: 90
+    content: l
+  - delay: 184
+    content: "\a"
+  - delay: 575
+    content: "\r\e[K"
+  - delay: 153
+    content: "\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[K\r\n\r\e[K\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C"
+  - delay: 147
+    content: "\b\e[K"
+  - delay: 325
+    content: s
+  - delay: 275
+    content: "li\rices.nssmf.free5gc.com "
+  - delay: 728
+    content: "\r\n"
+  - delay: 264
+    content: "NAME         SST   SD       STATUS     N4 CIDR     UE SUBNET   CPU       MEMORY    BANDWIDTH   AGE\r\n0x01010203   01    010203   Inactive   Undefined   Undefined   Default   Default   Default     93s\r\n0x01010204   01    010204   Inactive   Undefined   Undefined   Default   Default   Default     93s\r\n0x01010205   01    010205   Inactive   Undefined   Undefined   Default   Default   Default     92s\r\n0x01020203   01    020203   Inactive   Undefined   Undefined   Default   Default   Default     45s\r\n0x01020204   01    020204   Inactive   Undefined   Undefined   Default   Default   Default     45s\r\n0x01020205   01    020205   Inactive   Undefined   Undefined   Default   Default   Default     45s\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 7637
+    content: "./free5gc-create-tenant.sh 466 93\r3 TWM 1 192.168.72"
+  - delay: 6
+    content: '.54'
+  - delay: 1104
+    content: "\r\n"
+  - delay: 959
+    content: "telecom.nso.free5gc.com/466-93 created\r\n"
+  - delay: 318
+    content: "networkslice.nssmf.free5gc.com/0x01030203 created\r\n"
+  - delay: 286
+    content: "networkslice.nssmf.free5gc.com/0x01030204 created\r\n"
+  - delay: 261
+    content: "networkslice.nssmf.free5gc.com/0x01030205 created\r\n"
+  - delay: 360
+    content: "configmap/free5gc-mongodb-466-93-config created\r\n"
+  - delay: 5
+    content: "service/free5gc-mongodb-466-93 created\r\n"
+  - delay: 9
+    content: "statefulset.apps/free5gc-mongodb-466-93 created\r\n"
+  - delay: 15
+    content: "persistentvolume/mongodb-466-93-pv-volume created\r\n"
+  - delay: 11
+    content: "persistentvolumeclaim/mongodb-466-93-pv-claim created\r\n"
+  - delay: 117
+    content: "waiting for pod free5gc-mongodb-466-93\r\n"
+  - delay: 1081
+    content: "waiting for pod free5gc-mongodb-466-93\r\n"
+  - delay: 1127
+    content: "waiting for pod free5gc-mongodb-466-93\r\n"
+  - delay: 1370
+    content: "serviceaccount/free5gc-nrf-466-93-sa created\r\n"
+  - delay: 10
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-nrf-466-93-rbac created\r\n"
+  - delay: 8
+    content: "configmap/free5gc-nrf-466-93-config created\r\n"
+  - delay: 8
+    content: "secret/free5gc-nrf-466-93-tls-secret created\r\n"
+  - delay: 15
+    content: "service/free5gc-nrf-466-93 created\r\n"
+  - delay: 17
+    content: "deployment.apps/free5gc-nrf-466-93 created\r\n"
+  - delay: 323
+    content: "serviceaccount/free5gc-webui-466-93-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-webui-466-93-rbac created\r\n"
+  - delay: 6
+    content: "configmap/free5gc-webui-466-93-config-29m747t62t created\r\n"
+  - delay: 13
+    content: "service/free5gc-webui-466-93 created\r\n"
+  - delay: 9
+    content: "deployment.apps/free5gc-webui-466-93 created\r\n"
+  - delay: 121
+    content: "waiting for pod free5gc-nrf-466-93\r\n"
+  - delay: 1112
+    content: "waiting for pod free5gc-nrf-466-93\r\n"
+  - delay: 1091
+    content: "waiting for pod free5gc-nrf-466-93\r\n"
+  - delay: 1088
+    content: "waiting for pod free5gc-nrf-466-93\r\n"
+  - delay: 1480
+    content: "serviceaccount/free5gc-amf-466-93-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-amf-466-93-rbac created\r\n"
+  - delay: 13
+    content: "configmap/free5gc-amf-466-93-config created\r\n"
+  - delay: 8
+    content: "secret/free5gc-amf-466-93-tls-secret created\r\n"
+  - delay: 7
+    content: "service/free5gc-amf-466-93 created\r\n"
+  - delay: 10
+    content: "deployment.apps/free5gc-amf-466-93 created\r\n"
+  - delay: 358
+    content: "serviceaccount/free5gc-ausf-466-93-sa created\r\n"
+  - delay: 5
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-ausf-466-93-rbac created\r\n"
+  - delay: 6
+    content: "configmap/free5gc-ausf-466-93-config created\r\n"
+  - delay: 11
+    content: "secret/free5gc-ausf-466-93-tls-secret created\r\n"
+  - delay: 12
+    content: "service/free5gc-ausf-466-93 created\r\n"
+  - delay: 20
+    content: "deployment.apps/free5gc-ausf-466-93 created\r\n"
+  - delay: 365
+    content: "serviceaccount/free5gc-nssf-466-93-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-nssf-466-93-rbac created\r\n"
+  - delay: 10
+    content: "configmap/free5gc-nssf-466-93-config created\r\n"
+  - delay: 7
+    content: "secret/free5gc-nssf-466-93-tls-secret created\r\n"
+  - delay: 19
+    content: "service/free5gc-nssf-466-93 created\r\n"
+  - delay: 13
+    content: "deployment.apps/free5gc-nssf-466-93 created\r\n"
+  - delay: 339
+    content: "serviceaccount/free5gc-pcf-466-93-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-pcf-466-93-rbac created\r\n"
+  - delay: 10
+    content: "configmap/free5gc-pcf-466-93-config created\r\n"
+  - delay: 9
+    content: "secret/free5gc-pcf-466-93-tls-secret created\r\n"
+  - delay: 44
+    content: "service/free5gc-pcf-466-93 created\r\n"
+  - delay: 36
+    content: "deployment.apps/free5gc-pcf-466-93 created\r\n"
+  - delay: 415
+    content: "serviceaccount/free5gc-udm-466-93-sa created\r\n"
+  - delay: 5
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-udm-466-93-rbac created\r\n"
+  - delay: 17
+    content: "configmap/free5gc-udm-466-93-config created\r\n"
+  - delay: 8
+    content: "secret/free5gc-udm-466-93-tls-secret created\r\n"
+  - delay: 15
+    content: "service/free5gc-udm-466-93 created\r\n"
+  - delay: 13
+    content: "deployment.apps/free5gc-udm-466-93 created\r\n"
+  - delay: 366
+    content: "serviceaccount/free5gc-udr-466-93-sa created\r\nclusterrolebinding.rbac.authorization.k8s.io/free5gc-udr-466-93-rbac created\r\n"
+  - delay: 12
+    content: "configmap/free5gc-udr-466-93-config created\r\n"
+  - delay: 6
+    content: "secret/free5gc-udr-466-93-tls-secret created\r\n"
+  - delay: 13
+    content: "service/free5gc-udr-466-93 created\r\n"
+  - delay: 12
+    content: "deployment.apps/free5gc-udr-466-93 created\r\n"
+  - delay: 420
+    content: "serviceaccount/free5gc-ueransim-gnb-466-93-000000010-sa created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/free5gc-ueransim-gnb-466-93-000000010-rbac created\r\n"
+  - delay: 7
+    content: "configmap/free5gc-ueransim-gnb-466-93-000000010-config created\r\n"
+  - delay: 15
+    content: "service/free5gc-ueransim-gnb-466-93-000000010 created\r\n"
+  - delay: 31
+    content: "deployment.apps/free5gc-ueransim-gnb-466-93-000000010 created\r\n"
+  - delay: 31
+    content: "networkattachmentdefinition.k8s.cni.cncf.io/free5gc-n3-466-93-000000010 created\r\n"
+  - delay: 22
+    content: "subnet.kubeovn.io/free5gc-n3-466-93-000000010 created\r\n"
+  - delay: 24
+    content: "gnb.nso.free5gc.com/466-93-000000010 created\r\n"
+  - delay: 5
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 3261
+    content: k
+  - delay: 149
+    content: u
+  - delay: 94
+    content: b
+  - delay: 193
+    content: e
+  - delay: 203
+    content: c
+  - delay: 204
+    content: "\atl"
+  - delay: 166
+    content: ' '
+  - delay: 115
+    content: '-'
+  - delay: 178
+    content: 'n'
+  - delay: 77
+    content: ' '
+  - delay: 150
+    content: f
+  - delay: 264
+    content: 'ree5gc '
+  - delay: 391
+    content: g
+  - delay: 128
+    content: e
+  - delay: 145
+    content: t
+  - delay: 118
+    content: ' '
+  - delay: 966
+    content: t
+  - delay: 163
+    content: e
+  - delay: 301
+    content: "lecoms.n\rnso.free5gc.com "
+  - delay: 601
+    content: "\r\n"
+  - delay: 304
+    content: "NAME     ID    PROVIDER   ABBREV   MCC   MNC   GNB NUMBERS   SLICE NUMBERS\r\n466-01   1     free5gc    FET      466   01    1             3\r\n466-11   2     free5gc    CHT      466   11    1             3\r\n466-93   3     free5gc    TWM      466   93    1             3\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1959
+    content: "kubectl -n free5gc get telecoms.n\rnso.free5gc.com "
+  - delay: 871
+    content: "\b\e[K"
+  - delay: 503
+    content: "\b\e[K"
+  - delay: 31
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 32
+    content: "\r\e[K"
+  - delay: 198
+    content: "\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[K\r\n\r\e[K\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C"
+  - delay: 180
+    content: "\b\e[K"
+  - delay: 150
+    content: "\b\e[K"
+  - delay: 146
+    content: "\b\e[K"
+  - delay: 123
+    content: "\b\e[K"
+  - delay: 132
+    content: "\b\e[K"
+  - delay: 138
+    content: "\b\e[K"
+  - delay: 146
+    content: "\b\e[K"
+  - delay: 174
+    content: "\b\e[K"
+  - delay: 690
+    content: g
+  - delay: 306
+    content: "nbs.nso.f\rfree5gc.com "
+  - delay: 444
+    content: "\r\n"
+  - delay: 281
+    content: "NAME               MCC   MNC   UE NUMBERS   N3 CIDR           EXTERNAL IP\r\n466-01-000000010   466   01    0            10.201.100.0/24   192.168.72.51\r\n466-11-000000010   466   11    0            10.201.100.0/24   192.168.72.53\r\n466-93-000000010   466   93    0            10.202.100.0/24   192.168.72.55\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1522
+    content: "kubectl -n free5gc get gnbs.nso.f\rfree5gc.com "
+  - delay: 712
+    content: "\b\e[K"
+  - delay: 501
+    content: "\b\e[K"
+  - delay: 36
+    content: "\b\e[K"
+  - delay: 30
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 31
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 34
+    content: "\r\e[K"
+  - delay: 33
+    content: "\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[K\r\n\r\e[K\e[A\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C\e[C"
+  - delay: 33
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 34
+    content: "\b\e[K"
+  - delay: 32
+    content: "\b\e[K"
+  - delay: 411
+    content: "\b\e[K"
+  - delay: 161
+    content: "\b\e[K"
+  - delay: 140
+    content: "\b\e[K"
+  - delay: 136
+    content: "\b\e[K"
+  - delay: 2423
+    content: 'n'
+  - delay: 101
+    content: e
+  - delay: 297
+    content: "\atwork"
+  - delay: 363
+    content: s
+  - delay: 108
+    content: "l \r"
+  - delay: 180
+    content: 'ices.nssmf.free5gc.com '
+  - delay: 433
+    content: "\r\n"
+  - delay: 286
+    content: "NAME         SST   SD       STATUS     N4 CIDR     UE SUBNET   CPU       MEMORY    BANDWIDTH   AGE\r\n0x01010203   01    010203   Inactive   Undefined   Undefined   Default   Default   Default     2m19s\r\n0x01010204   01    010204   Inactive   Undefined   Undefined   Default   Default   Default     2m19s\r\n0x01010205   01    010205   Inactive   Undefined   Undefined   Default   Default   Default     2m18s\r\n0x01020203   01    020203   Inactive   Undefined   Undefined   Default   Default   Default     91s\r\n0x01020204   01    020204   Inactive   Undefined   Undefined   Default   Default   Default     91s\r\n0x01020205   01    020205   Inactive   Undefined   Undefined   Default   Default   Default     91s\r\n0x01030203   01    030203   Inactive   Undefined   Undefined   Default   Default   Default     36s\r\n0x01030204   01    030204   Inactive   Undefined   Undefined   Default   Default   Default     36s\r\n0x01030205   01    030205   Inactive   Undefined   Undefined   Default   Default   Default     35s\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 4231
+    content: k
+  - delay: 175
+    content: u
+  - delay: 106
+    content: b
+  - delay: 169
+    content: e
+  - delay: 190
+    content: c
+  - delay: 180
+    content: "\atl"
+  - delay: 178
+    content: ' '
+  - delay: 144
+    content: '-'
+  - delay: 198
+    content: 'n'
+  - delay: 89
+    content: ' '
+  - delay: 500
+    content: f
+  - delay: 256
+    content: 'ree5gc '
+  - delay: 277
+    content: g
+  - delay: 112
+    content: e
+  - delay: 122
+    content: t
+  - delay: 114
+    content: ' '
+  - delay: 164
+    content: p
+  - delay: 122
+    content: o
+  - delay: 56
+    content: d
+  - delay: 179
+    content: ' '
+  - delay: 641
+    content: '-'
+  - delay: 268
+    content: l
+  - delay: 1009
+    content: ' '
+  - delay: 396
+    content: t
+  - delay: 83
+    content: "e \r"
+  - delay: 697
+    content: l
+  - delay: 124
+    content: e
+  - delay: 872
+    content: c
+  - delay: 88
+    content: o
+  - delay: 167
+    content: m
+  - delay: 1149
+    content: ''''
+  - delay: 754
+    content: "\b\e[K"
+  - delay: 1534
+    content: +
+  - delay: 475
+    content: "\b\e[K"
+  - delay: 271
+    content: '='
+  - delay: 28
+    content: '-'
+  - delay: 417
+    content: "\b\e[K"
+  - delay: 1193
+    content: F
+  - delay: 221
+    content: E
+  - delay: 241
+    content: T
+  - delay: 1046
+    content: "\r\n"
+  - delay: 81
+    content: "NAME                                                     READY   STATUS    RESTARTS   AGE\r\nfree5gc-amf-466-01-cfd65cfc5-xqdtt                       2/2     Running   0          2m29s\r\nfree5gc-ausf-466-01-58b4c85ffb-42qwk                     2/2     Running   0          2m28s\r\nfree5gc-mongodb-466-01-0                                 1/1     Running   0          2m38s\r\nfree5gc-nrf-466-01-69bb7d87f8-vkg47                      2/2     Running   0          2m34s\r\nfree5gc-nssf-466-01-5d8568f9c4-8jp82                     2/2     Running   0          2m28s\r\nfree5gc-pcf-466-01-866cd97fcb-tm4qz                      2/2     Running   0          2m28s\r\nfree5gc-udm-466-01-c7d98fbbd-9s96v                       2/2     Running   0          2m27s\r\nfree5gc-udr-466-01-699b996b9b-h74bz                      2/2     Running   0          2m27s\r\nfree5gc-ueransim-gnb-466-01-000000010-769dbc5b88-pl4th   2/2     Running   0          2m26s\r\nfree5gc-webui-466-01-5fdbd47cb-h8k9f                     2/2     Running   0          2m34s\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 2256
+    content: "kubectl -n free5gc get pod -l tel\rlecom=FET"
+  - delay: 922
+    content: "\b\e[K"
+  - delay: 160
+    content: "\b\e[K"
+  - delay: 268
+    content: "\b\e[K"
+  - delay: 585
+    content: C
+  - delay: 249
+    content: H
+  - delay: 422
+    content: T
+  - delay: 1383
+    content: "\r\n"
+  - delay: 83
+    content: "NAME                                                     READY   STATUS    RESTARTS   AGE\r\nfree5gc-amf-466-11-957767bbf-rmtnz                       2/2     Running   0          98s\r\nfree5gc-ausf-466-11-6649648ccb-qch8j                     2/2     Running   0          98s\r\nfree5gc-mongodb-466-11-0                                 1/1     Running   0          116s\r\nfree5gc-nrf-466-11-6c9b655cc4-bbh2h                      2/2     Running   0          104s\r\nfree5gc-nssf-466-11-777f9c7db6-nd5fk                     2/2     Running   0          98s\r\nfree5gc-pcf-466-11-85f944d89b-9c2cs                      2/2     Running   0          97s\r\nfree5gc-udm-466-11-5558fc8544-v8xzn                      2/2     Running   0          97s\r\nfree5gc-udr-466-11-69b99d9cb-49g9w                       2/2     Running   0          96s\r\nfree5gc-ueransim-gnb-466-11-000000010-68c6d4bff5-sv4pr   2/2     Running   0          96s\r\nfree5gc-webui-466-11-69566fc94d-5dljn                    2/2     Running   0          103s\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 1728
+    content: "kubectl -n free5gc get pod -l tel\rlecom=CHT"
+  - delay: 936
+    content: "\b\e[K"
+  - delay: 214
+    content: "\b\e[K"
+  - delay: 274
+    content: "\b\e[K"
+  - delay: 1595
+    content: T
+  - delay: 177
+    content: W
+  - delay: 1487
+    content: M
+  - delay: 899
+    content: "\r\n"
+  - delay: 89
+    content: "NAME                                                     READY   STATUS    RESTARTS   AGE\r\nfree5gc-amf-466-93-6c54d87b96-946ps                      2/2     Running   0          59s\r\nfree5gc-ausf-466-93-6bb8cd88cf-zr7dx                     2/2     Running   0          58s\r\nfree5gc-mongodb-466-93-0                                 1/1     Running   0          68s\r\nfree5gc-nrf-466-93-7df566c7ff-ngmkg                      2/2     Running   0          64s\r\nfree5gc-nssf-466-93-bd44bbf65-jm2gx                      2/2     Running   0          58s\r\nfree5gc-pcf-466-93-768cf4588f-6rtds                      2/2     Running   0          58s\r\nfree5gc-udm-466-93-bc6967d77-zh6pz                       2/2     Running   0          57s\r\nfree5gc-udr-466-93-6bd87d4ffc-b4cnv                      2/2     Running   0          57s\r\nfree5gc-ueransim-gnb-466-93-000000010-667d454df7-pf969   2/2     Running   0          56s\r\nfree5gc-webui-466-93-cb4968fc8-2xb8w                     2/2     Running   0          64s\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/deployment/free5gc\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/deployment/free5gc\e[00m$ "
+  - delay: 3713
     content: "logout\r\n"
