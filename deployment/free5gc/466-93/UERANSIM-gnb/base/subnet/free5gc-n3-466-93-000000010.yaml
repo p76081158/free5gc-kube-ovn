@@ -10,7 +10,8 @@ metadata:
     mnc: "93"
     nci: "000000010"
     telecom: TWM
+    namespace: free5gc
 spec:
   protocol: IPv4
-  cidrBlock: 10.203.100.0/24
-  gateway: 10.203.100.1
+  cidrBlock: 10.202.100.0/24
+  gateway: 10.202.100.1

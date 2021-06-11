@@ -10,7 +10,8 @@ metadata:
     mnc: "11"
     nci: "000000010"
     telecom: CHT
+    namespace: free5gc
 spec:
   protocol: IPv4
-  cidrBlock: 10.202.100.0/24
-  gateway: 10.202.100.1
+  cidrBlock: 10.201.100.0/24
+  gateway: 10.201.100.1

@@ -10,7 +10,8 @@ metadata:
     mnc: "01"
     nci: "000000010"
     telecom: FET
+    namespace: free5gc
 spec:
   protocol: IPv4
-  cidrBlock: 10.201.100.0/24
-  gateway: 10.201.100.1
+  cidrBlock: 10.200.100.0/24
+  gateway: 10.200.100.1

@@ -16,7 +16,7 @@ data:
 
     linkIp: 192.168.72.55   # gNB's local IP address for Radio Link Simulation (Usually same with local IP)
     ngapIp: 192.168.72.55   # gNB's local IP address for N2 Interface (Usually same with local IP)
-    gtpIp: 10.203.100.3    # gNB's local IP address for N3 Interface (Usually same with local IP)
+    gtpIp: 10.202.100.3    # gNB's local IP address for N3 Interface (Usually same with local IP)
 
     # List of AMF address information
     amfConfigs:

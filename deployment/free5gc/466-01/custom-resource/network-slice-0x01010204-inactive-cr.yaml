@@ -1,0 +1,15 @@
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01010204"
+  namespace: free5gc
+spec:
+  sst: "01"
+  sd: "010204"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default

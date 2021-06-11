@@ -30,7 +30,7 @@ spec:
         k8s.v1.cni.cncf.io/networks: free5gc-macvlan, free5gc-n3-466-01-000000010
         free5gc-macvlan.free5gc.kubernetes.io/ip_address: 192.168.72.51
         free5gc-n3-466-01-000000010.free5gc.ovn.kubernetes.io/logical_switch: free5gc-n3-466-01-000000010
-        free5gc-n3-466-01-000000010.free5gc.ovn.kubernetes.io/ip_address: 10.201.100.3
+        free5gc-n3-466-01-000000010.free5gc.ovn.kubernetes.io/ip_address: 10.200.100.3
     spec:
       securityContext:
         runAsUser: 0
