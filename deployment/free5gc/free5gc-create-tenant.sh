@@ -69,8 +69,62 @@ spec:
   abbrev: "$abb"
   mcc: "$mcc"
   mnc: "$mnc"
-  gnb-nums: 1
-  slice-nums: 0
+  gnb-nums: 1               # default has one gnb in the core network
+  slice-nums: 3             # default has three network slices in the core network
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0203-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}0203"
+  namespace: free5gc
+spec:
+  sst: "01"
+  sd: "${core_network_id}0203"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0204-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}0204"
+  namespace: free5gc
+spec:
+  sst: "01"
+  sd: "${core_network_id}0204"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0205-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}0205"
+  namespace: free5gc
+spec:
+  sst: "01"
+  sd: "${core_network_id}0205"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
 EOF
 
 #
@@ -2060,6 +2114,7 @@ metadata:
     mnc: "$mnc"
     nci: "$default_gnb_id"
     telecom: $abb
+    namespace: free5gc
 spec:
   protocol: IPv4
   cidrBlock: 10.$gnb_n3_ip_b.100.0/24
@@ -2210,7 +2265,41 @@ spec:
 EOF
 
 #
-# Register telecom to kubernetes
+# Register & Apply telecom to kubernetes
 #
 
-kubectl apply -f $mcc-$mnc/custom-resource/telecom-cr.yaml
+checkpod () {
+while [[ $(kubectl -n free5gc get pods -l app=$1 -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "waiting for pod" $1 && sleep 1; done
+}
+
+kustomizeapply () {
+cd $1 && kubectl apply -k .
+cd ../../
+}
+
+plmn="$mcc-$mnc"
+
+# Register custom resource of core network to kubernetes
+kubectl apply -f $plmn/custom-resource/telecom-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0203-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0204-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0205-inactive-cr.yaml
+
+cd $plmn
+cd mongodb      && kustomizeapply base
+
+# Depends on mongodb
+checkpod free5gc-mongodb-$plmn
+cd nrf          && kustomizeapply base
+cd webui        && kustomizeapply base
+
+# Depends on nrf
+checkpod free5gc-nrf-$plmn
+
+cd amf          && kustomizeapply base
+cd ausf         && kustomizeapply base
+cd nssf         && kustomizeapply base
+cd pcf          && kustomizeapply base
+cd udm          && kustomizeapply base
+cd udr          && kustomizeapply base
+cd UERANSIM-gnb && kustomizeapply base
