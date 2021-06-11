@@ -35,6 +35,7 @@ $ sudo ./quickstart.sh
 # run sudo kubeadm join on every worker
 $ sudo kubeadm join <ip> --token 31pm55.4m9buzv23pfp616n     --discovery-token-ca-cert-hash sha256:48c6017e83ab8bdd4b75bda9285c625808150a07e267d57ccd76aa569597ba4a
 ```
+![image alt](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/join-cluster.gif?raw=true)
 
 ### Check Worker and Pod status
 
@@ -63,7 +64,17 @@ $ cd deployment/free5gc
 # example
 $ ./free5gc-create-tenant.sh 466 01 FET 1 192.168.72.50 
 $ ./free5gc-create-tenant.sh 466 11 CHT 1 192.168.72.52 
-$ ./free5gc-create-tenant.sh 466 93 TWM 1 192.168.72.54 
+$ ./free5gc-create-tenant.sh 466 93 TWM 1 192.168.72.54
+
+# get custom resource
+$ kubectl -n free5gc get telecoms.nso.free5gc.com
+$ kubectl -n free5gc get gnbs.nso.free5gc.com
+$ kubectl -n free5gc get networkslices.nssmf.free5gc.com
+
+# get core network NF pods
+$ kubectl -n free5gc get pod -l telecom=FET
+$ kubectl -n free5gc get pod -l telecom=CHT
+$ kubectl -n free5gc get pod -l telecom=TWM
 ```
 ![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-create-tenant.gif?raw=true)
 * [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-create-tenant.gif)
@@ -74,8 +85,8 @@ $ ./free5gc-create-tenant.sh 466 93 TWM 1 192.168.72.54
 $ cd deployment/
 $ ./free5gc-clear-all.sh
 ```
-![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-clear.gif?raw=true)
-* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-clear.gif)
+![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-clear-all.gif?raw=true)
+* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-clear-all.gif)
 
 ### Uninstall All
 
@@ -89,6 +100,7 @@ $ cd kube-ovn/
 $ sudo ./delete-config.sh
 ```
 ![image alt](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/uninstall-all.gif?raw=true)
+
 ## Custom Resource
 
 ### TeleCom Example
@@ -107,7 +119,7 @@ spec:
   mcc: "466"
   mnc: "01"
   gnb-nums: 1
-  slice-nums: 0
+  slice-nums: 3
 ```
 
 ### gNB Example
@@ -124,4 +136,24 @@ spec:
   ue-nums: 0
   n3_cidr: "10.201.100.0/24"
   external_ip: "192.168.72.51"
+```
+
+### NetworkSlice Example
+
+```yaml=
+---
+apiVersion: "nso.free5gc.com/v1"
+kind: TeleCom
+metadata:
+  name: "466-01"
+  namespace: free5gc
+spec:
+  id: 1
+  provider: free5gc
+  abbrev: "FET"
+  mcc: "466"
+  mnc: "01"
+  gnb-nums: 1               # default has one gnb in the core network
+  slice-nums: 3             # default has three network slices in the core network
+
 ```
