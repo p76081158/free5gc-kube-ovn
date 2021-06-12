@@ -1,0 +1,2041 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/vcx/free5gc-kube-ovn/images/UERANSIM
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 79
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 30
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 5814
+    content: "\e]0;vcx@vcx-virtual-machine:~/free5gc-kube-ovn/images/UERANSIM\a\e]7;file://vcx-virtual-machine/home/vcx/free5gc-kube-ovn/images/UERANSIM\a(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/images/UERANSIM\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/images/UERANSIM\e[00m$ "
+  - delay: 1158
+    content: d
+  - delay: 138
+    content: o
+  - delay: 142
+    content: c
+  - delay: 130
+    content: k
+  - delay: 154
+    content: e
+  - delay: 144
+    content: r
+  - delay: 188
+    content: ' '
+  - delay: 805
+    content: p
+  - delay: 130
+    content: u
+  - delay: 167
+    content: s
+  - delay: 120
+    content: h
+  - delay: 497
+    content: "  \r"
+  - delay: 407
+    content: b
+  - delay: 109
+    content: l
+  - delay: 271
+    content: "\aack842679513/"
+  - delay: 1229
+    content: f
+  - delay: 356
+    content: "\aree5gc-ueransim"
+  - delay: 1249
+    content: ':'
+  - delay: 449
+    content: 'v3.2.0 '
+  - delay: 1035
+    content: "\r\n"
+  - delay: 52
+    content: "The push refers to repository [docker.io/black842679513/free5gc-ueransim]\r\n"
+  - delay: 960
+    content: "\r\n\e[1A\e[2K\r3cccba8fe4a0: Preparing \r\e[1B\r\n\e[1A\e[2K\rfe6d8881187d: Preparing \r\e[1B\r\n\e[1A\e[2K\r23135df75b44: Preparing \r\e[1B\r\n\e[1A\e[2K\rb43408d5f11b: Preparing \r\e[1B"
+  - delay: 1990
+    content: "\e[1A\e[2K\rb43408d5f11b: Layer already exists \r\e[1B"
+  - delay: 12
+    content: "\e[3A\e[2K\rfe6d8881187d: Layer already exists \r\e[3B"
+  - delay: 6
+    content: "\e[2A\e[2K\r23135df75b44: Layer already exists \r\e[2B"
+  - delay: 2418
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  552.4kB/547.7MB\r\e[4B"
+  - delay: 15946
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   1.11MB/547.7MB\r\e[4B"
+  - delay: 11938
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  1.667MB/547.7MB\r\e[4B"
+  - delay: 17901
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  2.224MB/547.7MB\r\e[4B"
+  - delay: 21817
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  2.781MB/547.7MB\r\e[4B"
+  - delay: 13053
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  3.338MB/547.7MB\r\e[4B"
+  - delay: 13000
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  3.895MB/547.7MB\r\e[4B"
+  - delay: 16537
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  4.423MB/547.7MB\r\e[4B"
+  - delay: 6263
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  4.951MB/547.7MB\r\e[4B"
+  - delay: 2136
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  5.508MB/547.7MB\r\e[4B"
+  - delay: 4991
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  6.065MB/547.7MB\r\e[4B"
+  - delay: 4252
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  6.622MB/547.7MB\r\e[4B"
+  - delay: 8352
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  7.179MB/547.7MB\r\e[4B"
+  - delay: 3997
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  7.736MB/547.7MB\r\e[4B"
+  - delay: 3495
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  8.293MB/547.7MB\r\e[4B"
+  - delay: 1339
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   8.85MB/547.7MB\r\e[4B"
+  - delay: 1299
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  9.407MB/547.7MB\r\e[4B"
+  - delay: 3731
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  9.964MB/547.7MB\r\e[4B"
+  - delay: 2203
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  10.52MB/547.7MB\r\e[4B"
+  - delay: 5162
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  11.07MB/547.7MB\r\e[4B"
+  - delay: 3708
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  11.63MB/547.7MB\r\e[4B"
+  - delay: 5882
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  12.18MB/547.7MB\r\e[4B"
+  - delay: 3817
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  12.74MB/547.7MB\r\e[4B"
+  - delay: 7542
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   13.3MB/547.7MB\r\e[4B"
+  - delay: 2100
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  13.85MB/547.7MB\r\e[4B"
+  - delay: 1220
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  14.41MB/547.7MB\r\e[4B"
+  - delay: 2828
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  14.97MB/547.7MB\r\e[4B"
+  - delay: 2418
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   15.5MB/547.7MB\r\e[4B"
+  - delay: 3067
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  16.03MB/547.7MB\r\e[4B"
+  - delay: 5635
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  16.56MB/547.7MB\r\e[4B"
+  - delay: 2414
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  17.12MB/547.7MB\r\e[4B"
+  - delay: 3776
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  17.68MB/547.7MB\r\e[4B"
+  - delay: 2571
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  18.24MB/547.7MB\r\e[4B"
+  - delay: 6900
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  18.79MB/547.7MB\r\e[4B"
+  - delay: 7257
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  19.35MB/547.7MB\r\e[4B"
+  - delay: 4299
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  19.91MB/547.7MB\r\e[4B"
+  - delay: 2466
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  21.02MB/547.7MB\r\e[4B"
+  - delay: 5502
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  21.58MB/547.7MB\r\e[4B"
+  - delay: 3377
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  22.14MB/547.7MB\r\e[4B"
+  - delay: 1721
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  22.68MB/547.7MB\r\e[4B"
+  - delay: 3278
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  23.24MB/547.7MB\r\e[4B"
+  - delay: 5693
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   23.8MB/547.7MB\r\e[4B"
+  - delay: 5307
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  24.35MB/547.7MB\r\e[4B"
+  - delay: 7133
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  24.91MB/547.7MB\r\e[4B"
+  - delay: 3076
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  25.47MB/547.7MB\r\e[4B"
+  - delay: 1296
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  26.03MB/547.7MB\r\e[4B"
+  - delay: 3152
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  26.58MB/547.7MB\r\e[4B"
+  - delay: 3474
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  27.12MB/547.7MB\r\e[4B"
+  - delay: 3420
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  27.65MB/547.7MB\r\e[4B"
+  - delay: 2179
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  28.17MB/547.7MB\r\e[4B"
+  - delay: 2421
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   28.7MB/547.7MB\r\e[4B"
+  - delay: 1952
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  30.29MB/547.7MB\r\e[4B"
+  - delay: 121
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  30.81MB/547.7MB\r\e[4B"
+  - delay: 2264
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  31.34MB/547.7MB\r\e[4B"
+  - delay: 1778
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  32.41MB/547.7MB\r\e[4B"
+  - delay: 1338
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  33.46MB/547.7MB\r\e[4B"
+  - delay: 5278
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  33.99MB/547.7MB\r\e[4B"
+  - delay: 2153
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  35.05MB/547.7MB\r\e[4B"
+  - delay: 1426
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  36.66MB/547.7MB\r\e[4B"
+  - delay: 1320
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  37.76MB/547.7MB\r\e[4B"
+  - delay: 1219
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  38.87MB/547.7MB\r\e[4B"
+  - delay: 2358
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  39.43MB/547.7MB\r\e[4B"
+  - delay: 1998
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  39.99MB/547.7MB\r\e[4B"
+  - delay: 4802
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   41.1MB/547.7MB\r\e[4B"
+  - delay: 1241
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  42.21MB/547.7MB\r\e[4B"
+  - delay: 1624
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  42.74MB/547.7MB\r\e[4B"
+  - delay: 1808
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  43.27MB/547.7MB\r\e[4B"
+  - delay: 136
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  43.79MB/547.7MB\r\e[4B"
+  - delay: 1515
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  44.32MB/547.7MB\r\e[4B"
+  - delay: 1064
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  44.84MB/547.7MB\r\e[4B"
+  - delay: 143
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  45.37MB/547.7MB\r\e[4B"
+  - delay: 1381
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  45.89MB/547.7MB\r\e[4B"
+  - delay: 1923
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  46.42MB/547.7MB\r\e[4B"
+  - delay: 1721
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  47.48MB/547.7MB\r\e[4B"
+  - delay: 2020
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  48.01MB/547.7MB\r\e[4B"
+  - delay: 1918
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  49.07MB/547.7MB\r\e[4B"
+  - delay: 2158
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  50.13MB/547.7MB\r\e[4B"
+  - delay: 1708
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  50.66MB/547.7MB\r\e[4B"
+  - delay: 2208
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  51.71MB/547.7MB\r\e[4B"
+  - delay: 1589
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  52.78MB/547.7MB\r\e[4B"
+  - delay: 2835
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  54.44MB/547.7MB\r\e[4B"
+  - delay: 4161
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  54.99MB/547.7MB\r\e[4B"
+  - delay: 3625
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  55.52MB/547.7MB\r\e[4B"
+  - delay: 3802
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  56.08MB/547.7MB\r\e[4B"
+  - delay: 2675
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  56.63MB/547.7MB\r\e[4B"
+  - delay: 3555
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  57.19MB/547.7MB\r\e[4B"
+  - delay: 1998
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  57.75MB/547.7MB\r\e[4B"
+  - delay: 1703
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   58.3MB/547.7MB\r\e[4B"
+  - delay: 1582
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  58.86MB/547.7MB\r\e[4B"
+  - delay: 1351
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  59.42MB/547.7MB\r\e[4B"
+  - delay: 1330
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  59.95MB/547.7MB\r\e[4B"
+  - delay: 3488
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  60.47MB/547.7MB\r\e[4B"
+  - delay: 3913
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing     61MB/547.7MB\r\e[4B"
+  - delay: 5349
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  61.56MB/547.7MB\r\e[4B"
+  - delay: 3569
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   62.1MB/547.7MB\r\e[4B"
+  - delay: 4162
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  62.66MB/547.7MB\r\e[4B"
+  - delay: 3876
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  63.19MB/547.7MB\r\e[4B"
+  - delay: 1325
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  63.72MB/547.7MB\r\e[4B"
+  - delay: 4103
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  64.25MB/547.7MB\r\e[4B"
+  - delay: 4360
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   64.8MB/547.7MB\r\e[4B"
+  - delay: 3550
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  65.35MB/547.7MB\r\e[4B"
+  - delay: 1451
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  65.91MB/547.7MB\r\e[4B"
+  - delay: 4165
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  66.46MB/547.7MB\r\e[4B"
+  - delay: 1574
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  67.02MB/547.7MB\r\e[4B"
+  - delay: 4318
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  67.55MB/547.7MB\r\e[4B"
+  - delay: 1691
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  68.09MB/547.7MB\r\e[4B"
+  - delay: 3924
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  68.65MB/547.7MB\r\e[4B"
+  - delay: 1726
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   69.2MB/547.7MB\r\e[4B"
+  - delay: 3743
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  69.75MB/547.7MB\r\e[4B"
+  - delay: 2689
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  70.31MB/547.7MB\r\e[4B"
+  - delay: 2392
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  70.84MB/547.7MB\r\e[4B"
+  - delay: 2467
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  71.37MB/547.7MB\r\e[4B"
+  - delay: 4590
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  72.47MB/547.7MB\r\e[4B"
+  - delay: 4473
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  73.03MB/547.7MB\r\e[4B"
+  - delay: 4491
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  73.58MB/547.7MB\r\e[4B"
+  - delay: 2327
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   74.1MB/547.7MB\r\e[4B"
+  - delay: 2953
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  74.65MB/547.7MB\r\e[4B"
+  - delay: 2815
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   75.2MB/547.7MB\r\e[4B"
+  - delay: 3030
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  75.75MB/547.7MB\r\e[4B"
+  - delay: 1506
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  76.31MB/547.7MB\r\e[4B"
+  - delay: 1504
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  76.84MB/547.7MB\r\e[4B"
+  - delay: 1914
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  77.36MB/547.7MB\r\e[4B"
+  - delay: 3902
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  77.89MB/547.7MB\r\e[4B"
+  - delay: 1424
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  78.94MB/547.7MB\r\e[4B"
+  - delay: 1413
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing     80MB/547.7MB\r\e[4B"
+  - delay: 1284
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  81.65MB/547.7MB\r\e[4B"
+  - delay: 1582
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   83.3MB/547.7MB\r\e[4B"
+  - delay: 1655
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  83.83MB/547.7MB\r\e[4B"
+  - delay: 106
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  84.35MB/547.7MB\r\e[4B"
+  - delay: 1920
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  84.88MB/547.7MB\r\e[4B"
+  - delay: 2992
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  85.41MB/547.7MB\r\e[4B"
+  - delay: 4046
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  86.46MB/547.7MB\r\e[4B"
+  - delay: 1883
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  86.99MB/547.7MB\r\e[4B"
+  - delay: 2254
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  88.04MB/547.7MB\r\e[4B"
+  - delay: 1560
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  89.09MB/547.7MB\r\e[4B"
+  - delay: 1329
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  90.14MB/547.7MB\r\e[4B"
+  - delay: 1678
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  90.66MB/547.7MB\r\e[4B"
+  - delay: 1457
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  91.71MB/547.7MB\r\e[4B"
+  - delay: 1784
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  92.24MB/547.7MB\r\e[4B"
+  - delay: 3047
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  92.77MB/547.7MB\r\e[4B"
+  - delay: 2300
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  93.32MB/547.7MB\r\e[4B"
+  - delay: 1724
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  93.85MB/547.7MB\r\e[4B"
+  - delay: 3653
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  94.38MB/547.7MB\r\e[4B"
+  - delay: 1689
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  94.91MB/547.7MB\r\e[4B"
+  - delay: 1689
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  95.43MB/547.7MB\r\e[4B"
+  - delay: 3270
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  95.97MB/547.7MB\r\e[4B"
+  - delay: 8052
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  97.02MB/547.7MB\r\e[4B"
+  - delay: 8321
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  97.55MB/547.7MB\r\e[4B"
+  - delay: 3701
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  98.62MB/547.7MB\r\e[4B"
+  - delay: 7203
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  99.15MB/547.7MB\r\e[4B"
+  - delay: 3516
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing   99.7MB/547.7MB\r\e[4B"
+  - delay: 6262
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  100.3MB/547.7MB\r\e[4B"
+  - delay: 2353
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  100.8MB/547.7MB\r\e[4B"
+  - delay: 7415
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  101.4MB/547.7MB\r\e[4B"
+  - delay: 5957
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  101.9MB/547.7MB\r\e[4B"
+  - delay: 8812
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  102.4MB/547.7MB\r\e[4B"
+  - delay: 7781
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    103MB/547.7MB\r\e[4B"
+  - delay: 7808
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  103.5MB/547.7MB\r\e[4B"
+  - delay: 10699
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  104.1MB/547.7MB\r\e[4B"
+  - delay: 14781
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  104.6MB/547.7MB\r\e[4B"
+  - delay: 7711
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  105.2MB/547.7MB\r\e[4B"
+  - delay: 4898
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  105.7MB/547.7MB\r\e[4B"
+  - delay: 4189
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  106.3MB/547.7MB\r\e[4B"
+  - delay: 5814
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  106.8MB/547.7MB\r\e[4B"
+  - delay: 6487
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  107.4MB/547.7MB\r\e[4B"
+  - delay: 7120
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  107.9MB/547.7MB\r\e[4B"
+  - delay: 13810
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  108.5MB/547.7MB\r\e[4B"
+  - delay: 7319
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  109.1MB/547.7MB\r\e[4B"
+  - delay: 9426
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  109.6MB/547.7MB\r\e[4B"
+  - delay: 5719
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  110.2MB/547.7MB\r\e[4B"
+  - delay: 5754
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  110.7MB/547.7MB\r\e[4B"
+  - delay: 10533
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  111.3MB/547.7MB\r\e[4B"
+  - delay: 7272
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  111.8MB/547.7MB\r\e[4B"
+  - delay: 8516
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  112.4MB/547.7MB\r\e[4B"
+  - delay: 9772
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    113MB/547.7MB\r\e[4B"
+  - delay: 11341
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  113.5MB/547.7MB\r\e[4B"
+  - delay: 6557
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  114.1MB/547.7MB\r\e[4B"
+  - delay: 6923
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  114.6MB/547.7MB\r\e[4B"
+  - delay: 4768
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  115.2MB/547.7MB\r\e[4B"
+  - delay: 7019
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  115.7MB/547.7MB\r\e[4B"
+  - delay: 9369
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  116.3MB/547.7MB\r\e[4B"
+  - delay: 7097
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  116.9MB/547.7MB\r\e[4B"
+  - delay: 7363
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  117.4MB/547.7MB\r\e[4B"
+  - delay: 7334
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    118MB/547.7MB\r\e[4B"
+  - delay: 8144
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  118.5MB/547.7MB\r\e[4B"
+  - delay: 9865
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  119.1MB/547.7MB\r\e[4B"
+  - delay: 6445
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  119.6MB/547.7MB\r\e[4B"
+  - delay: 3314
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  120.2MB/547.7MB\r\e[4B"
+  - delay: 3804
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  120.8MB/547.7MB\r\e[4B"
+  - delay: 5804
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  121.3MB/547.7MB\r\e[4B"
+  - delay: 7366
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  121.9MB/547.7MB\r\e[4B"
+  - delay: 7105
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  122.4MB/547.7MB\r\e[4B"
+  - delay: 12624
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    123MB/547.7MB\r\e[4B"
+  - delay: 12483
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  123.5MB/547.7MB\r\e[4B"
+  - delay: 6708
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  124.1MB/547.7MB\r\e[4B"
+  - delay: 9252
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  124.7MB/547.7MB\r\e[4B"
+  - delay: 8688
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  125.2MB/547.7MB\r\e[4B"
+  - delay: 4583
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  125.7MB/547.7MB\r\e[4B"
+  - delay: 6652
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  126.3MB/547.7MB\r\e[4B"
+  - delay: 7738
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  126.9MB/547.7MB\r\e[4B"
+  - delay: 4691
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  127.4MB/547.7MB\r\e[4B"
+  - delay: 7179
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    128MB/547.7MB\r\e[4B"
+  - delay: 8917
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  128.5MB/547.7MB\r\e[4B"
+  - delay: 11133
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  129.1MB/547.7MB\r\e[4B"
+  - delay: 12320
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  129.6MB/547.7MB\r\e[4B"
+  - delay: 6945
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  130.2MB/547.7MB\r\e[4B"
+  - delay: 7616
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  130.8MB/547.7MB\r\e[4B"
+  - delay: 10573
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  131.3MB/547.7MB\r\e[4B"
+  - delay: 11404
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  131.9MB/547.7MB\r\e[4B"
+  - delay: 8105
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  132.4MB/547.7MB\r\e[4B"
+  - delay: 11787
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    133MB/547.7MB\r\e[4B"
+  - delay: 6266
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  133.5MB/547.7MB\r\e[4B"
+  - delay: 11166
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  134.1MB/547.7MB\r\e[4B"
+  - delay: 8048
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  134.7MB/547.7MB\r\e[4B"
+  - delay: 10280
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  135.2MB/547.7MB\r\e[4B"
+  - delay: 4727
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  135.8MB/547.7MB\r\e[4B"
+  - delay: 11041
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  136.3MB/547.7MB\r\e[4B"
+  - delay: 5058
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  136.9MB/547.7MB\r\e[4B"
+  - delay: 3474
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  137.4MB/547.7MB\r\e[4B"
+  - delay: 10412
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    138MB/547.7MB\r\e[4B"
+  - delay: 11303
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  138.5MB/547.7MB\r\e[4B"
+  - delay: 11494
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  139.1MB/547.7MB\r\e[4B"
+  - delay: 6587
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  139.6MB/547.7MB\r\e[4B"
+  - delay: 9694
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  140.1MB/547.7MB\r\e[4B"
+  - delay: 11373
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  140.7MB/547.7MB\r\e[4B"
+  - delay: 9275
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  141.3MB/547.7MB\r\e[4B"
+  - delay: 11149
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  141.8MB/547.7MB\r\e[4B"
+  - delay: 11110
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  142.3MB/547.7MB\r\e[4B"
+  - delay: 6101
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  142.9MB/547.7MB\r\e[4B"
+  - delay: 8154
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  143.4MB/547.7MB\r\e[4B"
+  - delay: 10110
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    144MB/547.7MB\r\e[4B"
+  - delay: 6545
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  144.5MB/547.7MB\r\e[4B"
+  - delay: 11261
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    145MB/547.7MB\r\e[4B"
+  - delay: 7621
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  145.6MB/547.7MB\r\e[4B"
+  - delay: 6323
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  146.1MB/547.7MB\r\e[4B"
+  - delay: 5809
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  146.6MB/547.7MB\r\e[4B"
+  - delay: 5576
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  147.2MB/547.7MB\r\e[4B"
+  - delay: 7925
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  147.8MB/547.7MB\r\e[4B"
+  - delay: 7039
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  148.3MB/547.7MB\r\e[4B"
+  - delay: 11232
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  148.9MB/547.7MB\r\e[4B"
+  - delay: 10026
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  149.4MB/547.7MB\r\e[4B"
+  - delay: 7202
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    150MB/547.7MB\r\e[4B"
+  - delay: 9709
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  150.5MB/547.7MB\r\e[4B"
+  - delay: 8467
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  151.1MB/547.7MB\r\e[4B"
+  - delay: 4854
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  151.6MB/547.7MB\r\e[4B"
+  - delay: 14057
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  152.2MB/547.7MB\r\e[4B"
+  - delay: 6882
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  152.7MB/547.7MB\r\e[4B"
+  - delay: 5770
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  153.3MB/547.7MB\r\e[4B"
+  - delay: 5894
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  153.8MB/547.7MB\r\e[4B"
+  - delay: 10867
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  154.4MB/547.7MB\r\e[4B"
+  - delay: 6857
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  154.9MB/547.7MB\r\e[4B"
+  - delay: 4948
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  155.4MB/547.7MB\r\e[4B"
+  - delay: 6214
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    156MB/547.7MB\r\e[4B"
+  - delay: 5276
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  156.6MB/547.7MB\r\e[4B"
+  - delay: 9221
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  157.1MB/547.7MB\r\e[4B"
+  - delay: 5700
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  157.7MB/547.7MB\r\e[4B"
+  - delay: 5799
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  158.2MB/547.7MB\r\e[4B"
+  - delay: 4009
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  158.8MB/547.7MB\r\e[4B"
+  - delay: 10891
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  159.3MB/547.7MB\r\e[4B"
+  - delay: 8324
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  159.9MB/547.7MB\r\e[4B"
+  - delay: 3382
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  160.5MB/547.7MB\r\e[4B"
+  - delay: 4063
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    161MB/547.7MB\r\e[4B"
+  - delay: 7742
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  161.5MB/547.7MB\r\e[4B"
+  - delay: 10233
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  162.1MB/547.7MB\r\e[4B"
+  - delay: 7820
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  162.6MB/547.7MB\r\e[4B"
+  - delay: 11966
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  163.2MB/547.7MB\r\e[4B"
+  - delay: 6834
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  163.8MB/547.7MB\r\e[4B"
+  - delay: 10561
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  164.3MB/547.7MB\r\e[4B"
+  - delay: 3034
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  164.9MB/547.7MB\r\e[4B"
+  - delay: 8469
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  165.4MB/547.7MB\r\e[4B"
+  - delay: 10818
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  165.9MB/547.7MB\r\e[4B"
+  - delay: 6816
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  166.4MB/547.7MB\r\e[4B"
+  - delay: 5489
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    167MB/547.7MB\r\e[4B"
+  - delay: 4798
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  167.5MB/547.7MB\r\e[4B"
+  - delay: 7862
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  168.1MB/547.7MB\r\e[4B"
+  - delay: 6691
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  168.6MB/547.7MB\r\e[4B"
+  - delay: 2413
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  169.2MB/547.7MB\r\e[4B"
+  - delay: 1730
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  170.3MB/547.7MB\r\e[4B"
+  - delay: 5837
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  170.8MB/547.7MB\r\e[4B"
+  - delay: 7071
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  171.4MB/547.7MB\r\e[4B"
+  - delay: 7983
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  171.9MB/547.7MB\r\e[4B"
+  - delay: 4598
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  172.5MB/547.7MB\r\e[4B"
+  - delay: 4448
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  173.1MB/547.7MB\r\e[4B"
+  - delay: 8773
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  173.6MB/547.7MB\r\e[4B"
+  - delay: 10453
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  174.1MB/547.7MB\r\e[4B"
+  - delay: 7531
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  174.7MB/547.7MB\r\e[4B"
+  - delay: 3420
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  175.2MB/547.7MB\r\e[4B"
+  - delay: 1813
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  175.8MB/547.7MB\r\e[4B"
+  - delay: 1510
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  176.3MB/547.7MB\r\e[4B"
+  - delay: 1180
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  176.8MB/547.7MB\r\e[4B"
+  - delay: 1582
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  177.4MB/547.7MB\r\e[4B"
+  - delay: 2562
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  177.9MB/547.7MB\r\e[4B"
+  - delay: 3812
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  178.5MB/547.7MB\r\e[4B"
+  - delay: 1247
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    179MB/547.7MB\r\e[4B"
+  - delay: 1143
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  179.5MB/547.7MB\r\e[4B"
+  - delay: 1117
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    180MB/547.7MB\r\e[4B"
+  - delay: 800
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  180.6MB/547.7MB\r\e[4B"
+  - delay: 895
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  181.1MB/547.7MB\r\e[4B"
+  - delay: 1058
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  181.6MB/547.7MB\r\e[4B"
+  - delay: 1345
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  182.2MB/547.7MB\r\e[4B"
+  - delay: 2155
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  182.7MB/547.7MB\r\e[4B"
+  - delay: 2172
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  183.3MB/547.7MB\r\e[4B"
+  - delay: 2521
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  183.8MB/547.7MB\r\e[4B"
+  - delay: 4950
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  184.3MB/547.7MB\r\e[4B"
+  - delay: 4684
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  184.8MB/547.7MB\r\e[4B"
+  - delay: 5737
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  185.4MB/547.7MB\r\e[4B"
+  - delay: 5078
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  185.9MB/547.7MB\r\e[4B"
+  - delay: 4307
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  186.5MB/547.7MB\r\e[4B"
+  - delay: 4291
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    187MB/547.7MB\r\e[4B"
+  - delay: 4967
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  187.5MB/547.7MB\r\e[4B"
+  - delay: 5090
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  188.1MB/547.7MB\r\e[4B"
+  - delay: 3891
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  188.6MB/547.7MB\r\e[4B"
+  - delay: 2741
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  189.1MB/547.7MB\r\e[4B"
+  - delay: 2967
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  189.7MB/547.7MB\r\e[4B"
+  - delay: 1717
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  190.2MB/547.7MB\r\e[4B"
+  - delay: 3920
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  190.7MB/547.7MB\r\e[4B"
+  - delay: 4197
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  191.3MB/547.7MB\r\e[4B"
+  - delay: 2125
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  191.8MB/547.7MB\r\e[4B"
+  - delay: 3099
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  192.4MB/547.7MB\r\e[4B"
+  - delay: 1700
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  192.9MB/547.7MB\r\e[4B"
+  - delay: 1415
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    194MB/547.7MB\r\e[4B"
+  - delay: 1589
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  194.6MB/547.7MB\r\e[4B"
+  - delay: 2058
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  196.3MB/547.7MB\r\e[4B"
+  - delay: 1331
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  197.4MB/547.7MB\r\e[4B"
+  - delay: 10067
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  198.5MB/547.7MB\r\e[4B"
+  - delay: 5844
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    199MB/547.7MB\r\e[4B"
+  - delay: 6753
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  199.6MB/547.7MB\r\e[4B"
+  - delay: 12968
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  200.1MB/547.7MB\r\e[4B"
+  - delay: 8304
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  200.7MB/547.7MB\r\e[4B"
+  - delay: 10698
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  201.2MB/547.7MB\r\e[4B"
+  - delay: 13942
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  201.8MB/547.7MB\r\e[4B"
+  - delay: 13294
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  202.4MB/547.7MB\r\e[4B"
+  - delay: 10526
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  202.9MB/547.7MB\r\e[4B"
+  - delay: 13101
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  203.5MB/547.7MB\r\e[4B"
+  - delay: 4933
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    204MB/547.7MB\r\e[4B"
+  - delay: 10778
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  204.6MB/547.7MB\r\e[4B"
+  - delay: 4666
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  205.1MB/547.7MB\r\e[4B"
+  - delay: 8938
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  205.7MB/547.7MB\r\e[4B"
+  - delay: 14271
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  206.3MB/547.7MB\r\e[4B"
+  - delay: 13042
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  206.8MB/547.7MB\r\e[4B"
+  - delay: 12144
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  207.4MB/547.7MB\r\e[4B"
+  - delay: 8892
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  207.9MB/547.7MB\r\e[4B"
+  - delay: 7400
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  208.5MB/547.7MB\r\e[4B"
+  - delay: 7894
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    209MB/547.7MB\r\e[4B"
+  - delay: 10464
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  209.6MB/547.7MB\r\e[4B"
+  - delay: 11946
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  210.2MB/547.7MB\r\e[4B"
+  - delay: 9578
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  210.7MB/547.7MB\r\e[4B"
+  - delay: 11041
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  211.3MB/547.7MB\r\e[4B"
+  - delay: 10985
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  211.8MB/547.7MB\r\e[4B"
+  - delay: 7531
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  212.4MB/547.7MB\r\e[4B"
+  - delay: 8566
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  212.9MB/547.7MB\r\e[4B"
+  - delay: 8677
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  213.5MB/547.7MB\r\e[4B"
+  - delay: 6210
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  214.1MB/547.7MB\r\e[4B"
+  - delay: 3809
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  214.6MB/547.7MB\r\e[4B"
+  - delay: 4350
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  215.2MB/547.7MB\r\e[4B"
+  - delay: 1668
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  215.7MB/547.7MB\r\e[4B"
+  - delay: 5721
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  216.3MB/547.7MB\r\e[4B"
+  - delay: 3837
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  216.8MB/547.7MB\r\e[4B"
+  - delay: 1682
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  217.4MB/547.7MB\r\e[4B"
+  - delay: 1225
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    218MB/547.7MB\r\e[4B"
+  - delay: 2346
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  218.5MB/547.7MB\r\e[4B"
+  - delay: 9195
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  219.6MB/547.7MB\r\e[4B"
+  - delay: 8655
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  220.2MB/547.7MB\r\e[4B"
+  - delay: 4953
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  220.7MB/547.7MB\r\e[4B"
+  - delay: 6942
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  221.3MB/547.7MB\r\e[4B"
+  - delay: 5954
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  221.8MB/547.7MB\r\e[4B"
+  - delay: 10114
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  222.4MB/547.7MB\r\e[4B"
+  - delay: 3876
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    223MB/547.7MB\r\e[4B"
+  - delay: 9559
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  223.5MB/547.7MB\r\e[4B"
+  - delay: 6825
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  224.1MB/547.7MB\r\e[4B"
+  - delay: 14061
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  224.6MB/547.7MB\r\e[4B"
+  - delay: 12647
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  225.2MB/547.7MB\r\e[4B"
+  - delay: 6140
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  225.7MB/547.7MB\r\e[4B"
+  - delay: 8815
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  226.3MB/547.7MB\r\e[4B"
+  - delay: 12323
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  226.9MB/547.7MB\r\e[4B"
+  - delay: 12757
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  227.4MB/547.7MB\r\e[4B"
+  - delay: 4160
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    228MB/547.7MB\r\e[4B"
+  - delay: 8861
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  228.5MB/547.7MB\r\e[4B"
+  - delay: 5609
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  229.1MB/547.7MB\r\e[4B"
+  - delay: 3037
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  229.6MB/547.7MB\r\e[4B"
+  - delay: 8127
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  230.2MB/547.7MB\r\e[4B"
+  - delay: 11594
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  230.8MB/547.7MB\r\e[4B"
+  - delay: 8260
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  231.3MB/547.7MB\r\e[4B"
+  - delay: 5805
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  231.9MB/547.7MB\r\e[4B"
+  - delay: 14451
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  232.4MB/547.7MB\r\e[4B"
+  - delay: 5002
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    233MB/547.7MB\r\e[4B"
+  - delay: 10374
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  233.5MB/547.7MB\r\e[4B"
+  - delay: 8501
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  234.1MB/547.7MB\r\e[4B"
+  - delay: 14177
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  234.7MB/547.7MB\r\e[4B"
+  - delay: 15130
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  235.2MB/547.7MB\r\e[4B"
+  - delay: 7079
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  235.8MB/547.7MB\r\e[4B"
+  - delay: 14958
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  236.3MB/547.7MB\r\e[4B"
+  - delay: 11613
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  236.9MB/547.7MB\r\e[4B"
+  - delay: 11694
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  237.4MB/547.7MB\r\e[4B"
+  - delay: 12833
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    238MB/547.7MB\r\e[4B"
+  - delay: 12456
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  238.6MB/547.7MB\r\e[4B"
+  - delay: 2729
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  239.1MB/547.7MB\r\e[4B"
+  - delay: 2245
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  239.7MB/547.7MB\r\e[4B"
+  - delay: 3819
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  240.2MB/547.7MB\r\e[4B"
+  - delay: 5734
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  240.8MB/547.7MB\r\e[4B"
+  - delay: 10121
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  241.9MB/547.7MB\r\e[4B"
+  - delay: 4684
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  242.4MB/547.7MB\r\e[4B"
+  - delay: 3282
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    243MB/547.7MB\r\e[4B"
+  - delay: 3545
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  243.6MB/547.7MB\r\e[4B"
+  - delay: 2182
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  244.1MB/547.7MB\r\e[4B"
+  - delay: 2339
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  244.7MB/547.7MB\r\e[4B"
+  - delay: 13676
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  245.2MB/547.7MB\r\e[4B"
+  - delay: 4806
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  245.8MB/547.7MB\r\e[4B"
+  - delay: 3840
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  246.3MB/547.7MB\r\e[4B"
+  - delay: 8386
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  246.9MB/547.7MB\r\e[4B"
+  - delay: 6053
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  247.4MB/547.7MB\r\e[4B"
+  - delay: 2934
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  249.1MB/547.7MB\r\e[4B"
+  - delay: 2665
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  250.1MB/547.7MB\r\e[4B"
+  - delay: 2711
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  250.7MB/547.7MB\r\e[4B"
+  - delay: 2514
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  251.8MB/547.7MB\r\e[4B"
+  - delay: 3421
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  252.4MB/547.7MB\r\e[4B"
+  - delay: 7500
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  252.9MB/547.7MB\r\e[4B"
+  - delay: 2874
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  253.4MB/547.7MB\r\e[4B"
+  - delay: 15136
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    254MB/547.7MB\r\e[4B"
+  - delay: 17519
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  254.6MB/547.7MB\r\e[4B"
+  - delay: 10818
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  255.1MB/547.7MB\r\e[4B"
+  - delay: 11348
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  255.7MB/547.7MB\r\e[4B"
+  - delay: 5135
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  256.2MB/547.7MB\r\e[4B"
+  - delay: 3790
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  256.8MB/547.7MB\r\e[4B"
+  - delay: 2754
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  257.3MB/547.7MB\r\e[4B"
+  - delay: 5471
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  257.9MB/547.7MB\r\e[4B"
+  - delay: 2136
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  258.4MB/547.7MB\r\e[4B"
+  - delay: 3536
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  258.9MB/547.7MB\r\e[4B"
+  - delay: 5381
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    260MB/547.7MB\r\e[4B"
+  - delay: 5052
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  260.6MB/547.7MB\r\e[4B"
+  - delay: 5609
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  261.2MB/547.7MB\r\e[4B"
+  - delay: 4891
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  262.3MB/547.7MB\r\e[4B"
+  - delay: 2934
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  262.8MB/547.7MB\r\e[4B"
+  - delay: 3083
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  263.4MB/547.7MB\r\e[4B"
+  - delay: 4310
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  263.9MB/547.7MB\r\e[4B"
+  - delay: 1895
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    265MB/547.7MB\r\e[4B"
+  - delay: 1585
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  265.5MB/547.7MB\r\e[4B"
+  - delay: 4749
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  266.1MB/547.7MB\r\e[4B"
+  - delay: 4615
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  266.6MB/547.7MB\r\e[4B"
+  - delay: 3922
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  267.2MB/547.7MB\r\e[4B"
+  - delay: 10101
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  267.7MB/547.7MB\r\e[4B"
+  - delay: 8821
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  268.3MB/547.7MB\r\e[4B"
+  - delay: 11947
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  268.9MB/547.7MB\r\e[4B"
+  - delay: 4373
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  269.4MB/547.7MB\r\e[4B"
+  - delay: 9196
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    270MB/547.7MB\r\e[4B"
+  - delay: 13870
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  270.5MB/547.7MB\r\e[4B"
+  - delay: 15301
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  271.1MB/547.7MB\r\e[4B"
+  - delay: 8292
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  271.6MB/547.7MB\r\e[4B"
+  - delay: 14103
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  272.2MB/547.7MB\r\e[4B"
+  - delay: 9580
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  272.8MB/547.7MB\r\e[4B"
+  - delay: 9750
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  273.3MB/547.7MB\r\e[4B"
+  - delay: 10935
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  273.9MB/547.7MB\r\e[4B"
+  - delay: 7743
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  274.4MB/547.7MB\r\e[4B"
+  - delay: 2629
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    275MB/547.7MB\r\e[4B"
+  - delay: 5716
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  275.5MB/547.7MB\r\e[4B"
+  - delay: 9733
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  276.1MB/547.7MB\r\e[4B"
+  - delay: 11932
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  276.7MB/547.7MB\r\e[4B"
+  - delay: 8594
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  277.2MB/547.7MB\r\e[4B"
+  - delay: 9812
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  277.8MB/547.7MB\r\e[4B"
+  - delay: 10467
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  278.3MB/547.7MB\r\e[4B"
+  - delay: 5259
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  278.9MB/547.7MB\r\e[4B"
+  - delay: 9448
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  279.4MB/547.7MB\r\e[4B"
+  - delay: 12056
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    280MB/547.7MB\r\e[4B"
+  - delay: 8060
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  280.6MB/547.7MB\r\e[4B"
+  - delay: 10513
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  281.1MB/547.7MB\r\e[4B"
+  - delay: 7697
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  281.7MB/547.7MB\r\e[4B"
+  - delay: 14908
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  282.2MB/547.7MB\r\e[4B"
+  - delay: 4969
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  282.8MB/547.7MB\r\e[4B"
+  - delay: 8158
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  283.3MB/547.7MB\r\e[4B"
+  - delay: 3063
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  283.9MB/547.7MB\r\e[4B"
+  - delay: 2167
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  284.5MB/547.7MB\r\e[4B"
+  - delay: 1836
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    285MB/547.7MB\r\e[4B"
+  - delay: 3013
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  286.1MB/547.7MB\r\e[4B"
+  - delay: 1328
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  286.7MB/547.7MB\r\e[4B"
+  - delay: 1378
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  287.2MB/547.7MB\r\e[4B"
+  - delay: 2274
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  287.8MB/547.7MB\r\e[4B"
+  - delay: 2914
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  288.4MB/547.7MB\r\e[4B"
+  - delay: 2648
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  288.9MB/547.7MB\r\e[4B"
+  - delay: 6860
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  289.5MB/547.7MB\r\e[4B"
+  - delay: 4201
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    290MB/547.7MB\r\e[4B"
+  - delay: 1752
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  290.6MB/547.7MB\r\e[4B"
+  - delay: 5170
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  291.1MB/547.7MB\r\e[4B"
+  - delay: 6593
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  291.7MB/547.7MB\r\e[4B"
+  - delay: 2571
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  292.2MB/547.7MB\r\e[4B"
+  - delay: 1977
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  292.8MB/547.7MB\r\e[4B"
+  - delay: 8783
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  293.3MB/547.7MB\r\e[4B"
+  - delay: 4262
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  293.9MB/547.7MB\r\e[4B"
+  - delay: 1415
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  294.5MB/547.7MB\r\e[4B"
+  - delay: 3971
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    295MB/547.7MB\r\e[4B"
+  - delay: 5245
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  295.6MB/547.7MB\r\e[4B"
+  - delay: 9465
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  296.1MB/547.7MB\r\e[4B"
+  - delay: 7782
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  296.7MB/547.7MB\r\e[4B"
+  - delay: 14044
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  297.2MB/547.7MB\r\e[4B"
+  - delay: 5992
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  297.8MB/547.7MB\r\e[4B"
+  - delay: 6794
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  298.4MB/547.7MB\r\e[4B"
+  - delay: 5157
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  298.9MB/547.7MB\r\e[4B"
+  - delay: 5443
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  299.5MB/547.7MB\r\e[4B"
+  - delay: 12216
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    300MB/547.7MB\r\e[4B"
+  - delay: 6217
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  300.6MB/547.7MB\r\e[4B"
+  - delay: 2439
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  301.1MB/547.7MB\r\e[4B"
+  - delay: 6618
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  301.7MB/547.7MB\r\e[4B"
+  - delay: 8433
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  302.3MB/547.7MB\r\e[4B"
+  - delay: 3711
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  302.8MB/547.7MB\r\e[4B"
+  - delay: 3812
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  303.4MB/547.7MB\r\e[4B"
+  - delay: 3707
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  303.9MB/547.7MB\r\e[4B"
+  - delay: 9987
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  304.5MB/547.7MB\r\e[4B"
+  - delay: 10995
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    305MB/547.7MB\r\e[4B"
+  - delay: 13995
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  305.6MB/547.7MB\r\e[4B"
+  - delay: 5300
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  306.2MB/547.7MB\r\e[4B"
+  - delay: 8733
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  306.7MB/547.7MB\r\e[4B"
+  - delay: 5398
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  307.8MB/547.7MB\r\e[4B"
+  - delay: 3648
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  308.9MB/547.7MB\r\e[4B"
+  - delay: 9059
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  309.5MB/547.7MB\r\e[4B"
+  - delay: 4806
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  310.1MB/547.7MB\r\e[4B"
+  - delay: 6408
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  310.6MB/547.7MB\r\e[4B"
+  - delay: 4817
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  311.2MB/547.7MB\r\e[4B"
+  - delay: 3893
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  313.4MB/547.7MB\r\e[4B"
+  - delay: 3239
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    314MB/547.7MB\r\e[4B"
+  - delay: 4612
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  314.5MB/547.7MB\r\e[4B"
+  - delay: 7579
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  315.1MB/547.7MB\r\e[4B"
+  - delay: 3285
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  315.6MB/547.7MB\r\e[4B"
+  - delay: 3463
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  316.2MB/547.7MB\r\e[4B"
+  - delay: 6307
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  316.7MB/547.7MB\r\e[4B"
+  - delay: 6039
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  317.3MB/547.7MB\r\e[4B"
+  - delay: 5011
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  318.9MB/547.7MB\r\e[4B"
+  - delay: 5600
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  319.5MB/547.7MB\r\e[4B"
+  - delay: 3425
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  320.6MB/547.7MB\r\e[4B"
+  - delay: 9088
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  321.1MB/547.7MB\r\e[4B"
+  - delay: 4900
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  321.7MB/547.7MB\r\e[4B"
+  - delay: 2887
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  322.2MB/547.7MB\r\e[4B"
+  - delay: 4767
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  322.8MB/547.7MB\r\e[4B"
+  - delay: 15891
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  323.3MB/547.7MB\r\e[4B"
+  - delay: 18733
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  323.9MB/547.7MB\r\e[4B"
+  - delay: 15061
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  324.4MB/547.7MB\r\e[4B"
+  - delay: 10008
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    325MB/547.7MB\r\e[4B"
+  - delay: 4271
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  325.5MB/547.7MB\r\e[4B"
+  - delay: 8612
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  326.1MB/547.7MB\r\e[4B"
+  - delay: 10430
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  327.2MB/547.7MB\r\e[4B"
+  - delay: 3326
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  327.7MB/547.7MB\r\e[4B"
+  - delay: 9800
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  328.3MB/547.7MB\r\e[4B"
+  - delay: 3324
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  329.4MB/547.7MB\r\e[4B"
+  - delay: 4440
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  329.9MB/547.7MB\r\e[4B"
+  - delay: 9342
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  330.5MB/547.7MB\r\e[4B"
+  - delay: 3275
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    331MB/547.7MB\r\e[4B"
+  - delay: 12038
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  331.6MB/547.7MB\r\e[4B"
+  - delay: 3950
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  332.1MB/547.7MB\r\e[4B"
+  - delay: 9310
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  332.7MB/547.7MB\r\e[4B"
+  - delay: 4004
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  333.2MB/547.7MB\r\e[4B"
+  - delay: 2512
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  333.8MB/547.7MB\r\e[4B"
+  - delay: 7450
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  334.3MB/547.7MB\r\e[4B"
+  - delay: 8646
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  334.9MB/547.7MB\r\e[4B"
+  - delay: 7922
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  335.4MB/547.7MB\r\e[4B"
+  - delay: 5533
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    336MB/547.7MB\r\e[4B"
+  - delay: 8802
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  336.6MB/547.7MB\r\e[4B"
+  - delay: 6723
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  337.1MB/547.7MB\r\e[4B"
+  - delay: 10508
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  337.7MB/547.7MB\r\e[4B"
+  - delay: 6694
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  338.2MB/547.7MB\r\e[4B"
+  - delay: 8892
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  338.8MB/547.7MB\r\e[4B"
+  - delay: 10412
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  339.3MB/547.7MB\r\e[4B"
+  - delay: 6800
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  339.9MB/547.7MB\r\e[4B"
+  - delay: 11555
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  340.5MB/547.7MB\r\e[4B"
+  - delay: 5830
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    341MB/547.7MB\r\e[4B"
+  - delay: 6831
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  341.6MB/547.7MB\r\e[4B"
+  - delay: 3210
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  342.1MB/547.7MB\r\e[4B"
+  - delay: 4722
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  342.7MB/547.7MB\r\e[4B"
+  - delay: 1556
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  343.2MB/547.7MB\r\e[4B"
+  - delay: 2201
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  343.8MB/547.7MB\r\e[4B"
+  - delay: 3789
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  344.4MB/547.7MB\r\e[4B"
+  - delay: 4920
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  344.9MB/547.7MB\r\e[4B"
+  - delay: 3712
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  345.5MB/547.7MB\r\e[4B"
+  - delay: 8881
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    346MB/547.7MB\r\e[4B"
+  - delay: 5414
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  346.6MB/547.7MB\r\e[4B"
+  - delay: 7240
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  347.1MB/547.7MB\r\e[4B"
+  - delay: 2343
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  347.7MB/547.7MB\r\e[4B"
+  - delay: 7336
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  349.4MB/547.7MB\r\e[4B"
+  - delay: 6676
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  349.9MB/547.7MB\r\e[4B"
+  - delay: 7407
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  350.5MB/547.7MB\r\e[4B"
+  - delay: 3371
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    351MB/547.7MB\r\e[4B"
+  - delay: 3168
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  352.7MB/547.7MB\r\e[4B"
+  - delay: 4062
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  353.8MB/547.7MB\r\e[4B"
+  - delay: 11178
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  354.9MB/547.7MB\r\e[4B"
+  - delay: 3873
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  355.5MB/547.7MB\r\e[4B"
+  - delay: 7233
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  356.1MB/547.7MB\r\e[4B"
+  - delay: 3177
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  356.6MB/547.7MB\r\e[4B"
+  - delay: 9487
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  357.2MB/547.7MB\r\e[4B"
+  - delay: 6298
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  357.7MB/547.7MB\r\e[4B"
+  - delay: 8329
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  358.3MB/547.7MB\r\e[4B"
+  - delay: 6625
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  358.8MB/547.7MB\r\e[4B"
+  - delay: 2826
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  359.4MB/547.7MB\r\e[4B"
+  - delay: 7938
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  359.9MB/547.7MB\r\e[4B"
+  - delay: 13465
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  360.5MB/547.7MB\r\e[4B"
+  - delay: 6437
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    361MB/547.7MB\r\e[4B"
+  - delay: 7392
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  361.6MB/547.7MB\r\e[4B"
+  - delay: 5167
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  362.1MB/547.7MB\r\e[4B"
+  - delay: 8810
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  362.7MB/547.7MB\r\e[4B"
+  - delay: 8472
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  363.2MB/547.7MB\r\e[4B"
+  - delay: 5228
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  363.8MB/547.7MB\r\e[4B"
+  - delay: 5758
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  364.3MB/547.7MB\r\e[4B"
+  - delay: 7019
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  364.9MB/547.7MB\r\e[4B"
+  - delay: 9547
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  365.4MB/547.7MB\r\e[4B"
+  - delay: 5847
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    366MB/547.7MB\r\e[4B"
+  - delay: 4901
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  366.5MB/547.7MB\r\e[4B"
+  - delay: 3685
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  367.1MB/547.7MB\r\e[4B"
+  - delay: 7112
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  367.6MB/547.7MB\r\e[4B"
+  - delay: 11119
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  368.2MB/547.7MB\r\e[4B"
+  - delay: 5807
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  368.7MB/547.7MB\r\e[4B"
+  - delay: 7722
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  369.3MB/547.7MB\r\e[4B"
+  - delay: 10549
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  369.8MB/547.7MB\r\e[4B"
+  - delay: 5778
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  370.4MB/547.7MB\r\e[4B"
+  - delay: 12584
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  370.9MB/547.7MB\r\e[4B"
+  - delay: 4325
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  371.5MB/547.7MB\r\e[4B"
+  - delay: 6571
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    372MB/547.7MB\r\e[4B"
+  - delay: 10113
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  372.6MB/547.7MB\r\e[4B"
+  - delay: 4405
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  373.2MB/547.7MB\r\e[4B"
+  - delay: 5577
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  373.7MB/547.7MB\r\e[4B"
+  - delay: 6993
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  374.3MB/547.7MB\r\e[4B"
+  - delay: 10786
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  374.8MB/547.7MB\r\e[4B"
+  - delay: 7141
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  375.4MB/547.7MB\r\e[4B"
+  - delay: 5199
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  375.9MB/547.7MB\r\e[4B"
+  - delay: 8390
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  376.5MB/547.7MB\r\e[4B"
+  - delay: 4639
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    377MB/547.7MB\r\e[4B"
+  - delay: 2874
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  377.6MB/547.7MB\r\e[4B"
+  - delay: 13457
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  378.1MB/547.7MB\r\e[4B"
+  - delay: 5159
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  378.6MB/547.7MB\r\e[4B"
+  - delay: 7552
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  379.2MB/547.7MB\r\e[4B"
+  - delay: 3246
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  379.7MB/547.7MB\r\e[4B"
+  - delay: 6790
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  380.3MB/547.7MB\r\e[4B"
+  - delay: 6860
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  380.8MB/547.7MB\r\e[4B"
+  - delay: 7078
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  381.3MB/547.7MB\r\e[4B"
+  - delay: 3995
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  381.9MB/547.7MB\r\e[4B"
+  - delay: 2743
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  382.4MB/547.7MB\r\e[4B"
+  - delay: 5589
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  382.9MB/547.7MB\r\e[4B"
+  - delay: 4069
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  383.5MB/547.7MB\r\e[4B"
+  - delay: 3384
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    384MB/547.7MB\r\e[4B"
+  - delay: 1836
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  384.6MB/547.7MB\r\e[4B"
+  - delay: 4480
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  385.1MB/547.7MB\r\e[4B"
+  - delay: 3838
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  385.6MB/547.7MB\r\e[4B"
+  - delay: 9617
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  386.1MB/547.7MB\r\e[4B"
+  - delay: 5528
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  386.7MB/547.7MB\r\e[4B"
+  - delay: 3227
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  387.2MB/547.7MB\r\e[4B"
+  - delay: 6698
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  387.8MB/547.7MB\r\e[4B"
+  - delay: 6761
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  388.3MB/547.7MB\r\e[4B"
+  - delay: 3253
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  388.8MB/547.7MB\r\e[4B"
+  - delay: 2422
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  389.4MB/547.7MB\r\e[4B"
+  - delay: 3383
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  389.9MB/547.7MB\r\e[4B"
+  - delay: 3414
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  390.4MB/547.7MB\r\e[4B"
+  - delay: 3607
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  391.5MB/547.7MB\r\e[4B"
+  - delay: 3303
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  392.6MB/547.7MB\r\e[4B"
+  - delay: 8933
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  393.1MB/547.7MB\r\e[4B"
+  - delay: 4833
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  393.6MB/547.7MB\r\e[4B"
+  - delay: 8135
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  394.1MB/547.7MB\r\e[4B"
+  - delay: 3087
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  394.7MB/547.7MB\r\e[4B"
+  - delay: 5582
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  395.2MB/547.7MB\r\e[4B"
+  - delay: 5065
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  395.8MB/547.7MB\r\e[4B"
+  - delay: 4120
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  396.3MB/547.7MB\r\e[4B"
+  - delay: 4608
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  396.8MB/547.7MB\r\e[4B"
+  - delay: 3308
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  397.3MB/547.7MB\r\e[4B"
+  - delay: 4005
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  397.9MB/547.7MB\r\e[4B"
+  - delay: 4082
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  398.4MB/547.7MB\r\e[4B"
+  - delay: 5965
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    399MB/547.7MB\r\e[4B"
+  - delay: 4220
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  399.5MB/547.7MB\r\e[4B"
+  - delay: 4267
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    400MB/547.7MB\r\e[4B"
+  - delay: 7951
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  400.6MB/547.7MB\r\e[4B"
+  - delay: 2722
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  401.1MB/547.7MB\r\e[4B"
+  - delay: 2354
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  401.6MB/547.7MB\r\e[4B"
+  - delay: 7341
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  402.2MB/547.7MB\r\e[4B"
+  - delay: 4347
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  402.7MB/547.7MB\r\e[4B"
+  - delay: 4105
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  403.2MB/547.7MB\r\e[4B"
+  - delay: 9118
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  403.7MB/547.7MB\r\e[4B"
+  - delay: 4567
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  404.8MB/547.7MB\r\e[4B"
+  - delay: 4315
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  405.4MB/547.7MB\r\e[4B"
+  - delay: 17478
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  406.4MB/547.7MB\r\e[4B"
+  - delay: 7344
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    407MB/547.7MB\r\e[4B"
+  - delay: 8926
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    408MB/547.7MB\r\e[4B"
+  - delay: 10045
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  408.6MB/547.7MB\r\e[4B"
+  - delay: 4419
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  409.1MB/547.7MB\r\e[4B"
+  - delay: 169
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  410.7MB/547.7MB\r\e[4B"
+  - delay: 12913
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  411.3MB/547.7MB\r\e[4B"
+  - delay: 17021
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  411.8MB/547.7MB\r\e[4B"
+  - delay: 5556
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  412.3MB/547.7MB\r\e[4B"
+  - delay: 2429
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  412.9MB/547.7MB\r\e[4B"
+  - delay: 8497
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  413.5MB/547.7MB\r\e[4B"
+  - delay: 3460
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    414MB/547.7MB\r\e[4B"
+  - delay: 6356
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  414.6MB/547.7MB\r\e[4B"
+  - delay: 9039
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  415.1MB/547.7MB\r\e[4B"
+  - delay: 3265
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  415.7MB/547.7MB\r\e[4B"
+  - delay: 4274
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  416.2MB/547.7MB\r\e[4B"
+  - delay: 8906
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  416.8MB/547.7MB\r\e[4B"
+  - delay: 7798
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  417.3MB/547.7MB\r\e[4B"
+  - delay: 4621
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  417.8MB/547.7MB\r\e[4B"
+  - delay: 4893
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  418.4MB/547.7MB\r\e[4B"
+  - delay: 4188
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    419MB/547.7MB\r\e[4B"
+  - delay: 4223
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  419.5MB/547.7MB\r\e[4B"
+  - delay: 3355
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  420.1MB/547.7MB\r\e[4B"
+  - delay: 3062
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  420.6MB/547.7MB\r\e[4B"
+  - delay: 4962
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  421.2MB/547.7MB\r\e[4B"
+  - delay: 2880
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  421.7MB/547.7MB\r\e[4B"
+  - delay: 2711
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  422.3MB/547.7MB\r\e[4B"
+  - delay: 3076
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  422.9MB/547.7MB\r\e[4B"
+  - delay: 5049
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  423.4MB/547.7MB\r\e[4B"
+  - delay: 2057
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  423.9MB/547.7MB\r\e[4B"
+  - delay: 7171
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  424.5MB/547.7MB\r\e[4B"
+  - delay: 9987
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  425.1MB/547.7MB\r\e[4B"
+  - delay: 6004
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  425.6MB/547.7MB\r\e[4B"
+  - delay: 4587
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  426.1MB/547.7MB\r\e[4B"
+  - delay: 11251
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  426.7MB/547.7MB\r\e[4B"
+  - delay: 6867
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  427.3MB/547.7MB\r\e[4B"
+  - delay: 14248
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  427.8MB/547.7MB\r\e[4B"
+  - delay: 5514
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  428.4MB/547.7MB\r\e[4B"
+  - delay: 7391
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  428.9MB/547.7MB\r\e[4B"
+  - delay: 6382
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  429.4MB/547.7MB\r\e[4B"
+  - delay: 4609
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    430MB/547.7MB\r\e[4B"
+  - delay: 6870
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  430.5MB/547.7MB\r\e[4B"
+  - delay: 7987
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  431.1MB/547.7MB\r\e[4B"
+  - delay: 7127
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  431.6MB/547.7MB\r\e[4B"
+  - delay: 6397
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  432.2MB/547.7MB\r\e[4B"
+  - delay: 2702
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  432.7MB/547.7MB\r\e[4B"
+  - delay: 7407
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  433.3MB/547.7MB\r\e[4B"
+  - delay: 6314
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  433.8MB/547.7MB\r\e[4B"
+  - delay: 4638
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  434.3MB/547.7MB\r\e[4B"
+  - delay: 3732
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  434.8MB/547.7MB\r\e[4B"
+  - delay: 8625
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  435.4MB/547.7MB\r\e[4B"
+  - delay: 11860
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    436MB/547.7MB\r\e[4B"
+  - delay: 8754
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  436.5MB/547.7MB\r\e[4B"
+  - delay: 10458
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  437.1MB/547.7MB\r\e[4B"
+  - delay: 8527
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  437.6MB/547.7MB\r\e[4B"
+  - delay: 3453
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  438.2MB/547.7MB\r\e[4B"
+  - delay: 6611
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  438.7MB/547.7MB\r\e[4B"
+  - delay: 2708
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  439.3MB/547.7MB\r\e[4B"
+  - delay: 2487
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  439.9MB/547.7MB\r\e[4B"
+  - delay: 3732
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  440.4MB/547.7MB\r\e[4B"
+  - delay: 4480
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    441MB/547.7MB\r\e[4B"
+  - delay: 16152
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  441.5MB/547.7MB\r\e[4B"
+  - delay: 6904
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  442.1MB/547.7MB\r\e[4B"
+  - delay: 4934
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  442.6MB/547.7MB\r\e[4B"
+  - delay: 4746
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  443.2MB/547.7MB\r\e[4B"
+  - delay: 6604
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  443.8MB/547.7MB\r\e[4B"
+  - delay: 3079
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  444.3MB/547.7MB\r\e[4B"
+  - delay: 10011
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  444.9MB/547.7MB\r\e[4B"
+  - delay: 7785
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  445.4MB/547.7MB\r\e[4B"
+  - delay: 6786
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    446MB/547.7MB\r\e[4B"
+  - delay: 3501
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  446.5MB/547.7MB\r\e[4B"
+  - delay: 8254
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  447.1MB/547.7MB\r\e[4B"
+  - delay: 8588
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  447.7MB/547.7MB\r\e[4B"
+  - delay: 4112
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  448.2MB/547.7MB\r\e[4B"
+  - delay: 7358
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  448.8MB/547.7MB\r\e[4B"
+  - delay: 4404
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  449.3MB/547.7MB\r\e[4B"
+  - delay: 4568
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  449.9MB/547.7MB\r\e[4B"
+  - delay: 2683
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  450.4MB/547.7MB\r\e[4B"
+  - delay: 8794
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    451MB/547.7MB\r\e[4B"
+  - delay: 4082
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  451.6MB/547.7MB\r\e[4B"
+  - delay: 8298
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  452.1MB/547.7MB\r\e[4B"
+  - delay: 6740
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  452.7MB/547.7MB\r\e[4B"
+  - delay: 7757
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  453.2MB/547.7MB\r\e[4B"
+  - delay: 3583
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  453.8MB/547.7MB\r\e[4B"
+  - delay: 3413
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  454.3MB/547.7MB\r\e[4B"
+  - delay: 3798
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  454.9MB/547.7MB\r\e[4B"
+  - delay: 7656
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  455.5MB/547.7MB\r\e[4B"
+  - delay: 2060
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    456MB/547.7MB\r\e[4B"
+  - delay: 7370
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  456.6MB/547.7MB\r\e[4B"
+  - delay: 4673
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  457.1MB/547.7MB\r\e[4B"
+  - delay: 9478
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  457.7MB/547.7MB\r\e[4B"
+  - delay: 4521
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  458.2MB/547.7MB\r\e[4B"
+  - delay: 8272
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  458.8MB/547.7MB\r\e[4B"
+  - delay: 3123
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  459.4MB/547.7MB\r\e[4B"
+  - delay: 2605
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  459.9MB/547.7MB\r\e[4B"
+  - delay: 3012
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  460.5MB/547.7MB\r\e[4B"
+  - delay: 9151
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    461MB/547.7MB\r\e[4B"
+  - delay: 3646
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  461.6MB/547.7MB\r\e[4B"
+  - delay: 4496
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  462.1MB/547.7MB\r\e[4B"
+  - delay: 5152
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  462.7MB/547.7MB\r\e[4B"
+  - delay: 4994
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  463.2MB/547.7MB\r\e[4B"
+  - delay: 4958
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  463.8MB/547.7MB\r\e[4B"
+  - delay: 13448
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  464.3MB/547.7MB\r\e[4B"
+  - delay: 5276
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  464.9MB/547.7MB\r\e[4B"
+  - delay: 12281
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  465.4MB/547.7MB\r\e[4B"
+  - delay: 2381
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    466MB/547.7MB\r\e[4B"
+  - delay: 3671
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  466.5MB/547.7MB\r\e[4B"
+  - delay: 6928
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  467.1MB/547.7MB\r\e[4B"
+  - delay: 8210
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  467.6MB/547.7MB\r\e[4B"
+  - delay: 7587
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  468.2MB/547.7MB\r\e[4B"
+  - delay: 10066
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  468.7MB/547.7MB\r\e[4B"
+  - delay: 7319
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  469.3MB/547.7MB\r\e[4B"
+  - delay: 3272
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  469.8MB/547.7MB\r\e[4B"
+  - delay: 9502
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  470.4MB/547.7MB\r\e[4B"
+  - delay: 2962
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  470.9MB/547.7MB\r\e[4B"
+  - delay: 5737
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  471.5MB/547.7MB\r\e[4B"
+  - delay: 7154
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    472MB/547.7MB\r\e[4B"
+  - delay: 5974
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  472.6MB/547.7MB\r\e[4B"
+  - delay: 3971
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  473.2MB/547.7MB\r\e[4B"
+  - delay: 6550
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  473.7MB/547.7MB\r\e[4B"
+  - delay: 5601
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  474.2MB/547.7MB\r\e[4B"
+  - delay: 5587
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  474.8MB/547.7MB\r\e[4B"
+  - delay: 13029
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  475.3MB/547.7MB\r\e[4B"
+  - delay: 2673
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  475.9MB/547.7MB\r\e[4B"
+  - delay: 3218
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  476.4MB/547.7MB\r\e[4B"
+  - delay: 2544
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    478MB/547.7MB\r\e[4B"
+  - delay: 12095
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  478.6MB/547.7MB\r\e[4B"
+  - delay: 9403
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  479.2MB/547.7MB\r\e[4B"
+  - delay: 1042
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  479.7MB/547.7MB\r\e[4B"
+  - delay: 3336
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  480.2MB/547.7MB\r\e[4B"
+  - delay: 4215
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  481.4MB/547.7MB\r\e[4B"
+  - delay: 6413
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  481.9MB/547.7MB\r\e[4B"
+  - delay: 5762
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  482.5MB/547.7MB\r\e[4B"
+  - delay: 3828
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    483MB/547.7MB\r\e[4B"
+  - delay: 5212
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  483.6MB/547.7MB\r\e[4B"
+  - delay: 3075
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  484.1MB/547.7MB\r\e[4B"
+  - delay: 7340
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  484.7MB/547.7MB\r\e[4B"
+  - delay: 4748
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  485.3MB/547.7MB\r\e[4B"
+  - delay: 4415
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  485.8MB/547.7MB\r\e[4B"
+  - delay: 10558
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  486.4MB/547.7MB\r\e[4B"
+  - delay: 6637
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  486.9MB/547.7MB\r\e[4B"
+  - delay: 7013
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  487.4MB/547.7MB\r\e[4B"
+  - delay: 8465
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    488MB/547.7MB\r\e[4B"
+  - delay: 7843
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  488.5MB/547.7MB\r\e[4B"
+  - delay: 3665
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    489MB/547.7MB\r\e[4B"
+  - delay: 2370
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  489.6MB/547.7MB\r\e[4B"
+  - delay: 8571
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  490.1MB/547.7MB\r\e[4B"
+  - delay: 8463
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  490.7MB/547.7MB\r\e[4B"
+  - delay: 7918
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  491.2MB/547.7MB\r\e[4B"
+  - delay: 3548
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  491.8MB/547.7MB\r\e[4B"
+  - delay: 6835
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  492.3MB/547.7MB\r\e[4B"
+  - delay: 7413
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  492.9MB/547.7MB\r\e[4B"
+  - delay: 3357
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  493.4MB/547.7MB\r\e[4B"
+  - delay: 3817
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    494MB/547.7MB\r\e[4B"
+  - delay: 3852
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  495.1MB/547.7MB\r\e[4B"
+  - delay: 1708
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  495.6MB/547.7MB\r\e[4B"
+  - delay: 2623
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  496.2MB/547.7MB\r\e[4B"
+  - delay: 2456
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  496.7MB/547.7MB\r\e[4B"
+  - delay: 3386
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  497.2MB/547.7MB\r\e[4B"
+  - delay: 3069
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  497.8MB/547.7MB\r\e[4B"
+  - delay: 2725
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  498.3MB/547.7MB\r\e[4B"
+  - delay: 3328
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  498.9MB/547.7MB\r\e[4B"
+  - delay: 3193
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  499.4MB/547.7MB\r\e[4B"
+  - delay: 2917
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  499.9MB/547.7MB\r\e[4B"
+  - delay: 8197
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  501.1MB/547.7MB\r\e[4B"
+  - delay: 2285
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  501.6MB/547.7MB\r\e[4B"
+  - delay: 1889
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  502.2MB/547.7MB\r\e[4B"
+  - delay: 2328
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  502.7MB/547.7MB\r\e[4B"
+  - delay: 2419
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  503.3MB/547.7MB\r\e[4B"
+  - delay: 4542
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  503.8MB/547.7MB\r\e[4B"
+  - delay: 2196
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  504.4MB/547.7MB\r\e[4B"
+  - delay: 3156
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  505.5MB/547.7MB\r\e[4B"
+  - delay: 3812
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    506MB/547.7MB\r\e[4B"
+  - delay: 6733
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  506.6MB/547.7MB\r\e[4B"
+  - delay: 3535
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  507.7MB/547.7MB\r\e[4B"
+  - delay: 3993
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  508.3MB/547.7MB\r\e[4B"
+  - delay: 7008
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  508.8MB/547.7MB\r\e[4B"
+  - delay: 5176
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  509.3MB/547.7MB\r\e[4B"
+  - delay: 3254
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  509.9MB/547.7MB\r\e[4B"
+  - delay: 3617
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  510.4MB/547.7MB\r\e[4B"
+  - delay: 4464
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  511.5MB/547.7MB\r\e[4B"
+  - delay: 4207
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    512MB/547.7MB\r\e[4B"
+  - delay: 7744
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  512.6MB/547.7MB\r\e[4B"
+  - delay: 4089
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  513.1MB/547.7MB\r\e[4B"
+  - delay: 3403
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  513.6MB/547.7MB\r\e[4B"
+  - delay: 4158
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  514.7MB/547.7MB\r\e[4B"
+  - delay: 240
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  515.2MB/547.7MB\r\e[4B"
+  - delay: 3674
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  515.8MB/547.7MB\r\e[4B"
+  - delay: 3015
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  516.3MB/547.7MB\r\e[4B"
+  - delay: 3422
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  516.8MB/547.7MB\r\e[4B"
+  - delay: 125
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  517.4MB/547.7MB\r\e[4B"
+  - delay: 3042
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  517.9MB/547.7MB\r\e[4B"
+  - delay: 109
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  518.4MB/547.7MB\r\e[4B"
+  - delay: 4815
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    519MB/547.7MB\r\e[4B"
+  - delay: 4239
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  519.5MB/547.7MB\r\e[4B"
+  - delay: 3167
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  520.6MB/547.7MB\r\e[4B"
+  - delay: 5972
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  521.6MB/547.7MB\r\e[4B"
+  - delay: 4483
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  522.1MB/547.7MB\r\e[4B"
+  - delay: 5191
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  522.7MB/547.7MB\r\e[4B"
+  - delay: 3636
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  523.2MB/547.7MB\r\e[4B"
+  - delay: 125
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  523.7MB/547.7MB\r\e[4B"
+  - delay: 1564
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  524.3MB/547.7MB\r\e[4B"
+  - delay: 2354
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  524.8MB/547.7MB\r\e[4B"
+  - delay: 142
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  525.3MB/547.7MB\r\e[4B"
+  - delay: 4026
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  525.9MB/547.7MB\r\e[4B"
+  - delay: 4315
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  526.4MB/547.7MB\r\e[4B"
+  - delay: 9605
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  526.9MB/547.7MB\r\e[4B"
+  - delay: 2914
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  527.5MB/547.7MB\r\e[4B"
+  - delay: 3060
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    528MB/547.7MB\r\e[4B"
+  - delay: 7255
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  528.6MB/547.7MB\r\e[4B"
+  - delay: 4262
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  529.6MB/547.7MB\r\e[4B"
+  - delay: 137
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  530.1MB/547.7MB\r\e[4B"
+  - delay: 3967
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  530.7MB/547.7MB\r\e[4B"
+  - delay: 140
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  531.7MB/547.7MB\r\e[4B"
+  - delay: 6737
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  532.3MB/547.7MB\r\e[4B"
+  - delay: 3713
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  533.4MB/547.7MB\r\e[4B"
+  - delay: 4097
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  533.9MB/547.7MB\r\e[4B"
+  - delay: 5524
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    535MB/547.7MB\r\e[4B"
+  - delay: 5302
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  535.6MB/547.7MB\r\e[4B"
+  - delay: 4751
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  536.1MB/547.7MB\r\e[4B"
+  - delay: 4727
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  536.6MB/547.7MB\r\e[4B"
+  - delay: 4583
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  537.2MB/547.7MB\r\e[4B"
+  - delay: 5119
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  537.7MB/547.7MB\r\e[4B"
+  - delay: 3030
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  538.3MB/547.7MB\r\e[4B"
+  - delay: 3407
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  538.8MB/547.7MB\r\e[4B"
+  - delay: 3375
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  539.3MB/547.7MB\r\e[4B"
+  - delay: 3593
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  539.9MB/547.7MB\r\e[4B"
+  - delay: 2973
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  540.4MB/547.7MB\r\e[4B"
+  - delay: 3067
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  541.5MB/547.7MB\r\e[4B"
+  - delay: 3234
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    542MB/547.7MB\r\e[4B"
+  - delay: 3283
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  542.6MB/547.7MB\r\e[4B"
+  - delay: 2627
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  543.7MB/547.7MB\r\e[4B"
+  - delay: 5026
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  544.2MB/547.7MB\r\e[4B"
+  - delay: 3450
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  544.7MB/547.7MB\r\e[4B"
+  - delay: 5128
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  545.3MB/547.7MB\r\e[4B"
+  - delay: 4201
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  545.8MB/547.7MB\r\e[4B"
+  - delay: 3084
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  546.3MB/547.7MB\r\e[4B"
+  - delay: 4749
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  546.9MB/547.7MB\r\e[4B"
+  - delay: 2442
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    548MB\r\e[4B"
+  - delay: 4981
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  549.1MB\r\e[4B"
+  - delay: 5383
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  549.6MB\r\e[4B"
+  - delay: 3408
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  550.2MB\r\e[4B"
+  - delay: 3689
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  550.7MB\r\e[4B"
+  - delay: 3376
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  551.3MB\r\e[4B"
+  - delay: 4702
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  551.8MB\r\e[4B"
+  - delay: 4472
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  552.4MB\r\e[4B"
+  - delay: 4731
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  552.9MB\r\e[4B"
+  - delay: 3600
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  553.9MB\r\e[4B"
+  - delay: 2138
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  554.5MB\r\e[4B"
+  - delay: 2110
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    555MB\r\e[4B"
+  - delay: 2797
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  555.6MB\r\e[4B"
+  - delay: 3563
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  556.7MB\r\e[4B"
+  - delay: 4079
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  557.2MB\r\e[4B"
+  - delay: 2843
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  557.7MB\r\e[4B"
+  - delay: 4449
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  558.3MB\r\e[4B"
+  - delay: 4777
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  558.8MB\r\e[4B"
+  - delay: 4260
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  559.3MB\r\e[4B"
+  - delay: 122
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  559.9MB\r\e[4B"
+  - delay: 4666
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  560.4MB\r\e[4B"
+  - delay: 6633
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  561.5MB\r\e[4B"
+  - delay: 5296
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    562MB\r\e[4B"
+  - delay: 4335
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing  562.5MB\r\e[4B"
+  - delay: 81
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushing    563MB\r\e[4B"
+  - delay: 16621
+    content: "\e[4A\e[2K\r3cccba8fe4a0: Pushed \r\e[4B"
+  - delay: 8342
+    content: "v3.2.0: digest: sha256:b0696530054328cb53bc053d46c8eca1b04dc26df126e3da76346bfab19e07bd size: 1156\r\n"
+  - delay: 9
+    content: "\e]0;vcx@vcx-virtual-machine:~/free5gc-kube-ovn/images/UERANSIM\a\e]7;file://vcx-virtual-machine/home/vcx/free5gc-kube-ovn/images/UERANSIM\a(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn/images/UERANSIM\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn/images/UERANSIM\e[00m$ "
+  - delay: 2992797
+    content: "logout\r\n"
