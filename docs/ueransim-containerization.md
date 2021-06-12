@@ -68,9 +68,11 @@ WORKDIR /UERANSIM
 ```bash
 $ docker build -t black842679513/free5gc-ueransim:v3.2.0 . --no-cache
 ```
+![image alt](https://media.githubusercontent.com/media/p76081158/free5gc-kube-ovn/assets/docs/terminalizer/gif/ueransim-image-build.gif)
 
 ### Push to Dockerhub
 
 ```bash
 $ docker push black842679513/free5gc-ueransim:v3.2.0
 ```
+![image alt](https://media.githubusercontent.com/media/p76081158/free5gc-kube-ovn/assets/docs/terminalizer/gif/ueransim-image-push.gif)
