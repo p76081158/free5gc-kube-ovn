@@ -1,0 +1,197 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/vcx/test/free5gc-kube-ovn
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 102
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 30
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 1629
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/test/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/test/free5gc-kube-ovn\e[00m$ "
+  - delay: 3420
+    content: "curl -s https://packagecloud.io/install/reposit\rtori"
+  - delay: 5
+    content: es/github/git-lfs/script.deb.sh | sudo bash
+  - delay: 1978
+    content: "\r\n"
+  - delay: 12
+    content: '[sudo] password for vcx: '
+  - delay: 3263
+    content: "\r\n"
+  - delay: 12
+    content: "Detected operating system as Ubuntu/bionic.\r\nChecking for curl...\r\nDetected curl...\r\nChecking for gpg...\r\nDetected gpg...\r\nRunning apt-get update... "
+  - delay: 5549
+    content: "done.\r\nInstalling apt-transport-https... "
+  - delay: 1015
+    content: "done.\r\nInstalling /etc/apt/sources.list.d/github_git-lfs.list..."
+  - delay: 690
+    content: "done.\r\nImporting packagecloud gpg key... "
+  - delay: 1026
+    content: "done.\r\nRunning apt-get update... "
+  - delay: 5201
+    content: "done.\r\n\r\nThe repository is setup! You can now install packages.\r\n(base) \e]0;vcx@vcx-virtual-machine: ~/test/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/test/free5gc-kube-ovn\e[00m$ "
+  - delay: 4014
+    content: sudo apt-get install git-lfs
+  - delay: 1812
+    content: "\r\n"
+  - delay: 57
+    content: "\rReading package lists... 0%\r"
+  - delay: 37
+    content: "\rReading package lists... 100%\r\rReading package lists... Done\r\r\n"
+  - delay: 10
+    content: "\rBuilding dependency tree... 0%\r\rBuilding dependency tree... 0%\r"
+  - delay: 44
+    content: "\rBuilding dependency tree... 50%\r\rBuilding dependency tree... 50%\r"
+  - delay: 356
+    content: "\rBuilding dependency tree       \r\r\n\rReading state information... 0%\r\rReading state information... 0%\r\rReading state information... Done\r\r\n"
+  - delay: 357
+    content: "The following packages were automatically installed and are no longer required:\r\n  cmake-data gyp javascript-common libhttp-parser2.7.1 libjs-async libjs-inherits libjs-jquery\r\n  libjs-node-uuid libjs-underscore libjsoncpp1 librhash0 libssl1.0-dev libuv1 libuv1-dev\r\n  linux-hwe-5.4-headers-5.4.0-53 linux-hwe-5.4-headers-5.4.0-56 linux-hwe-5.4-headers-5.4.0-58\r\n  linux-hwe-5.4-headers-5.4.0-59 linux-hwe-5.4-headers-5.4.0-60 linux-hwe-5.4-headers-5.4.0-62\r\n  linux-hwe-5.4-headers-5.4.0-65 node-abbrev node-ansi node-ansi-color-table node-archy node-async\r\n  node-balanced-match node-block-stream node-brace-expansion node-builtin-modules\r\n  node-combined-stream node-concat-map node-cookie-jar node-delayed-stream node-forever-agent\r\n  node-form-data node-fs.realpath node-fstream node-fstream-ignore node-github-url-from-git\r\n  node-glob node-graceful-fs node-gyp node-hosted-git-info node-inflight node-inherits node-ini\r\n  node-is-builtin-module node-isexe node-json-stringify-safe node-lockfile node-lru-cache node-mime\r\n  node-minimatch node-mkdirp node-mute-stream node-node-uuid node-nopt node-normalize-package-data\r\n  node-npmlog node-once node-osenv node-path-is-absolute node-pseudomap node-qs node-read\r\n  node-read-package-json node-request node-retry node-rimraf node-semver node-sha node-slide\r\n  node-spdx-correct node-spdx-expression-parse node-spdx-license-ids node-tar node-tunnel-agent\r\n  node-underscore node-validate-npm-package-license node-which node-wrappy node-yallist nodejs\r\n  nodejs-dev nodejs-doc python-pkg-resources\r\nUse 'sudo apt autoremove' to remove them.\r\n"
+  - delay: 70
+    content: "The following NEW packages will be installed:\r\n  git-lfs\r\n"
+  - delay: 15
+    content: "0 upgraded, 1 newly installed, 0 to remove and 245 not upgraded.\r\nNeed to get 6229 kB of archives.\r\nAfter this operation, 14.5 MB of additional disk space will be used.\r\n"
+  - delay: 6
+    content: "\r0% [Working]"
+  - delay: 500
+    content: "\r0% [Waiting for headers]"
+  - delay: 143
+    content: "\r                        \r0% [Working]"
+  - delay: 91
+    content: "\r            \rGet:1 https://packagecloud.io/github/git-lfs/ubuntu bionic/main amd64 git-lfs amd64 2.13.3 [6229 kB]\r\n\r0% [1 git-lfs 0 B/6229 kB 0%]"
+  - delay: 141
+    content: "\r                             \r100% [Working]\r              \rFetched 6229 kB in 1s (7116 kB/s)\r\n"
+  - delay: 1498
+    content: "Selecting previously unselected package git-lfs.\r\n(Reading database ... \r"
+  - delay: 8
+    content: "(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r"
+  - delay: 43
+    content: "(Reading database ... 55%\r"
+  - delay: 31
+    content: "(Reading database ... 60%\r"
+  - delay: 7
+    content: "(Reading database ... 65%\r"
+  - delay: 9
+    content: "(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r"
+  - delay: 5
+    content: "(Reading database ... 90%\r"
+  - delay: 8
+    content: "(Reading database ... 95%\r"
+  - delay: 31
+    content: "(Reading database ... 100%\r(Reading database ... 349375 files and directories currently installed.)\r\n"
+  - delay: 18
+    content: "Preparing to unpack .../git-lfs_2.13.3_amd64.deb ...\r\nUnpacking git-lfs (2.13.3) ...\r\n"
+  - delay: 736
+    content: "Setting up git-lfs (2.13.3) ...\r\n"
+  - delay: 26
+    content: "Git LFS initialized.\r\n"
+  - delay: 5
+    content: "Processing triggers for man-db (2.8.3-2ubuntu0.1) ...\r\n"
+  - delay: 4516
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/test/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/test/free5gc-kube-ovn\e[00m$ "
+  - delay: 12383
+    content: "logout\r\n"

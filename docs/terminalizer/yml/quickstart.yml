@@ -1,0 +1,561 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/vcx/free5gc-kube-ovn
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 102
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 28
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 5757
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
+  - delay: 3149
+    content: s
+  - delay: 110
+    content: u
+  - delay: 594
+    content: d
+  - delay: 139
+    content: o
+  - delay: 135
+    content: ' '
+  - delay: 981
+    content: .
+  - delay: 262
+    content: /
+  - delay: 674
+    content: q
+  - delay: 26
+    content: 'uickstart.sh '
+  - delay: 1712
+    content: "\r\n"
+  - delay: 83
+    content: '[sudo] password for vcx: '
+  - delay: 3547
+    content: "\r\n"
+  - delay: 23
+    content: "[Initial 0] Create kubernetes cluster\r\n"
+  - delay: 4031
+    content: "I0610 12:38:29.353957    5285 version.go:252] remote version is much newer: v1.21.1; falling back to: stable-1.19\r\n"
+  - delay: 398
+    content: "W0610 12:38:29.751610    5285 configset.go:348] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io]\r\n"
+  - delay: 32
+    content: "[init] Using Kubernetes version: v1.19.11\r\n[preflight] Running pre-flight checks\r\n"
+  - delay: 5874
+    content: "\t[WARNING IsDockerSystemdCheck]: detected \"cgroupfs\" as the Docker cgroup driver. The recommended driver is \"systemd\". Please follow the guide at https://kubernetes.io/docs/setup/cri/\r\n"
+  - delay: 5376
+    content: "[preflight] Pulling images required for setting up a Kubernetes cluster\r\n[preflight] This might take a minute or two, depending on the speed of your internet connection\r\n[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'\r\n"
+  - delay: 469
+    content: "[certs] Using certificateDir folder \"/etc/kubernetes/pki\"\r\n"
+  - delay: 363
+    content: "[certs] Generating \"ca\" certificate and key\r\n"
+  - delay: 325
+    content: "[certs] Generating \"apiserver\" certificate and key\r\n[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local vcx-virtual-machine] and IPs [10.96.0.1 140.116.247.67]\r\n"
+  - delay: 437
+    content: "[certs] Generating \"apiserver-kubelet-client\" certificate and key\r\n"
+  - delay: 295
+    content: "[certs] Generating \"front-proxy-ca\" certificate and key\r\n"
+  - delay: 335
+    content: "[certs] Generating \"front-proxy-client\" certificate and key\r\n"
+  - delay: 210
+    content: "[certs] Generating \"etcd/ca\" certificate and key\r\n"
+  - delay: 199
+    content: "[certs] Generating \"etcd/server\" certificate and key\r\n[certs] etcd/server serving cert is signed for DNS names [localhost vcx-virtual-machine] and IPs [140.116.247.67 127.0.0.1 ::1]\r\n"
+  - delay: 313
+    content: "[certs] Generating \"etcd/peer\" certificate and key\r\n[certs] etcd/peer serving cert is signed for DNS names [localhost vcx-virtual-machine] and IPs [140.116.247.67 127.0.0.1 ::1]\r\n"
+  - delay: 412
+    content: "[certs] Generating \"etcd/healthcheck-client\" certificate and key\r\n"
+  - delay: 272
+    content: "[certs] Generating \"apiserver-etcd-client\" certificate and key\r\n"
+  - delay: 336
+    content: "[certs] Generating \"sa\" key and public key\r\n[kubeconfig] Using kubeconfig folder \"/etc/kubernetes\"\r\n"
+  - delay: 153
+    content: "[kubeconfig] Writing \"admin.conf\" kubeconfig file\r\n"
+  - delay: 78
+    content: "[kubeconfig] Writing \"kubelet.conf\" kubeconfig file\r\n"
+  - delay: 185
+    content: "[kubeconfig] Writing \"controller-manager.conf\" kubeconfig file\r\n"
+  - delay: 300
+    content: "[kubeconfig] Writing \"scheduler.conf\" kubeconfig file\r\n"
+  - delay: 32
+    content: "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"\r\n"
+  - delay: 49
+    content: "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"\r\n[kubelet-start] Starting the kubelet\r\n"
+  - delay: 177
+    content: "[control-plane] Using manifest folder \"/etc/kubernetes/manifests\"\r\n[control-plane] Creating static Pod manifest for \"kube-apiserver\"\r\n"
+  - delay: 27
+    content: "[control-plane] Creating static Pod manifest for \"kube-controller-manager\"\r\n[control-plane] Creating static Pod manifest for \"kube-scheduler\"\r\n"
+  - delay: 37
+    content: "[etcd] Creating static Pod manifest for local etcd in \"/etc/kubernetes/manifests\"\r\n"
+  - delay: 47
+    content: "[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory \"/etc/kubernetes/manifests\". This can take up to 4m0s\r\n"
+  - delay: 27012
+    content: "[apiclient] All control plane components are healthy after 27.010414 seconds\r\n[upload-config] Storing the configuration used in ConfigMap \"kubeadm-config\" in the \"kube-system\" Namespace\r\n"
+  - delay: 23
+    content: "[kubelet] Creating a ConfigMap \"kubelet-config-1.19\" in namespace kube-system with the configuration for the kubelets in the cluster\r\n"
+  - delay: 532
+    content: "[upload-certs] Skipping phase. Please see --upload-certs\r\n[mark-control-plane] Marking the node vcx-virtual-machine as control-plane by adding the label \"node-role.kubernetes.io/master=''\"\r\n[mark-control-plane] Marking the node vcx-virtual-machine as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]\r\n"
+  - delay: 526
+    content: "[bootstrap-token] Using token: 8m9p0y.sh5lkp7bu0lcgksl\r\n[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles\r\n"
+  - delay: 12
+    content: "[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes\r\n"
+  - delay: 7
+    content: "[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials\r\n[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token\r\n[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster\r\n[bootstrap-token] Creating the \"cluster-info\" ConfigMap in the \"kube-public\" namespace\r\n"
+  - delay: 7
+    content: "[kubelet-finalize] Updating \"/etc/kubernetes/kubelet.conf\" to point to a rotatable kubelet client certificate and key\r\n"
+  - delay: 397
+    content: "[addons] Applied essential addon: CoreDNS\r\n"
+  - delay: 173
+    content: "[addons] Applied essential addon: kube-proxy\r\n\r\nYour Kubernetes control-plane has initialized successfully!\r\n\r\nTo start using your cluster, you need to run the following as a regular user:\r\n\r\n  mkdir -p $HOME/.kube\r\n  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config\r\n  sudo chown $(id -u):$(id -g) $HOME/.kube/config\r\n\r\nYou should now deploy a pod network to the cluster.\r\nRun \"kubectl apply -f [podnetwork].yaml\" with one of the options listed at:\r\n  https://kubernetes.io/docs/concepts/cluster-administration/addons/\r\n\r\nThen you can join any number of worker nodes by running the following on each as root:\r\n\r\nkubeadm join 140.116.247.67:6443 --token 8m9p0y.sh5lkp7bu0lcgksl \\\r\n    --discovery-token-ca-cert-hash sha256:a4603a717608ca8b0d272c2be8f2e0206ba448ca7f074e6d28e998f13c2e7c1d \r\n-------------------------------\r\n\r\n[Initial 1] Set up local kubeconfig\r\n"
+  - delay: 31
+    content: 'cp: overwrite ''/home/vcx/.kube/config''? '
+  - delay: 2323
+    content: 'y'
+  - delay: 464
+    content: "\r\n"
+  - delay: 24
+    content: "-------------------------------\r\n\r\n"
+  - delay: 16
+    content: "[Step 1] Label kube-ovn-master node\r\n"
+  - delay: 822
+    content: "node/vcx-virtual-machine labeled\r\n-------------------------------\r\n\r\n[Step 2] Install OVN components\r\n"
+  - delay: 106
+    content: "Install OVN DB in 140.116.247.67,\r\n"
+  - delay: 446
+    content: "customresourcedefinition.apiextensions.k8s.io/vpc-nat-gateways.kubeovn.io created\r\n"
+  - delay: 14
+    content: "customresourcedefinition.apiextensions.k8s.io/vpcs.kubeovn.io created\r\n"
+  - delay: 7
+    content: "customresourcedefinition.apiextensions.k8s.io/ips.kubeovn.io created\r\n"
+  - delay: 13
+    content: "customresourcedefinition.apiextensions.k8s.io/subnets.kubeovn.io created\r\n"
+  - delay: 10
+    content: "customresourcedefinition.apiextensions.k8s.io/vlans.kubeovn.io created\r\n"
+  - delay: 262
+    content: "podsecuritypolicy.policy/kube-ovn created\r\n"
+  - delay: 5
+    content: "configmap/ovn-config created\r\n"
+  - delay: 8
+    content: "serviceaccount/ovn created\r\n"
+  - delay: 5
+    content: "clusterrole.rbac.authorization.k8s.io/system:ovn created\r\nclusterrolebinding.rbac.authorization.k8s.io/ovn created\r\n"
+  - delay: 13
+    content: "service/ovn-nb created\r\nservice/ovn-sb created\r\n"
+  - delay: 12
+    content: "service/kube-ovn-monitor created\r\n"
+  - delay: 22
+    content: "deployment.apps/ovn-central created\r\n"
+  - delay: 10
+    content: "daemonset.apps/ovs-ovn created\r\n"
+  - delay: 91
+    content: "Waiting for deployment spec update to be observed...\r\n"
+  - delay: 2714
+    content: "Waiting for deployment spec update to be observed...\r\n"
+  - delay: 40
+    content: "Waiting for deployment \"ovn-central\" rollout to finish: 0 out of 1 new replicas have been updated...\r\n"
+  - delay: 38
+    content: "Waiting for deployment \"ovn-central\" rollout to finish: 0 of 1 updated replicas are available...\r\n"
+  - delay: 16407
+    content: "deployment \"ovn-central\" successfully rolled out\r\n"
+  - delay: 6
+    content: "-------------------------------\r\n\r\n[Step 3] Install Kube-OVN\r\n"
+  - delay: 319
+    content: "deployment.apps/kube-ovn-controller created\r\n"
+  - delay: 14
+    content: "daemonset.apps/kube-ovn-cni created\r\n"
+  - delay: 17
+    content: "daemonset.apps/kube-ovn-pinger created\r\n"
+  - delay: 50
+    content: "service/kube-ovn-pinger created\r\n"
+  - delay: 65
+    content: "service/kube-ovn-controller created\r\n"
+  - delay: 17
+    content: "service/kube-ovn-cni created\r\n"
+  - delay: 92
+    content: "Waiting for deployment \"kube-ovn-controller\" rollout to finish: 0 of 1 updated replicas are available...\r\n"
+  - delay: 4814
+    content: "deployment \"kube-ovn-controller\" successfully rolled out\r\n"
+  - delay: 127
+    content: "Waiting for daemon set \"kube-ovn-cni\" rollout to finish: 0 of 1 updated pods are available...\r\n"
+  - delay: 22812
+    content: "daemon set \"kube-ovn-cni\" successfully rolled out\r\n-------------------------------\r\n\r\n[Step 4] Delete pod that not in host network mode\r\n"
+  - delay: 596
+    content: "pod \"coredns-f9fd979d6-crhll\" deleted\r\n"
+  - delay: 107
+    content: "pod \"coredns-f9fd979d6-d6bvh\" deleted\r\n"
+  - delay: 119
+    content: "pod \"kube-ovn-pinger-l6sj8\" deleted\r\n"
+  - delay: 1405
+    content: "Waiting for daemon set \"kube-ovn-pinger\" rollout to finish: 0 of 1 updated pods are available...\r\n"
+  - delay: 5957
+    content: "daemon set \"kube-ovn-pinger\" successfully rolled out\r\n"
+  - delay: 261
+    content: "Waiting for deployment \"coredns\" rollout to finish: 0 of 2 updated replicas are available...\r\n"
+  - delay: 4930
+    content: "Waiting for deployment \"coredns\" rollout to finish: 1 of 2 updated replicas are available...\r\n"
+  - delay: 6966
+    content: "deployment \"coredns\" successfully rolled out\r\n-------------------------------\r\n\r\n[Step 5] Install kubectl plugin\r\n"
+  - delay: 20
+    content: "-------------------------------\r\n\r\n[Step 6] Run network diagnose\r\n"
+  - delay: 302
+    content: "NAME              CREATED AT\r\nvpcs.kubeovn.io   2021-06-10T04:39:19Z\r\n"
+  - delay: 79
+    content: "NAME                          CREATED AT\r\nvpc-nat-gateways.kubeovn.io   2021-06-10T04:39:18Z\r\n"
+  - delay: 75
+    content: "NAME                 CREATED AT\r\nsubnets.kubeovn.io   2021-06-10T04:39:19Z\r\n"
+  - delay: 90
+    content: "NAME             CREATED AT\r\nips.kubeovn.io   2021-06-10T04:39:19Z\r\n"
+  - delay: 105
+    content: "NAME       TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE\r\nkube-dns   ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   74s\r\n"
+  - delay: 87
+    content: "NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE\r\nkubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   75s\r\n"
+  - delay: 98
+    content: "NAME                  STATUS   ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME\r\nvcx-virtual-machine   Ready    master   75s   v1.19.0   140.116.247.67   <none>        Ubuntu 18.04.3 LTS   5.0.0-23-generic   docker://19.3.13\r\n"
+  - delay: 416
+    content: "switch e602c721-5db0-4ca5-a0eb-87e8ce34d1d1 (ovn-default)\r\n    port coredns-f9fd979d6-d5xwd.kube-system\r\n        addresses: [\"00:00:00:26:C6:85 10.16.0.6\"]\r\n    port coredns-f9fd979d6-z9nrz.kube-system\r\n        addresses: [\"00:00:00:0B:6B:2E 10.16.0.5\"]\r\n    port kube-ovn-pinger-77nb9.kube-system\r\n        addresses: [\"00:00:00:0C:75:A3 10.16.0.7\"]\r\n    port ovn-default-ovn-cluster\r\n        type: router\r\n        addresses: [\"00:00:00:D0:1B:0C\"]\r\n        router-port: ovn-cluster-ovn-default\r\nswitch 1a3da9dd-6fd5-4d62-b217-6960420030bb (join)\r\n    port node-vcx-virtual-machine\r\n        addresses: [\"00:00:00:F0:25:3B 100.64.0.2\"]\r\n    port join-ovn-cluster\r\n        type: router\r\n        addresses: [\"00:00:00:7F:C7:66\"]\r\n        router-port: ovn-cluster-join\r\nrouter 67e11596-ce7e-4013-b5f8-2996822256d5 (ovn-cluster)\r\n    port ovn-cluster-join\r\n        mac: \"00:00:00:7F:C7:66\"\r\n        networks: [\"100.64.0.1/16\"]\r\n    port ovn-cluster-ovn-default\r\n        mac: \"00:00:00:D0:1B:0C\"\r\n        networks: [\"10.16.0.1/16\"]\r\n"
+  - delay: 425
+    content: "IPv4 Routes\r\n           140.116.247.67                100.64.0.2 dst-ip\r\n                10.16.0.5                100.64.0.2 src-ip\r\n                10.16.0.6                100.64.0.2 src-ip\r\n                10.16.0.7                100.64.0.2 src-ip\r\n"
+  - delay: 417
+    content: "UUID                                    LB                  PROTO      VIP                    IPs\r\na0c0f092-fc22-4410-8533-505a9971198b    cluster-tcp-load    tcp        10.100.34.105:6641     140.116.247.67:6641\r\n                                                            tcp        10.102.84.98:8080      10.16.0.7:8080\r\n                                                            tcp        10.103.76.138:10665    140.116.247.67:10665\r\n                                                            tcp        10.106.95.205:10660    140.116.247.67:10660\r\n                                                            tcp        10.108.216.2:10661     140.116.247.67:10661\r\n                                                            tcp        10.96.0.10:53          10.16.0.5:53,10.16.0.6:53\r\n                                                            tcp        10.96.0.10:9153        10.16.0.5:9153,10.16.0.6:9153\r\n                                                            tcp        10.96.0.1:443          140.116.247.67:6443\r\n                                                            tcp        10.99.197.254:6642     140.116.247.67:6642\r\nad495fbe-ef5c-49f2-9bf2-af14ac454d32    cluster-udp-load    udp        10.96.0.10:53          10.16.0.5:53,10.16.0.6:53\r\n"
+  - delay: 782
+    content: "Chassis \"4030fbd5-f727-498f-a0bf-11230d5c1fb6\"\r\n    hostname: vcx-virtual-machine\r\n    Encap geneve\r\n        ip: \"140.116.247.67\"\r\n        options: {csum=\"false\"}\r\n    Port_Binding node-vcx-virtual-machine\r\n    Port_Binding kube-ovn-pinger-77nb9.kube-system\r\n    Port_Binding coredns-f9fd979d6-z9nrz.kube-system\r\n    Port_Binding coredns-f9fd979d6-d5xwd.kube-system\r\n"
+  - delay: 404
+    content: "ds kube-proxy ready\r\n"
+  - delay: 391
+    content: "deployment ovn-central ready\r\n"
+  - delay: 407
+    content: "deployment kube-ovn-controller ready\r\n"
+  - delay: 327
+    content: "ds kube-ovn-cni ready\r\n"
+  - delay: 301
+    content: "ds ovs-ovn ready\r\n"
+  - delay: 289
+    content: "deployment coredns ready\r\n### kube-ovn-controller recent log\r\n"
+  - delay: 94
+    content: "\r\n"
+  - delay: 156
+    content: "### start to diagnose node vcx-virtual-machine\r\n#### ovn-controller log:\r\n"
+  - delay: 172
+    content: "2021-06-10T04:39:46.548Z|00003|rconn(ovn_pinctrl0)|INFO|unix:/var/run/openvswitch/br-int.mgmt: connected\r\n2021-06-10T04:39:55.614Z|00020|binding|INFO|Claiming lport node-vcx-virtual-machine for this chassis.\r\n2021-06-10T04:39:55.614Z|00021|binding|INFO|node-vcx-virtual-machine: Claiming 00:00:00:F0:25:3B 100.64.0.2\r\n2021-06-10T04:40:05.732Z|00022|main|INFO|User triggered force recompute.\r\n2021-06-10T04:40:13.997Z|00023|binding|INFO|Claiming lport kube-ovn-pinger-77nb9.kube-system for this chassis.\r\n2021-06-10T04:40:13.997Z|00024|binding|INFO|kube-ovn-pinger-77nb9.kube-system: Claiming 00:00:00:0C:75:A3 10.16.0.7\r\n2021-06-10T04:40:15.768Z|00025|binding|INFO|Claiming lport coredns-f9fd979d6-z9nrz.kube-system for this chassis.\r\n2021-06-10T04:40:15.768Z|00026|binding|INFO|coredns-f9fd979d6-z9nrz.kube-system: Claiming 00:00:00:0B:6B:2E 10.16.0.5\r\n2021-06-10T04:40:16.982Z|00027|binding|INFO|Claiming lport coredns-f9fd979d6-d5xwd.kube-system for this chassis.\r\n2021-06-10T04:40:16.982Z|00028|binding|INFO|coredns-f9fd979d6-d5xwd.kube-system: Claiming 00:00:00:26:C6:85 10.16.0.6\r\n"
+  - delay: 34
+    content: "\r\n#### ovs-vswitchd log:\r\n"
+  - delay: 147
+    content: "2021-06-10T04:39:36.349Z|00075|bridge|INFO|bridge br-int: added interface br-int on port 65534\r\n2021-06-10T04:39:36.377Z|00079|fatal_signal|WARN|could not unlink \"/var/run/openvswitch/br1.mgmt\" (No such file or directory)\r\n2021-06-10T04:39:36.377Z|00080|fatal_signal|WARN|could not unlink \"/var/run/openvswitch/br1.snoop\" (No such file or directory)\r\n2021-06-10T04:39:44.364Z|00076|memory|INFO|88220 kB peak resident set size after 10.3 seconds\r\n2021-06-10T04:39:44.364Z|00077|memory|INFO|handlers:5 ofconns:1 ports:1 revalidators:3 rules:4\r\n2021-06-10T04:39:46.273Z|00078|connmgr|INFO|br-int<->unix#0: 1 flow_mods 10 s ago (1 deletes)\r\n2021-06-10T04:39:55.609Z|00079|bridge|INFO|bridge br-int: added interface ovn0 on port 1\r\n2021-06-10T04:40:13.994Z|00080|bridge|INFO|bridge br-int: added interface 7c9d4345e9ea_h on port 2\r\n2021-06-10T04:40:15.766Z|00081|bridge|INFO|bridge br-int: added interface eda13380253d_h on port 3\r\n2021-06-10T04:40:16.979Z|00082|bridge|INFO|bridge br-int: added interface c7d9835dc2cc_h on port 4\r\n"
+  - delay: 32
+    content: "\r\n#### ovs-vsctl show results:\r\n"
+  - delay: 174
+    content: "b3d9ddba-053b-4b20-94cb-ff3e296ab2f5\r\n    Bridge br-int\r\n        fail_mode: secure\r\n        Port br-int\r\n            Interface br-int\r\n                type: internal\r\n        Port eda13380253d_h\r\n            Interface eda13380253d_h\r\n        Port c7d9835dc2cc_h\r\n            Interface c7d9835dc2cc_h\r\n        Port \"7c9d4345e9ea_h\"\r\n            Interface \"7c9d4345e9ea_h\"\r\n        Port ovn0\r\n            Interface ovn0\r\n                type: internal\r\n    ovs_version: \"2.15.1\"\r\n"
+  - delay: 28
+    content: "\r\n#### pinger diagnose results:\r\n"
+  - delay: 160
+    content: "I0610 04:40:33.397560   17599 pinger.go:18] \r\n-------------------------------------------------------------------------------\r\nKube-OVN: \r\n  Version:       v1.8.0\r\n  Build:         2021-06-08_16:44:54\r\n  Commit:        git-9a44afcb\r\n  Go Version:    go1.16\r\n  Arch:          amd64\r\n-------------------------------------------------------------------------------\r\nI0610 04:40:33.399142   17599 config.go:134] pinger config is &{KubeConfigFile: KubeClient:0xc0003ce2c0 Port:8080 DaemonSetNamespace:kube-system DaemonSetName:kube-ovn-pinger Interval:5 Mode:job ExitCode:0 InternalDNS:kubernetes.default ExternalDNS:alauda.cn NodeName:vcx-virtual-machine HostIP:140.116.247.67 PodName:kube-ovn-pinger-77nb9 PodIP:10.16.0.7 ExternalAddress:114.114.114.114 NetworkMode:kube-ovn PollTimeout:2 PollInterval:15 SystemRunDir:/var/run/openvswitch DatabaseVswitchName:Open_vSwitch DatabaseVswitchSocketRemote:unix:/var/run/openvswitch/db.sock DatabaseVswitchFileDataPath:/etc/openvswitch/conf.db DatabaseVswitchFileLogPath:/var/log/openvswitch/ovsdb-server.log DatabaseVswitchFilePidPath:/var/run/openvswitch/ovsdb-server.pid DatabaseVswitchFileSystemIDPath:/etc/openvswitch/system-id.conf ServiceVswitchdFileLogPath:/var/log/openvswitch/ovs-vswitchd.log ServiceVswitchdFilePidPath:/var/run/openvswitch/ovs-vswitchd.pid ServiceOvnControllerFileLogPath:/var/log/ovn/ovn-controller.log ServiceOvnControllerFilePidPath:/var/run/ovn/ovn-controller.pid}\r\nI0610 04:40:33.401580   17599 exporter.go:77] vcx-virtual-machine: exporter connect successfully\r\n"
+  - delay: 7
+    content: "I0610 04:40:33.408064   17599 ovn.go:20] ovs-vswitchd and ovsdb are up\r\n"
+  - delay: 9
+    content: "I0610 04:40:33.415276   17599 ovn.go:32] ovn_controller is up\r\nI0610 04:40:33.415307   17599 ovn.go:38] start to check port binding\r\n"
+  - delay: 8
+    content: "I0610 04:40:33.423884   17599 ovn.go:134] chassis id is f156b6ef-edff-40a1-97c3-9c19bb23a66a\r\nI0610 04:40:33.428423   17599 ovn.go:48] port in sb is [node-vcx-virtual-machine kube-ovn-pinger-77nb9.kube-system coredns-f9fd979d6-z9nrz.kube-system coredns-f9fd979d6-d5xwd.kube-system]\r\nI0610 04:40:33.428463   17599 ovn.go:60] ovs and ovn-sb binding check passed\r\n"
+  - delay: 8
+    content: "I0610 04:40:33.436761   17599 ping.go:245] start to check apiserver connectivity\r\n"
+  - delay: 8
+    content: "I0610 04:40:33.442962   17599 ping.go:254] connect to apiserver success in 6.17ms\r\nI0610 04:40:33.443020   17599 ping.go:126] start to check pod connectivity\r\n"
+  - delay: 111
+    content: "I0610 04:40:33.554456   17599 ping.go:155] ping pod: kube-ovn-pinger-77nb9 10.16.0.7, count: 3, loss count 0, average rtt 0.19ms\r\nI0610 04:40:33.554533   17599 ping.go:80] start to check node connectivity\r\n"
+  - delay: 303
+    content: "I0610 04:40:33.858475   17599 ping.go:105] ping node: vcx-virtual-machine 140.116.247.67, count: 3, loss count 0, average rtt 0.14ms\r\nI0610 04:40:33.858545   17599 ping.go:209] start to check dns connectivity\r\nI0610 04:40:33.859842   17599 ping.go:222] resolve dns kubernetes.default to [10.96.0.1] in 1.27ms\r\nI0610 04:40:33.859869   17599 ping.go:227] start to check dns connectivity\r\nI0610 04:40:33.861182   17599 ping.go:240] resolve dns alauda.cn to [203.107.43.165] in 1.29ms\r\nI0610 04:40:33.861201   17599 ping.go:180] start to check ping external to 114.114.114.114\r\n"
+  - delay: 333
+    content: "I0610 04:40:34.193531   17599 ping.go:193] ping external address: 114.114.114.114, total count: 3, loss count 0, average rtt 228.72ms\r\n"
+  - delay: 35
+    content: "### finish diagnose node vcx-virtual-machine\r\n\r\n-------------------------------\r\n\r\n[Step 7] Install other CNI\r\n"
+  - delay: 243
+    content: "\e[33;1mWarning:\e[0m apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition\r\n"
+  - delay: 5
+    content: "customresourcedefinition.apiextensions.k8s.io/network-attachment-definitions.k8s.cni.cncf.io created\r\n"
+  - delay: 5
+    content: "clusterrole.rbac.authorization.k8s.io/multus created\r\n"
+  - delay: 12
+    content: "clusterrolebinding.rbac.authorization.k8s.io/multus created\r\n"
+  - delay: 6
+    content: "serviceaccount/multus created\r\n"
+  - delay: 44
+    content: "configmap/multus-cni-config created\r\ndaemonset.apps/kube-multus-ds-amd64 created\r\ndaemonset.apps/kube-multus-ds-ppc64le created\r\n"
+  - delay: 9
+    content: "daemonset.apps/kube-multus-ds-arm64v8 created\r\n"
+  - delay: 34
+    content: "daemonset.apps/kube-multus-ds-s390x created\r\n-------------------------------\r\n\r\n[Step 8] Install other Prometheus\r\n"
+  - delay: 268
+    content: "namespace/monitoring created\r\n"
+  - delay: 103
+    content: "customresourcedefinition.apiextensions.k8s.io/alertmanagerconfigs.monitoring.coreos.com created\r\n"
+  - delay: 414
+    content: "customresourcedefinition.apiextensions.k8s.io/alertmanagers.monitoring.coreos.com created\r\n"
+  - delay: 127
+    content: "customresourcedefinition.apiextensions.k8s.io/podmonitors.monitoring.coreos.com created\r\n"
+  - delay: 15
+    content: "customresourcedefinition.apiextensions.k8s.io/probes.monitoring.coreos.com created\r\n"
+  - delay: 269
+    content: "customresourcedefinition.apiextensions.k8s.io/prometheuses.monitoring.coreos.com created\r\n"
+  - delay: 54
+    content: "customresourcedefinition.apiextensions.k8s.io/prometheusrules.monitoring.coreos.com created\r\n"
+  - delay: 47
+    content: "customresourcedefinition.apiextensions.k8s.io/servicemonitors.monitoring.coreos.com created\r\n"
+  - delay: 290
+    content: "customresourcedefinition.apiextensions.k8s.io/thanosrulers.monitoring.coreos.com created\r\n"
+  - delay: 20
+    content: "clusterrole.rbac.authorization.k8s.io/prometheus-operator created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/prometheus-operator created\r\n"
+  - delay: 25
+    content: "deployment.apps/prometheus-operator created\r\n"
+  - delay: 23
+    content: "service/prometheus-operator created\r\n"
+  - delay: 195
+    content: "serviceaccount/prometheus-operator created\r\n"
+  - delay: 1870
+    content: "No resources found\r\n"
+  - delay: 612
+    content: "alertmanager.monitoring.coreos.com/main created\r\n"
+  - delay: 318
+    content: "secret/alertmanager-main created\r\n"
+  - delay: 240
+    content: "service/alertmanager-main created\r\n"
+  - delay: 634
+    content: "serviceaccount/alertmanager-main created\r\n"
+  - delay: 48
+    content: "servicemonitor.monitoring.coreos.com/alertmanager created\r\n"
+  - delay: 99
+    content: "secret/grafana-datasources created\r\n"
+  - delay: 591
+    content: "configmap/grafana-dashboard-apiserver created\r\n"
+  - delay: 156
+    content: "configmap/grafana-dashboard-cluster-total created\r\n"
+  - delay: 18
+    content: "configmap/grafana-dashboard-controller-manager created\r\n"
+  - delay: 20
+    content: "configmap/grafana-dashboard-k8s-resources-cluster created\r\n"
+  - delay: 124
+    content: "configmap/grafana-dashboard-k8s-resources-namespace created\r\n"
+  - delay: 6
+    content: "configmap/grafana-dashboard-k8s-resources-node created\r\n"
+  - delay: 11
+    content: "configmap/grafana-dashboard-k8s-resources-pod created\r\n"
+  - delay: 24
+    content: "configmap/grafana-dashboard-k8s-resources-workload created\r\n"
+  - delay: 32
+    content: "configmap/grafana-dashboard-k8s-resources-workloads-namespace created\r\n"
+  - delay: 44
+    content: "configmap/grafana-dashboard-kubelet created\r\n"
+  - delay: 22
+    content: "configmap/grafana-dashboard-namespace-by-pod created\r\n"
+  - delay: 9
+    content: "configmap/grafana-dashboard-namespace-by-workload created\r\n"
+  - delay: 24
+    content: "configmap/grafana-dashboard-node-cluster-rsrc-use created\r\nconfigmap/grafana-dashboard-node-rsrc-use created\r\n"
+  - delay: 23
+    content: "configmap/grafana-dashboard-nodes created\r\n"
+  - delay: 7
+    content: "configmap/grafana-dashboard-persistentvolumesusage created\r\n"
+  - delay: 9
+    content: "configmap/grafana-dashboard-pod-total created\r\n"
+  - delay: 148
+    content: "configmap/grafana-dashboard-prometheus-remote-write created\r\n"
+  - delay: 8
+    content: "configmap/grafana-dashboard-prometheus created\r\n"
+  - delay: 15
+    content: "configmap/grafana-dashboard-proxy created\r\n"
+  - delay: 8
+    content: "configmap/grafana-dashboard-scheduler created\r\n"
+  - delay: 11
+    content: "configmap/grafana-dashboard-statefulset created\r\n"
+  - delay: 7
+    content: "configmap/grafana-dashboard-workload-total created\r\n"
+  - delay: 26
+    content: "configmap/grafana-dashboards created\r\n"
+  - delay: 13
+    content: "deployment.apps/grafana created\r\n"
+  - delay: 69
+    content: "service/grafana created\r\n"
+  - delay: 21
+    content: "serviceaccount/grafana created\r\n"
+  - delay: 30
+    content: "servicemonitor.monitoring.coreos.com/grafana created\r\nclusterrole.rbac.authorization.k8s.io/kube-state-metrics created\r\n"
+  - delay: 6
+    content: "clusterrolebinding.rbac.authorization.k8s.io/kube-state-metrics created\r\n"
+  - delay: 24
+    content: "deployment.apps/kube-state-metrics created\r\n"
+  - delay: 15
+    content: "service/kube-state-metrics created\r\n"
+  - delay: 19
+    content: "serviceaccount/kube-state-metrics created\r\n"
+  - delay: 20
+    content: "servicemonitor.monitoring.coreos.com/kube-state-metrics created\r\n"
+  - delay: 16
+    content: "clusterrole.rbac.authorization.k8s.io/node-exporter created\r\n"
+  - delay: 14
+    content: "clusterrolebinding.rbac.authorization.k8s.io/node-exporter created\r\n"
+  - delay: 13
+    content: "daemonset.apps/node-exporter created\r\n"
+  - delay: 18
+    content: "service/node-exporter created\r\n"
+  - delay: 7
+    content: "serviceaccount/node-exporter created\r\n"
+  - delay: 12
+    content: "servicemonitor.monitoring.coreos.com/node-exporter created\r\n"
+  - delay: 10
+    content: "apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io created\r\n"
+  - delay: 14
+    content: "clusterrole.rbac.authorization.k8s.io/prometheus-adapter created\r\n"
+  - delay: 6
+    content: "clusterrole.rbac.authorization.k8s.io/system:aggregated-metrics-reader created\r\n"
+  - delay: 17
+    content: "clusterrolebinding.rbac.authorization.k8s.io/prometheus-adapter created\r\nclusterrolebinding.rbac.authorization.k8s.io/resource-metrics:system:auth-delegator created\r\n"
+  - delay: 5
+    content: "clusterrole.rbac.authorization.k8s.io/resource-metrics-server-resources created\r\nconfigmap/adapter-config created\r\n"
+  - delay: 5
+    content: "deployment.apps/prometheus-adapter created\r\n"
+  - delay: 7
+    content: "rolebinding.rbac.authorization.k8s.io/resource-metrics-auth-reader created\r\n"
+  - delay: 13
+    content: "service/prometheus-adapter created\r\n"
+  - delay: 7
+    content: "serviceaccount/prometheus-adapter created\r\n"
+  - delay: 6
+    content: "servicemonitor.monitoring.coreos.com/prometheus-adapter created\r\nclusterrole.rbac.authorization.k8s.io/prometheus-k8s created\r\nclusterrolebinding.rbac.authorization.k8s.io/prometheus-k8s created\r\n"
+  - delay: 6
+    content: "servicemonitor.monitoring.coreos.com/prometheus-operator created\r\n"
+  - delay: 132
+    content: "prometheus.monitoring.coreos.com/k8s created\r\n"
+  - delay: 33
+    content: "rolebinding.rbac.authorization.k8s.io/prometheus-k8s-config created\r\n"
+  - delay: 6
+    content: "rolebinding.rbac.authorization.k8s.io/prometheus-k8s created\r\nrolebinding.rbac.authorization.k8s.io/prometheus-k8s created\r\nrolebinding.rbac.authorization.k8s.io/prometheus-k8s created\r\nrole.rbac.authorization.k8s.io/prometheus-k8s-config created\r\n"
+  - delay: 11
+    content: "role.rbac.authorization.k8s.io/prometheus-k8s created\r\nrole.rbac.authorization.k8s.io/prometheus-k8s created\r\nrole.rbac.authorization.k8s.io/prometheus-k8s created\r\n"
+  - delay: 95
+    content: "prometheusrule.monitoring.coreos.com/prometheus-k8s-rules created\r\n"
+  - delay: 12
+    content: "service/prometheus-k8s created\r\nserviceaccount/prometheus-k8s created\r\n"
+  - delay: 33
+    content: "servicemonitor.monitoring.coreos.com/prometheus created\r\n"
+  - delay: 11
+    content: "servicemonitor.monitoring.coreos.com/kube-apiserver created\r\n"
+  - delay: 5
+    content: "servicemonitor.monitoring.coreos.com/coredns created\r\n"
+  - delay: 7
+    content: "servicemonitor.monitoring.coreos.com/kube-controller-manager created\r\n"
+  - delay: 5
+    content: "servicemonitor.monitoring.coreos.com/kube-scheduler created\r\n"
+  - delay: 25
+    content: "servicemonitor.monitoring.coreos.com/kubelet created\r\n-------------------------------\r\n\r\n[Final] Join worker to cluster\r\n"
+  - delay: 232
+    content: "W0610 12:40:42.650928   19052 configset.go:348] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io]\r\n"
+  - delay: 13
+    content: "kubeadm join 140.116.247.67:6443 --token 2yy0yv.dukvrucr5vhqwcpo     --discovery-token-ca-cert-hash sha256:a4603a717608ca8b0d272c2be8f2e0206ba448ca7f074e6d28e998f13c2e7c1d \r\n-------------------------------\r\n\r\n"
+  - delay: 431
+    content: "(base) \e]0;vcx@vcx-virtual-machine: ~/free5gc-kube-ovn\a\e[01;32mvcx@vcx-virtual-machine\e[00m:\e[01;34m~/free5gc-kube-ovn\e[00m$ "
+  - delay: 7321
+    content: "logout\r\n"
