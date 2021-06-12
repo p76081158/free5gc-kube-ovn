@@ -26,8 +26,8 @@ $ cd free5gc-kube-ovn
 ```bash
 $ sudo ./quickstart.sh
 ```
-![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/quickstart.gif?raw=true)
-* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/quickstart.gif)
+![](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/quickstart.gif?raw=true)
+* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/quickstart.gif)
 
 ### Join Worker to Kubernetes Cluster
 
@@ -35,7 +35,7 @@ $ sudo ./quickstart.sh
 # run sudo kubeadm join on every worker
 $ sudo kubeadm join <ip> --token 31pm55.4m9buzv23pfp616n     --discovery-token-ca-cert-hash sha256:48c6017e83ab8bdd4b75bda9285c625808150a07e267d57ccd76aa569597ba4a
 ```
-![image alt](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/join-cluster.gif?raw=true)
+![image alt](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/join-cluster.gif?raw=true)
 
 ### Check Worker and Pod status
 
@@ -43,8 +43,8 @@ $ sudo kubeadm join <ip> --token 31pm55.4m9buzv23pfp616n     --discovery-token-c
 $ kubectl get node
 $ kubectl get pod --all-namespaces -o wide
 ```
-![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/check.gif?raw=true)
-* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/check.gif)
+![](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/check.gif?raw=true)
+* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/check.gif)
 
 ### Initialization of free5gc
 
@@ -52,8 +52,8 @@ $ kubectl get pod --all-namespaces -o wide
 $ cd deployment/
 $ ./free5gc-init.sh
 ```
-![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-init.gif?raw=true)
-* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-init.gif)
+![](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/free5gc-init.gif?raw=true)
+* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/free5gc-init.gif)
 
 ### Create free5gc yaml files by script and Apply to kubernetes
 
@@ -76,8 +76,8 @@ $ kubectl -n free5gc get pod -l telecom=FET
 $ kubectl -n free5gc get pod -l telecom=CHT
 $ kubectl -n free5gc get pod -l telecom=TWM
 ```
-![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-create-tenant.gif?raw=true)
-* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-create-tenant.gif)
+![](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/free5gc-create-tenant.gif?raw=true)
+* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/free5gc-create-tenant.gif)
 
 ### Delete All free5gc in kubernetes
 
@@ -85,8 +85,8 @@ $ kubectl -n free5gc get pod -l telecom=TWM
 $ cd deployment/
 $ ./free5gc-clear-all.sh
 ```
-![](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-clear-all.gif?raw=true)
-* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/free5gc-clear-all.gif)
+![](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/free5gc-clear-all.gif?raw=true)
+* [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/free5gc-clear-all.gif)
 
 ### Uninstall All
 
@@ -99,7 +99,7 @@ $ sudo ./kubeadm-reset.sh
 $ cd kube-ovn/
 $ sudo ./delete-config.sh
 ```
-![image alt](https://github.com/p76081158/free5gc-kube-ovn/blob/main/doc/terminalizer/gif/uninstall-all.gif?raw=true)
+![image alt](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/uninstall-all.gif?raw=true)
 
 ## Custom Resource
 
