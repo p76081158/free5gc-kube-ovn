@@ -12,7 +12,7 @@ RUN apt update && \
     apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main' && \
     apt update && \
     apt install -y cmake && \
-    git clone https://github.com/aligungr/UERANSIM && \
+    git clone -b v3.2.0 --depth 1 https://github.com/aligungr/UERANSIM && \
     cd UERANSIM && \
     make && \
     apt clean && \
@@ -20,4 +20,3 @@ RUN apt update && \
     
 # Set working dir
 WORKDIR /UERANSIM
-
