@@ -118,8 +118,8 @@ spec:
   abbrev: "FET"
   mcc: "466"
   mnc: "01"
-  gnb-nums: 1
-  slice-nums: 3
+  gnb-nums: 1               # default has one gnb in the core network
+  slice-nums: 3             # default has three network slices in the core network
 ```
 
 ### gNB Example
@@ -142,18 +142,16 @@ spec:
 
 ```yaml=
 ---
-apiVersion: "nso.free5gc.com/v1"
-kind: TeleCom
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
 metadata:
-  name: "466-01"
-  namespace: free5gc
+  name: "0x01010203"
 spec:
-  id: 1
-  provider: free5gc
-  abbrev: "FET"
-  mcc: "466"
-  mnc: "01"
-  gnb-nums: 1               # default has one gnb in the core network
-  slice-nums: 3             # default has three network slices in the core network
-
+  sst: "01"
+  sd: "010203"
+  n4_cidr: "10.201.101.0/24"
+  ue_subnet: "60.60.0.0/16"
+  cpu: 600m
+  memory: default
+  bandwidth: default
 ```
