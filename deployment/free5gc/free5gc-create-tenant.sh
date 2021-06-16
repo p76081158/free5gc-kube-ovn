@@ -63,14 +63,19 @@ kind: TeleCom
 metadata:
   name: "$mcc-$mnc"
   namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
 spec:
   id: $(( 1 + id ))
   provider: free5gc
   abbrev: "$abb"
   mcc: "$mcc"
   mnc: "$mnc"
-  gnb-nums: 1               # default has one gnb in the core network
-  slice-nums: 3             # default has three network slices in the core network
+  gnb-nums: 1                # default has one gnb in the core network
+  slice-nums: 10             # default has ten network slices in the core network
 EOF
 
 cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0203-inactive-cr.yaml
@@ -80,6 +85,11 @@ kind: NetworkSlice
 metadata:
   name: "0x01${core_network_id}0203"
   namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
 spec:
   sst: "01"
   sd: "${core_network_id}0203"
@@ -98,6 +108,11 @@ kind: NetworkSlice
 metadata:
   name: "0x01${core_network_id}0204"
   namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
 spec:
   sst: "01"
   sd: "${core_network_id}0204"
@@ -116,9 +131,175 @@ kind: NetworkSlice
 metadata:
   name: "0x01${core_network_id}0205"
   namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
 spec:
   sst: "01"
   sd: "${core_network_id}0205"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0206-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}0206"
+  namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
+spec:
+  sst: "01"
+  sd: "${core_network_id}0206"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0207-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}0207"
+  namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
+spec:
+  sst: "01"
+  sd: "${core_network_id}0207"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0208-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}0208"
+  namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
+spec:
+  sst: "01"
+  sd: "${core_network_id}0208"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}0209-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}0209"
+  namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
+spec:
+  sst: "01"
+  sd: "${core_network_id}0209"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}020a-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}020a"
+  namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
+spec:
+  sst: "01"
+  sd: "${core_network_id}020a"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}020b-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}020b"
+  namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
+spec:
+  sst: "01"
+  sd: "${core_network_id}020b"
+  status: Inactive
+  n4_cidr: Undefined
+  ue_subnet: Undefined
+  cpu: Default
+  memory: Default
+  bandwidth: Default
+EOF
+
+cat <<EOF > $mcc-$mnc/custom-resource/network-slice-0x01${core_network_id}020c-inactive-cr.yaml
+---
+apiVersion: "nssmf.free5gc.com/v1"
+kind: NetworkSlice
+metadata:
+  name: "0x01${core_network_id}020c"
+  namespace: free5gc
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
+spec:
+  sst: "01"
+  sd: "${core_network_id}020c"
   status: Inactive
   n4_cidr: Undefined
   ue_subnet: Undefined
@@ -618,6 +799,20 @@ configuration:
           sd: ${core_network_id}0204 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
         - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
           sd: ${core_network_id}0205 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0206 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0207 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0208 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0209 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}020a # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}020b # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}020c # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
   supportDnnList:  # the DNN (Data Network Name) list supported by this AMF
     - internet
   nrfUri: http://free5gc-nrf-$mcc-$mnc:8000 # a valid URI of NRF
@@ -1047,6 +1242,20 @@ configuration:
           sd: ${core_network_id}0204 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
         - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
           sd: ${core_network_id}0205 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0206 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0207 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0208 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}0209 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}020a # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}020b # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: ${core_network_id}020c # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
   nsiList: # List of available Network Slice Instance (NSI)
     - snssai: # S-NSSAI of this NSI
         sst: 1 # Slice/Service Type (uinteger, range: 0~255)
@@ -1069,6 +1278,55 @@ configuration:
         # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
         - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
           nsiId: 12
+    - snssai: # S-NSSAI of this NSI
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: ${core_network_id}0206 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      nsiInformationList: # Information list of this NSI
+        # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
+        - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 13
+    - snssai: # S-NSSAI of this NSI
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: ${core_network_id}0207 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      nsiInformationList: # Information list of this NSI
+        # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
+        - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 14
+    - snssai: # S-NSSAI of this NSI
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: ${core_network_id}0208 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      nsiInformationList: # Information list of this NSI
+        # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
+        - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 15
+    - snssai: # S-NSSAI of this NSI
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: ${core_network_id}0209 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      nsiInformationList: # Information list of this NSI
+        # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
+        - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 16
+    - snssai: # S-NSSAI of this NSI
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: ${core_network_id}020a # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      nsiInformationList: # Information list of this NSI
+        # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
+        - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 17
+    - snssai: # S-NSSAI of this NSI
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: ${core_network_id}020b # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      nsiInformationList: # Information list of this NSI
+        # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
+        - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 18
+    - snssai: # S-NSSAI of this NSI
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: ${core_network_id}020c # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      nsiInformationList: # Information list of this NSI
+        # the NRF to be used to select the NFs/services within the selected NSI, and an optonal ID
+        - nrfId: http://free5gc-nrf-$mcc-$mnc:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 19
   amfSetList: # List of AMF Sets that my be assigned by this NSSF
     - amfSetId: 1 # the AMF Set identifier
       amfList: # Instance ID of the AMFs in this set
@@ -2030,6 +2288,11 @@ apiVersion: "nso.free5gc.com/v1"
 kind: gNB
 metadata:
   name: "$mcc-$mnc-$default_gnb_id"
+  labels:
+    nsi: "$nsi"
+    mcc: "$mcc"
+    mnc: "$mnc"
+    telecom: $abb
 spec:
   mcc: "$mcc"
   mnc: "$mnc"
@@ -2080,6 +2343,20 @@ data:
         sd: 0x${core_network_id}0204
       - sst: 0x1
         sd: 0x${core_network_id}0205
+      - sst: 0x1
+        sd: 0x${core_network_id}0206
+      - sst: 0x1
+        sd: 0x${core_network_id}0207
+      - sst: 0x1
+        sd: 0x${core_network_id}0208
+      - sst: 0x1
+        sd: 0x${core_network_id}0209
+      - sst: 0x1
+        sd: 0x${core_network_id}020a
+      - sst: 0x1
+        sd: 0x${core_network_id}020b
+      - sst: 0x1
+        sd: 0x${core_network_id}020c
 
     # Indicates whether or not SCTP stream number errors should be ignored.
     ignoreStreamIds: true
@@ -2219,7 +2496,7 @@ spec:
         runAsGroup: 0
       containers:
         - name: free5gc-ueransim-gnb
-          image: black842679513/free5gc-ueransim:v3.1.5
+          image: black842679513/free5gc-ueransim:v3.2.0
           imagePullPolicy: IfNotPresent
           # imagePullPolicy: Always
           command:
@@ -2284,6 +2561,13 @@ kubectl apply -f $plmn/custom-resource/telecom-cr.yaml
 kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0203-inactive-cr.yaml
 kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0204-inactive-cr.yaml
 kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0205-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0206-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0207-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0208-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}0209-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}020a-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}020b-inactive-cr.yaml
+kubectl apply -f $plmn/custom-resource/network-slice-0x01${core_network_id}020c-inactive-cr.yaml
 
 cd $plmn
 cd mongodb      && kustomizeapply base
