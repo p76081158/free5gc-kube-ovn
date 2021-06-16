@@ -4,7 +4,9 @@ set -euo pipefail
 IPv6=${IPv6:-false}
 DualStack=${DualStack:-false}
 ENABLE_SSL=${ENABLE_SSL:-false}
+ENABLE_VLAN=${ENABLE_VLAN:-false}
 ENABLE_MIRROR=${ENABLE_MIRROR:-false}
+VLAN_NIC=${VLAN_NIC:-}
 HW_OFFLOAD=${HW_OFFLOAD:-false}
 IFACE=""                               # The nic to support container network can be a nic name or a group of regex separated by comma, if empty will use the nic that the default route use
 
@@ -41,6 +43,8 @@ fi
 EXCLUDE_IPS=""                         # EXCLUDE_IPS for default subnet
 LABEL="node-role.kubernetes.io/master" # The node label to deploy OVN DB
 NETWORK_TYPE="geneve"                  # geneve or vlan
+TUNNEL_TYPE="geneve"                   # geneve or vxlan
+POD_NIC_TYPE="veth-pair"               # veth-pair or internal-port
 
 # VLAN Config only take effect when NETWORK_TYPE is vlan
 PROVIDER_NAME="provider"
@@ -48,6 +52,13 @@ VLAN_INTERFACE_NAME=""
 VLAN_NAME="ovn-vlan"
 VLAN_ID="100"
 VLAN_RANGE="1,4095"
+
+if [ "$ENABLE_VLAN" = "true" ]; then
+  NETWORK_TYPE="vlan"
+  if [ "$VLAN_NIC" != "" ]; then
+    VLAN_INTERFACE_NAME="$VLAN_NIC"
+  fi
+fi
 
 # DPDK
 DPDK="false"
@@ -414,6 +425,15 @@ spec:
       - name: NAT
         type: boolean
         jsonPath: .spec.natOutgoing
+      - name: ExternalEgressGateway
+        type: string
+        jsonPath: .spec.externalEgressGateway
+      - name: PolicyRoutingPriority
+        type: integer
+        jsonPath: .spec.policyRoutingPriority
+      - name: PolicyRoutingTableID
+        type: integer
+        jsonPath: .spec.policyRoutingTableID
       - name: Default
         type: boolean
         jsonPath: .spec.default
@@ -499,6 +519,22 @@ spec:
                   type: string
                 natOutgoing:
                   type: boolean
+                externalEgressGateway:
+                  type: string
+                policyRoutingPriority:
+                  type: integer
+                  minimum: 1
+                  maximum: 32765
+                policyRoutingTableID:
+                  type: integer
+                  minimum: 1
+                  maximum: 2147483647
+                  not:
+                    enum:
+                      - 252 # compat
+                      - 253 # default
+                      - 254 # main
+                      - 255 # local
                 private:
                   type: boolean
                 vlan:
@@ -514,7 +550,6 @@ spec:
     kind: Subnet
     shortNames:
       - subnet
-
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -589,22 +624,18 @@ spec:
     rule: 'RunAsAny'
   fsGroup:
     rule: 'RunAsAny'
-
 ---
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ovn-config
   namespace: kube-system
-
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: ovn
   namespace: kube-system
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -679,7 +710,6 @@ rules:
       - create
       - patch
       - update
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -693,7 +723,6 @@ subjects:
   - kind: ServiceAccount
     name: ovn
     namespace: kube-system
-
 ---
 kind: Service
 apiVersion: v1
@@ -711,7 +740,6 @@ spec:
     app: ovn-central
     ovn-nb-leader: "true"
   sessionAffinity: None
-
 ---
 kind: Service
 apiVersion: v1
@@ -729,22 +757,22 @@ spec:
     app: ovn-central
     ovn-sb-leader: "true"
   sessionAffinity: None
-
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: kube-ovn-monitor
+  name: ovn-northd
   namespace: kube-system
-  labels:
-    app: kube-ovn-monitor
 spec:
   ports:
-    - name: metrics
-      port: 10661
+    - name: ovn-northd
+      protocol: TCP
+      port: 6643
+      targetPort: 6643
   type: ClusterIP
   selector:
     app: ovn-central
+    ovn-northd-leader: "true"
   sessionAffinity: None
 ---
 kind: Deployment
@@ -784,7 +812,6 @@ spec:
       priorityClassName: system-cluster-critical
       serviceAccountName: ovn
       hostNetwork: true
-      shareProcessNamespace: true
       containers:
         - name: ovn-central
           image: "$REGISTRY/kube-ovn:$VERSION"
@@ -833,6 +860,8 @@ spec:
               name: host-log-ovs
             - mountPath: /var/log/ovn
               name: host-log-ovn
+            - mountPath: /etc/localtime
+              name: localtime
             - mountPath: /var/run/tls
               name: kube-ovn-tls
           readinessProbe:
@@ -849,60 +878,6 @@ spec:
                 - /kube-ovn/ovn-healthcheck.sh
             initialDelaySeconds: 30
             periodSeconds: 7
-            failureThreshold: 5
-            timeoutSeconds: 45
-        - name: ovn-monitor
-          image: "$REGISTRY/kube-ovn:$VERSION"
-          imagePullPolicy: $IMAGE_PULL_POLICY
-          command: ["/kube-ovn/start-ovn-monitor.sh"]
-          env:
-            - name: ENABLE_SSL
-              value: "$ENABLE_SSL"
-            - name: NODE_IPS
-              value: $addresses
-            - name: KUBE_NODE_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: spec.nodeName
-          resources:
-            requests:
-              cpu: 200m
-              memory: 200Mi
-            limits:
-              cpu: 200m
-              memory: 200Mi
-          volumeMounts:
-            - mountPath: /var/run/openvswitch
-              name: host-run-ovs
-            - mountPath: /var/run/ovn
-              name: host-run-ovn
-            - mountPath: /sys
-              name: host-sys
-              readOnly: true
-            - mountPath: /etc/openvswitch
-              name: host-config-openvswitch
-            - mountPath: /etc/ovn
-              name: host-config-ovn
-            - mountPath: /var/log/openvswitch
-              name: host-log-ovs
-            - mountPath: /var/log/ovn
-              name: host-log-ovn
-            - mountPath: /var/run/tls
-              name: kube-ovn-tls
-          readinessProbe:
-            exec:
-              command:
-              - cat
-              - /var/run/ovn/ovnnb_db.pid
-            periodSeconds: 3
-            timeoutSeconds: 45
-          livenessProbe:
-            exec:
-              command:
-              - cat
-              - /var/run/ovn/ovn-nbctl.pid
-            initialDelaySeconds: 30
-            periodSeconds: 10
             failureThreshold: 5
             timeoutSeconds: 45
       nodeSelector:
@@ -930,11 +905,13 @@ spec:
         - name: host-log-ovn
           hostPath:
             path: /var/log/ovn
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
         - name: kube-ovn-tls
           secret:
             optional: true
             secretName: kube-ovn-tls
-
 ---
 kind: DaemonSet
 apiVersion: apps/v1
@@ -1007,6 +984,8 @@ spec:
               name: host-config-ovs
             - mountPath: /dev/hugepages
               name: hugepage
+            - mountPath: /etc/localtime
+              name: localtime
             - mountPath: /var/run/tls
               name: kube-ovn-tls
           readinessProbe:
@@ -1067,6 +1046,9 @@ spec:
         - name: hugepage
           emptyDir:
             medium: HugePages
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
         - name: kube-ovn-tls
           secret:
             optional: true
@@ -1102,9 +1084,7 @@ spec:
     rule: 'RunAsAny'
   fsGroup:
     rule: 'RunAsAny'
-
 ---
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -1241,17 +1221,18 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: kube-ovn-monitor
+  name: ovn-northd
   namespace: kube-system
-  labels:
-    app: kube-ovn-monitor
 spec:
   ports:
-    - name: metrics
-      port: 10661
+    - name: ovn-northd
+      protocol: TCP
+      port: 6643
+      targetPort: 6643
   type: ClusterIP
   selector:
     app: ovn-central
+    ovn-northd-leader: "true"
   sessionAffinity: None
 ---
 kind: Deployment
@@ -1291,7 +1272,6 @@ spec:
       priorityClassName: system-cluster-critical
       serviceAccountName: ovn
       hostNetwork: true
-      shareProcessNamespace: true
       containers:
         - name: ovn-central
           image: "$REGISTRY/kube-ovn:$VERSION"
@@ -1340,6 +1320,8 @@ spec:
               name: host-log-ovs
             - mountPath: /var/log/ovn
               name: host-log-ovn
+            - mountPath: /etc/localtime
+              name: localtime
             - mountPath: /var/run/tls
               name: kube-ovn-tls
           readinessProbe:
@@ -1356,60 +1338,6 @@ spec:
                 - /kube-ovn/ovn-healthcheck.sh
             initialDelaySeconds: 30
             periodSeconds: 7
-            failureThreshold: 5
-            timeoutSeconds: 45
-        - name: ovn-monitor
-          image: "$REGISTRY/kube-ovn:$VERSION"
-          imagePullPolicy: $IMAGE_PULL_POLICY
-          command: ["/kube-ovn/start-ovn-monitor.sh"]
-          env:
-            - name: ENABLE_SSL
-              value: "$ENABLE_SSL"
-            - name: NODE_IPS
-              value: $addresses
-            - name: KUBE_NODE_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: spec.nodeName
-          resources:
-            requests:
-              cpu: 200m
-              memory: 200Mi
-            limits:
-              cpu: 200m
-              memory: 200Mi
-          volumeMounts:
-            - mountPath: /var/run/openvswitch
-              name: host-run-ovs
-            - mountPath: /var/run/ovn
-              name: host-run-ovn
-            - mountPath: /sys
-              name: host-sys
-              readOnly: true
-            - mountPath: /etc/openvswitch
-              name: host-config-openvswitch
-            - mountPath: /etc/ovn
-              name: host-config-ovn
-            - mountPath: /var/log/openvswitch
-              name: host-log-ovs
-            - mountPath: /var/log/ovn
-              name: host-log-ovn
-            - mountPath: /var/run/tls
-              name: kube-ovn-tls
-          readinessProbe:
-            exec:
-              command:
-              - cat
-              - /var/run/ovn/ovnnb_db.pid
-            periodSeconds: 3
-            timeoutSeconds: 45
-          livenessProbe:
-            exec:
-              command:
-              - cat
-              - /var/run/ovn/ovn-nbctl.pid
-            initialDelaySeconds: 30
-            periodSeconds: 10
             failureThreshold: 5
             timeoutSeconds: 45
       nodeSelector:
@@ -1437,6 +1365,9 @@ spec:
         - name: host-log-ovn
           hostPath:
             path: /var/log/ovn
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
         - name: kube-ovn-tls
           secret:
             optional: true
@@ -1486,6 +1417,8 @@ spec:
                   fieldPath: status.podIP
             - name: HW_OFFLOAD
               value: "$HW_OFFLOAD"
+            - name: TUNNEL_TYPE
+              value: "$TUNNEL_TYPE"
             - name: KUBE_NODE_NAME
               valueFrom:
                 fieldRef:
@@ -1511,6 +1444,8 @@ spec:
               name: host-log-ovs
             - mountPath: /var/log/ovn
               name: host-log-ovn
+            - mountPath: /etc/localtime
+              name: localtime
             - mountPath: /var/run/tls
               name: kube-ovn-tls
           readinessProbe:
@@ -1564,6 +1499,9 @@ spec:
         - name: host-log-ovn
           hostPath:
             path: /var/log/ovn
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
         - name: kube-ovn-tls
           secret:
             optional: true
@@ -1632,6 +1570,7 @@ spec:
           - --network-type=$NETWORK_TYPE
           - --default-interface-name=$VLAN_INTERFACE_NAME
           - --default-vlan-id=$VLAN_ID
+          - --pod-nic-type=$POD_NIC_TYPE
           env:
             - name: ENABLE_SSL
               value: "$ENABLE_SSL"
@@ -1650,6 +1589,8 @@ spec:
             - name: OVN_DB_IPS
               value: $addresses
           volumeMounts:
+            - mountPath: /etc/localtime
+              name: localtime
             - mountPath: /var/run/tls
               name: kube-ovn-tls
           readinessProbe:
@@ -1678,11 +1619,13 @@ spec:
       nodeSelector:
         kubernetes.io/os: "linux"
       volumes:
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
         - name: kube-ovn-tls
           secret:
             optional: true
             secretName: kube-ovn-tls
-
 ---
 kind: DaemonSet
 apiVersion: apps/v1
@@ -1760,6 +1703,8 @@ spec:
           - mountPath: /var/run/netns
             name: host-ns
             mountPropagation: HostToContainer
+          - mountPath: /etc/localtime
+            name: localtime
         readinessProbe:
           exec:
             command:
@@ -1808,7 +1753,9 @@ spec:
         - name: host-ns
           hostPath:
             path: /var/run/netns
-
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
 ---
 kind: DaemonSet
 apiVersion: apps/v1
@@ -1881,6 +1828,8 @@ spec:
               name: host-log-ovs
             - mountPath: /var/log/ovn
               name: host-log-ovn
+            - mountPath: /etc/localtime
+              name: localtime
             - mountPath: /var/run/tls
               name: kube-ovn-tls
           resources:
@@ -1914,10 +1863,158 @@ spec:
         - name: host-log-ovn
           hostPath:
             path: /var/log/ovn
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
         - name: kube-ovn-tls
           secret:
             optional: true
             secretName: kube-ovn-tls
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: kube-ovn-monitor
+  namespace: kube-system
+  annotations:
+    kubernetes.io/description: |
+      Metrics for OVN components: northd, nb and sb.
+spec:
+  replicas: $count
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: kube-ovn-monitor
+  template:
+    metadata:
+      labels:
+        app: kube-ovn-monitor
+        component: network
+        type: infra
+    spec:
+      tolerations:
+      - operator: Exists
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: kube-ovn-monitor
+              topologyKey: kubernetes.io/hostname
+      priorityClassName: system-cluster-critical
+      serviceAccountName: ovn
+      containers:
+        - name: kube-ovn-monitor
+          image: "$REGISTRY/kube-ovn:$VERSION"
+          imagePullPolicy: $IMAGE_PULL_POLICY
+          command: ["/kube-ovn/start-ovn-monitor.sh"]
+          securityContext:
+            runAsUser: 0
+            privileged: false
+          env:
+            - name: ENABLE_SSL
+              value: "$ENABLE_SSL"
+            - name: NODE_IPS
+              value: $addresses
+            - name: KUBE_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 200m
+              memory: 200Mi
+          volumeMounts:
+            - mountPath: /var/run/openvswitch
+              name: host-run-ovs
+            - mountPath: /var/run/ovn
+              name: host-run-ovn
+            - mountPath: /sys
+              name: host-sys
+              readOnly: true
+            - mountPath: /etc/openvswitch
+              name: host-config-openvswitch
+            - mountPath: /etc/ovn
+              name: host-config-ovn
+            - mountPath: /var/log/openvswitch
+              name: host-log-ovs
+            - mountPath: /var/log/ovn
+              name: host-log-ovn
+            - mountPath: /etc/localtime
+              name: localtime
+            - mountPath: /var/run/tls
+              name: kube-ovn-tls
+          readinessProbe:
+            exec:
+              command:
+              - cat
+              - /var/run/ovn/ovnnb_db.pid
+            periodSeconds: 3
+            timeoutSeconds: 45
+          livenessProbe:
+            exec:
+              command:
+              - cat
+              - /var/run/ovn/ovn-nbctl.pid
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 5
+            timeoutSeconds: 45
+      nodeSelector:
+        kubernetes.io/os: "linux"
+        kube-ovn/role: "master"
+      volumes:
+        - name: host-run-ovs
+          hostPath:
+            path: /run/openvswitch
+        - name: host-run-ovn
+          hostPath:
+            path: /run/ovn
+        - name: host-sys
+          hostPath:
+            path: /sys
+        - name: host-config-openvswitch
+          hostPath:
+            path: /etc/origin/openvswitch
+        - name: host-config-ovn
+          hostPath:
+            path: /etc/origin/ovn
+        - name: host-log-ovs
+          hostPath:
+            path: /var/log/openvswitch
+        - name: host-log-ovn
+          hostPath:
+            path: /var/log/ovn
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
+        - name: kube-ovn-tls
+          secret:
+            optional: true
+            secretName: kube-ovn-tls
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kube-ovn-monitor
+  namespace: kube-system
+  labels:
+    app: kube-ovn-monitor
+spec:
+  ports:
+    - name: metrics
+      port: 10661
+  type: ClusterIP
+  selector:
+    app: kube-ovn-monitor
+  sessionAffinity: None
 ---
 kind: Service
 apiVersion: v1
@@ -1985,11 +2082,9 @@ mkdir -p /usr/local/bin
 cat <<\EOF > /usr/local/bin/kubectl-ko
 #!/bin/bash
 set -euo pipefail
-
 KUBE_OVN_NS=kube-system
 OVN_NB_POD=
 OVN_SB_POD=
-
 showHelp(){
   echo "kubectl ko {subcommand} [option...]"
   echo "Available Subcommands:"
@@ -2003,7 +2098,6 @@ showHelp(){
   echo "  trace {namespace/podname} {target ip address} {icmp|tcp|udp} [target tcp or udp port]    trace ovn microflow of specific packet"
   echo "  diagnose {all|node} [nodename]    diagnose connectivity of all nodes or a specific node"
 }
-
 tcpdump(){
   namespacedPod="$1"; shift
   namespace=$(echo "$namespacedPod" | cut -d "/" -f1)
@@ -2011,35 +2105,36 @@ tcpdump(){
   if [ "$podName" = "$namespacedPod" ]; then
     namespace="default"
   fi
-
   nodeName=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.spec.nodeName})
   hostNetwork=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.spec.hostNetwork})
-
   if [ -z "$nodeName" ]; then
     echo "Pod $namespacedPod not exists on any node"
     exit 1
   fi
-
   ovnCni=$(kubectl get pod -n $KUBE_OVN_NS -o wide| grep kube-ovn-cni| grep " $nodeName " | awk '{print $1}')
   if [ -z "$ovnCni" ]; then
     echo "kube-ovn-cni not exist on node $nodeName"
     exit 1
   fi
-
   if [ "$hostNetwork" = "true" ]; then
     set -x
-    kubectl exec -it "$ovnCni" -n $KUBE_OVN_NS -- tcpdump -nn "$@"
+    kubectl exec "$ovnCni" -n $KUBE_OVN_NS -- tcpdump -nn "$@"
   else
-    nicName=$(kubectl exec -it "$ovnCni" -n $KUBE_OVN_NS -- ovs-vsctl --data=bare --no-heading --columns=name find interface external-ids:iface-id="$podName"."$namespace" | tr -d '\r')
+    nicName=$(kubectl exec "$ovnCni" -n $KUBE_OVN_NS -- ovs-vsctl --data=bare --no-heading --columns=name find interface external-ids:iface-id="$podName"."$namespace" | tr -d '\r')
     if [ -z "$nicName" ]; then
       echo "nic doesn't exist on node $nodeName"
       exit 1
     fi
+    podNicType=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.metadata.annotations.ovn\\.kubernetes\\.io/pod_nic_type})
+    podNetNs=$(kubectl exec "$ovnCni" -n $KUBE_OVN_NS -- ovs-vsctl --data=bare --no-heading get interface "$nicName" external-ids:pod_netns | tr -d '\r')
     set -x
-    kubectl exec -it "$ovnCni" -n $KUBE_OVN_NS -- tcpdump -nn -i "$nicName" "$@"
+    if [ "$podNicType" = "internal-port" ]; then
+      kubectl exec "$ovnCni" -n $KUBE_OVN_NS -- ip netns exec "$podNetNs" tcpdump -nn -i "$nicName" "$@"
+    else
+      kubectl exec "$ovnCni" -n $KUBE_OVN_NS -- ip netns exec "$podNetNs" tcpdump -nn -i eth0 "$@"
+    fi
   fi
 }
-
 trace(){
   namespacedPod="$1"
   namespace=$(echo "$1" | cut -d "/" -f1)
@@ -2047,38 +2142,30 @@ trace(){
   if [ "$podName" = "$1" ]; then
     namespace="default"
   fi
-
   podIP=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.metadata.annotations.ovn\\.kubernetes\\.io/ip_address})
   mac=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.metadata.annotations.ovn\\.kubernetes\\.io/mac_address})
   ls=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.metadata.annotations.ovn\\.kubernetes\\.io/logical_switch})
   hostNetwork=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.spec.hostNetwork})
   nodeName=$(kubectl get pod "$podName" -n "$namespace" -o jsonpath={.spec.nodeName})
-
   if [ "$hostNetwork" = "true" ]; then
     echo "Can not trace host network pod"
     exit 1
   fi
-
   if [ -z "$ls" ]; then
     echo "pod address not ready"
     exit 1
   fi
-
-  gwMac=$(kubectl exec -it $OVN_NB_POD -n $KUBE_OVN_NS -c ovn-central -- ovn-nbctl --data=bare --no-heading --columns=mac find logical_router_port name=ovn-cluster-"$ls" | tr -d '\r')
-
+  gwMac=$(kubectl exec $OVN_NB_POD -n $KUBE_OVN_NS -c ovn-central -- ovn-nbctl --data=bare --no-heading --columns=mac find logical_router_port name=ovn-cluster-"$ls" | tr -d '\r')
   if [ -z "$gwMac" ]; then
     echo "get gw mac failed"
     exit 1
   fi
-
   dst="$2"
   if [ -z "$dst" ]; then
     echo "need a target ip address"
     exit 1
   fi
-
   type="$3"
-
   case $type in
     icmp)
       set -x
@@ -2094,19 +2181,16 @@ trace(){
       exit 1
       ;;
   esac
-
   set +x
   echo "--------"
   echo "Start OVS Tracing"
   echo ""
   echo ""
-
   ovsPod=$(kubectl get pod -n $KUBE_OVN_NS -o wide | grep " $nodeName " | grep ovs-ovn | awk '{print $1}')
   if [ -z "$ovsPod" ]; then
       echo "ovs pod  doesn't exist on node $nodeName"
       exit 1
   fi
-
   inPort=$(kubectl exec "$ovsPod" -n $KUBE_OVN_NS -- ovs-vsctl --format=csv --data=bare --no-heading --columns=ofport find interface external_id:iface-id="$podName"."$namespace")
     case $type in
     icmp)
@@ -2124,7 +2208,6 @@ trace(){
       ;;
   esac
 }
-
 xxctl(){
   subcommand="$1"; shift
   nodeName="$1"; shift
@@ -2136,7 +2219,6 @@ xxctl(){
   fi
   kubectl exec "$ovsPod" -n $KUBE_OVN_NS -- ovs-$subcommand "$@"
 }
-
 diagnose(){
   kubectl get crd vpcs.kubeovn.io
   kubectl get crd vpc-nat-gateways.kubeovn.io
@@ -2144,14 +2226,15 @@ diagnose(){
   kubectl get crd ips.kubeovn.io
   kubectl get svc kube-dns -n kube-system
   kubectl get svc kubernetes -n default
-
+  kubectl get sa -n kube-system ovn
+  kubectl get clusterrole system:ovn
+  kubectl get clusterrolebinding ovn
   kubectl get no -o wide
   kubectl ko nbctl show
   kubectl ko nbctl lr-route-list ovn-cluster
   kubectl ko nbctl ls-lb-list ovn-default
   kubectl ko nbctl list acl
   kubectl ko sbctl show
-
   checkKubeProxy
   checkDeployment ovn-central
   checkDeployment kube-ovn-controller
@@ -2172,16 +2255,16 @@ diagnose(){
         nodeName=$(kubectl get pod "$pinger" -n "$KUBE_OVN_NS" -o jsonpath={.spec.nodeName})
         echo "### start to diagnose node $nodeName"
         echo "#### ovn-controller log:"
-        kubectl exec -n $KUBE_OVN_NS -it "$pinger" -- tail /var/log/ovn/ovn-controller.log
+        kubectl exec -n $KUBE_OVN_NS "$pinger" -- tail /var/log/ovn/ovn-controller.log
         echo ""
         echo "#### ovs-vswitchd log:"
-        kubectl exec -n $KUBE_OVN_NS -it "$pinger" -- tail /var/log/openvswitch/ovs-vswitchd.log
+        kubectl exec -n $KUBE_OVN_NS "$pinger" -- tail /var/log/openvswitch/ovs-vswitchd.log
         echo ""
         echo "#### ovs-vsctl show results:"
-        kubectl exec -n $KUBE_OVN_NS -it "$pinger" -- ovs-vsctl show
+        kubectl exec -n $KUBE_OVN_NS "$pinger" -- ovs-vsctl show
         echo ""
         echo "#### pinger diagnose results:"
-        kubectl exec -n $KUBE_OVN_NS -it "$pinger" -- /kube-ovn/kube-ovn-pinger --mode=job
+        kubectl exec -n $KUBE_OVN_NS "$pinger" -- /kube-ovn/kube-ovn-pinger --mode=job
         echo "### finish diagnose node $nodeName"
         echo ""
       done
@@ -2192,12 +2275,12 @@ diagnose(){
       pinger=$(kubectl get pod -n $KUBE_OVN_NS -o wide | grep kube-ovn-pinger | grep " $nodeName " | awk '{print $1}')
       echo "### start to diagnose node nodeName"
       echo "#### ovn-controller log:"
-      kubectl exec -n $KUBE_OVN_NS -it "$pinger" -- tail /var/log/ovn/ovn-controller.log
+      kubectl exec -n $KUBE_OVN_NS "$pinger" -- tail /var/log/ovn/ovn-controller.log
       echo ""
       echo "#### ovs-vswitchd log:"
-      kubectl exec -n $KUBE_OVN_NS -it "$pinger" -- tail /var/log/openvswitch/ovs-vswitchd.log
+      kubectl exec -n $KUBE_OVN_NS "$pinger" -- tail /var/log/openvswitch/ovs-vswitchd.log
       echo ""
-      kubectl exec -n $KUBE_OVN_NS -it "$pinger" -- /kube-ovn/kube-ovn-pinger --mode=job
+      kubectl exec -n $KUBE_OVN_NS "$pinger" -- /kube-ovn/kube-ovn-pinger --mode=job
       echo "### finish diagnose node nodeName"
       echo ""
       ;;
@@ -2207,7 +2290,6 @@ diagnose(){
       ;;
     esac
 }
-
 getOvnCentralPod(){
     NB_POD=$(kubectl get pod -n $KUBE_OVN_NS -l ovn-nb-leader=true | grep ovn-central | head -n 1 | awk '{print $1}')
     if [ -z "$NB_POD" ]; then
@@ -2222,7 +2304,6 @@ getOvnCentralPod(){
     fi
     OVN_SB_POD=$SB_POD
 }
-
 checkDaemonSet(){
   name="$1"
   currentScheduled=$(kubectl get ds -n $KUBE_OVN_NS "$name" -o jsonpath={.status.currentNumberScheduled})
@@ -2236,7 +2317,6 @@ checkDaemonSet(){
     exit 1
   fi
 }
-
 checkDeployment(){
   name="$1"
   ready=$(kubectl get deployment -n $KUBE_OVN_NS "$name" -o jsonpath={.status.readyReplicas})
@@ -2250,7 +2330,6 @@ checkDeployment(){
     exit 1
   fi
 }
-
 checkKubeProxy(){
   dsMode=`kubectl get ds -n kube-system | grep kube-proxy || true`
   if [ -z "$dsMode" ]; then
@@ -2268,16 +2347,13 @@ checkKubeProxy(){
     checkDaemonSet kube-proxy
   fi
 }
-
 if [ $# -lt 1 ]; then
   showHelp
   exit 0
 else
   subcommand="$1"; shift
 fi
-
 getOvnCentralPod
-
 case $subcommand in
   nbctl)
     kubectl exec "$OVN_NB_POD" -n $KUBE_OVN_NS -c ovn-central -- ovn-nbctl "$@"
