@@ -4,6 +4,11 @@ kind: NetworkSlice
 metadata:
   name: "0x01030205"
   namespace: free5gc
+  labels:
+    nsi: "1"
+    mcc: "466"
+    mnc: "93"
+    telecom: TWM
 spec:
   sst: "01"
   sd: "030205"

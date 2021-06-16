@@ -39,6 +39,20 @@ configuration:
           sd: 030204 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
         - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
           sd: 030205 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: 030206 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: 030207 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: 030208 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: 030209 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: 03020a # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: 03020b # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+        - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+          sd: 03020c # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
   supportDnnList:  # the DNN (Data Network Name) list supported by this AMF
     - internet
   nrfUri: http://free5gc-nrf-466-93:8000 # a valid URI of NRF

@@ -3,6 +3,11 @@ apiVersion: "nso.free5gc.com/v1"
 kind: gNB
 metadata:
   name: "466-11-000000010"
+  labels:
+    nsi: "1"
+    mcc: "466"
+    mnc: "11"
+    telecom: CHT
 spec:
   mcc: "466"
   mnc: "11"

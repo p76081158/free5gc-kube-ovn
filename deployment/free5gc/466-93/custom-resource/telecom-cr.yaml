@@ -4,11 +4,16 @@ kind: TeleCom
 metadata:
   name: "466-93"
   namespace: free5gc
+  labels:
+    nsi: "1"
+    mcc: "466"
+    mnc: "93"
+    telecom: TWM
 spec:
   id: 3
   provider: free5gc
   abbrev: "TWM"
   mcc: "466"
   mnc: "93"
-  gnb-nums: 1               # default has one gnb in the core network
-  slice-nums: 3             # default has three network slices in the core network
+  gnb-nums: 1                # default has one gnb in the core network
+  slice-nums: 10             # default has ten network slices in the core network

@@ -2,16 +2,16 @@
 apiVersion: "nssmf.free5gc.com/v1"
 kind: NetworkSlice
 metadata:
-  name: "0x01010205"
+  name: "0x0102020c"
   namespace: free5gc
   labels:
     nsi: "1"
     mcc: "466"
-    mnc: "01"
-    telecom: FET
+    mnc: "11"
+    telecom: CHT
 spec:
   sst: "01"
-  sd: "010205"
+  sd: "02020c"
   status: Inactive
   n4_cidr: Undefined
   ue_subnet: Undefined

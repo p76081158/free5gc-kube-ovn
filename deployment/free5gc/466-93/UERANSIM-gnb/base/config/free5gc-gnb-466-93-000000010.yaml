@@ -31,6 +31,20 @@ data:
         sd: 0x030204
       - sst: 0x1
         sd: 0x030205
+      - sst: 0x1
+        sd: 0x030206
+      - sst: 0x1
+        sd: 0x030207
+      - sst: 0x1
+        sd: 0x030208
+      - sst: 0x1
+        sd: 0x030209
+      - sst: 0x1
+        sd: 0x03020a
+      - sst: 0x1
+        sd: 0x03020b
+      - sst: 0x1
+        sd: 0x03020c
 
     # Indicates whether or not SCTP stream number errors should be ignored.
     ignoreStreamIds: true
