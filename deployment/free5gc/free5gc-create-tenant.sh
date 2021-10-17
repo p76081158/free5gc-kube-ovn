@@ -890,7 +890,9 @@ namespace: free5gc
 resources:
   - amf-sa.yaml
   - amf-rbac.yaml
-  - amf-service.yaml
+  - amf-sbi-service.yaml
+  - amf-n2-service.yaml
+  - amf-n2-service-endpoint.yaml
   - amf-deployment.yaml
 
 # declare Secret from a secretGenerator
@@ -935,7 +937,7 @@ subjects:
   name: free5gc-amf-$mcc-$mnc-sa
 EOF
 
-cat <<EOF > $mcc-$mnc/amf/base/amf-service.yaml
+cat <<EOF > $mcc-$mnc/amf/base/amf-sbi-service.yaml
 ---
 apiVersion: v1
 kind: Service
@@ -952,13 +954,42 @@ spec:
     port: 8000
     protocol: TCP
     targetPort: 8000
-  - name: if-n1n2
+  #  nodePort: 32150
+  selector:
+    app: free5gc-amf-$mcc-$mnc
+EOF
+
+cat <<EOF > $mcc-$mnc/amf/base/amf-n2-service.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: free5gc-amf-$mcc-$mnc-n2
+  name: free5gc-amf-$mcc-$mnc-n2
+spec:
+  # type: ClusterIP
+  # type: NodePort
+  clusterIP: None
+  ports:
+  - name: if-n2
     port: 38412
     protocol: SCTP
     targetPort: 38412
   #  nodePort: 32150
-  selector:
-    app: free5gc-amf-$mcc-$mnc
+EOF
+
+cat <<EOF > $mcc-$mnc/amf/base/amf-n2-service-endpoint.yaml
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: free5gc-amf-$mcc-$mnc-n2
+subsets:
+  - addresses:
+      - ip: $amf_ip
+    ports:
+      - port: 38412
 EOF
 
 cat <<EOF > $mcc-$mnc/amf/base/amf-deployment.yaml
@@ -2410,6 +2441,7 @@ resources:
   - ueransim-gnb-sa.yaml
   - ueransim-gnb-rbac.yaml
   - ueransim-gnb-service.yaml
+  - ueransim-gnb-service-endpoint.yaml
   - ueransim-gnb-deployment.yaml
   - config/free5gc-gnb-$mcc-$mnc-$default_gnb_id.yaml
 EOF
@@ -2446,14 +2478,26 @@ metadata:
     app: free5gc-ueransim-gnb-$mcc-$mnc-$default_gnb_id
   name: free5gc-ueransim-gnb-$mcc-$mnc-$default_gnb_id
 spec:
-  type: ClusterIP
+  # type: ClusterIP
+  clusterIP: None
   ports:
   - name: free5gc-gnb-n3
     port: 2152
     protocol: UDP
     targetPort: 2152
-  selector:
-    app: free5gc-ueransim-gnb-$mcc-$mnc-$default_gnb_id
+EOF
+
+cat <<EOF > $mcc-$mnc/UERANSIM-gnb/base/ueransim-gnb-service-endpoint.yaml
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: free5gc-ueransim-gnb-$mcc-$mnc-$default_gnb_id
+subsets:
+  - addresses:
+      - ip: 10.$gnb_n3_ip_b.100.3
+    ports:
+      - port: 2152
 EOF
 
 cat <<EOF > $mcc-$mnc/UERANSIM-gnb/base/ueransim-gnb-deployment.yaml
