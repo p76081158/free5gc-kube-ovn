@@ -2,7 +2,7 @@
 
 ![](https://i.imgur.com/wy0NI6X.png)
 
-###### tags: `docs` `Kubernetes` `free5gc`
+###### tags: `docs` `Kubernetes` `free5gc` `Kube-OVN`
 
 ## Introduction
 
@@ -28,6 +28,12 @@ $ sudo ./quickstart.sh
 ```
 ![](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/quickstart.gif?raw=true)
 * [gif source](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/quickstart.gif)
+
+### kubectl without root
+
+```bash
+$ sudo chown -R $USER $HOME/.kube
+```
 
 ### Join Worker to Kubernetes Cluster
 
@@ -70,6 +76,9 @@ $ ./free5gc-create-tenant.sh 466 93 TWM 1 192.168.72.54
 $ kubectl -n free5gc get telecoms.nso.free5gc.com
 $ kubectl -n free5gc get gnbs.nso.free5gc.com
 $ kubectl -n free5gc get networkslices.nssmf.free5gc.com
+$ kubectl -n free5gc get networkslices.nssmf.free5gc.com -l telecom=FET
+$ kubectl -n free5gc get networkslices.nssmf.free5gc.com -l telecom=CHT
+$ kubectl -n free5gc get networkslices.nssmf.free5gc.com -l telecom=TWM
 
 # get core network NF pods
 $ kubectl -n free5gc get pod -l telecom=FET
@@ -102,6 +111,10 @@ $ sudo ./delete-config.sh
 ![image alt](https://github.com/p76081158/free5gc-kube-ovn/blob/assets/docs/terminalizer/gif/uninstall-all.gif?raw=true)
 
 ## Custom Resource
+
+### Definition
+
+* [custom-resource-definition](https://github.com/p76081158/free5gc-kube-ovn/tree/main/deployment/custom-resource-definition)
 
 ### TeleCom Example
 
