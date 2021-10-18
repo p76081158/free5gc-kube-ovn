@@ -16,7 +16,7 @@ echo ""
 
 # kube-ovn
 cd kube-ovn/
-sudo bash install.sh
+sudo bash install-new.sh
 cd ..
 
 # other cni
@@ -30,7 +30,7 @@ echo ""
 # prometheus
 echo "[Step 8] Install other Prometheus"
 cd prometheus
-./install-new.sh
+./install.sh
 cd ..
 echo "-------------------------------"
 echo ""
