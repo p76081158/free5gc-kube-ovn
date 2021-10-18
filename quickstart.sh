@@ -2,21 +2,21 @@
 
 # Create kubernetes cluster master node
 echo "[Initial 0] Create kubernetes cluster"
-sudo kubeadm init --config kubeadm/kubeadm-config.yaml
+kubeadm init --config kubeadm/kubeadm-config.yaml
 echo "-------------------------------"
 echo ""
 
 # Set up local kubeconfig
 echo "[Initial 1] Set up local kubeconfig"
 mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
 echo "-------------------------------"
 echo ""
 
 # kube-ovn
 cd kube-ovn/
-sudo bash install.sh
+bash install.sh
 cd ..
 
 # other cni
@@ -50,4 +50,4 @@ echo "-------------------------------"
 echo ""
 
 # kubectl without root
-sudo chown -R $USER $HOME/.kube
+chown -R $USER $HOME/.kube
