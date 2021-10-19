@@ -15,7 +15,7 @@ status=$(dpkg -s nmap | grep Status)
 if [ -z "$status" ]
 then
     echo "Install nmap"
-    sudo apt isntall nmap
+    sudo apt install nmap
 fi
 
 sudo nmap -sP -PR $local_ip* | grep $local_ip
