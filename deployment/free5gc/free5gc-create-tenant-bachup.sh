@@ -2394,6 +2394,7 @@ metadata:
     namespace: free5gc
 spec:
   protocol: IPv4
+  provider: free5gc-n3-$mcc-$mnc-$default_gnb_id.free5gc.ovn
   cidrBlock: 10.$gnb_n3_ip_b.100.0/24
   gateway: 10.$gnb_n3_ip_b.100.1
 EOF
