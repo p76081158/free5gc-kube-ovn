@@ -1,0 +1,11 @@
+---
+apiVersion: kubeovn.io/v1
+kind: Subnet
+metadata:
+  name: qos-nic-1
+  namespace: qos-test
+spec:
+  protocol: IPv4
+  provider: qos-nic-1.qos-test.ovn
+  cidrBlock: 10.150.100.0/24
+  gateway: 10.150.100.1

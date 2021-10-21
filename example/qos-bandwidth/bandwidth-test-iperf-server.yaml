@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bandwidth-test-iperf-server
+  namespace: qos-test
+  labels:
+    app: bandwidth-test-iperf-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bandwidth-test-iperf-server
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: bandwidth-test-iperf-server
+      annotations:
+        k8s.v1.cni.cncf.io/networks: qos-nic-1, qos-nic-2
+        qos-nic-1.qos-test.ovn.kubernetes.io/logical_switch: qos-nic-1                  
+        qos-nic-1.qos-test.ovn.kubernetes.io/ip_address: 10.150.100.3
+        qos-nic-1.qos-test.ovn.kubernetes.io/ingress_rate: "3"
+        qps-nic-1.qos-test.ovn.kubernetes.io/egress_rate: "3"
+        qos-nic-2.qos-test.ovn.kubernetes.io/logical_switch: qos-nic-2                  
+        qos-nic-2.qos-test.ovn.kubernetes.io/ip_address: 10.150.101.3
+        qos-nic-2.qos-test.ovn.kubernetes.io/ingress_rate: "6"
+        qps-nic-2.qos-test.ovn.kubernetes.io/egress_rate: "6"
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: iperf  
+          image: kubeovn/perf
